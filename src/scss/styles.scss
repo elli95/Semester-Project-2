@@ -1,5 +1,13 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+/* reference: https://blog.pope.tech/2020/02/28/missing-form-label-search/ */
+.wave-form-lable-fix {
+  position: absolute;
+  overflow: hidden;
+  left: -9999999px;
+  top: auto;
+}
+
 Header,
 footer {
   background-color: #72f88d;
