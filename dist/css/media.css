@@ -1,0 +1,38 @@
+@media (min-width: 900px) {
+  .logo {
+    padding-right: 40px;
+    font-size: 32px;
+    color: inherit;
+    text-decoration: inherit;
+  }
+  .logo-lock,
+  .profile-menu {
+    font-size: 24px;
+    margin: 0;
+  }
+  .dropdw-btn,
+  #menu .login {
+    display: none;
+  }
+  .meny-style {
+    position: initial !important;
+    background-color: rgb(114, 248, 141);
+    font-size: 24px;
+    border: 0;
+    transform: none !important;
+  }
+  .meny-style,
+  .meny-style li,
+  .searchbar,
+  .profile-menu {
+    flex-direction: row;
+    display: flex;
+  }
+  .searchbar,
+  .searchbar button {
+    height: 32px;
+    align-self: center;
+  }
+}
+
+/*# sourceMappingURL=media.css.map */
