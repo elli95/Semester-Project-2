@@ -22,6 +22,7 @@
     <script src="../src/js/profile/userAuctionData.js" type="module"></script>
     <script src="../src/js/search.js" type="module"></script>
     <script src="../src/js/api/editInfo.js" type="module"></script>
+    <script src="../src/js/profileFilter.js" type="module"></script>
   </head>
   <body>
     <header class="d-flex justify-content-between">
@@ -77,19 +78,30 @@
       <h2 class="errorText w-75 text-center" id="error-message"></h2>
       <section class="d-flex flex-column justify-content-center align-items-center profile-listing-data">
         <div class="dropdown col-6 d-flex justify-content-center z-1 pt-3">
-          <button class="btn btn-light dropdown-toggle px-5 text-white bg-dark" data-bs-toggle="dropdown" aria-expanded="false">Filter</button>
-          <ul class="dropdown-menu">
-            <li>
-              <button class="dropdown-item" id="new-posts">Show All</button>
-              <button class="dropdown-item" id="old-posts">My Bids</button>
-              <button class="dropdown-item" id="popular-posts">My Listings</button>
+          <button class="btn btn-light dropdown-toggle px-5 text-white bg-dark d-md-none" data-bs-toggle="dropdown" aria-expanded="false">
+            Filter
+          </button>
+          <ul class="dropdown-menu d-md-flex profile-filter-menu">
+            <li class="d-md-flex">
+              <button class="dropdown-item" id="show-all-filter">Show All</button>
+              <button class="dropdown-item profile-btn-border" id="my-bids-filter">My Bids</button>
+              <button class="dropdown-item profile-btn-border" id="my-listings-filter">My Listings</button>
+              <button class="dropdown-item profile-btn-border" id="my-wins-filter">My wins</button>
             </li>
           </ul>
         </div>
-        <h2 class="text-end">My listings:</h2>
-        <div id="listingsSection" class="row align-items-center align-self-center justify-content-center col-12"></div>
-        <h2>My bids:</h2>
-        <div id="myBidsSection" class="row align-items-center align-self-center justify-content-center col-12"></div>
+        <div id="my-listing-container" class="row justify-content-center col-12">
+          <h2 class="text-end">My Listings:</h2>
+          <div id="listingsSection" class="row align-self-center justify-content-center profile-cards-section"></div>
+        </div>
+        <div id="my-bid-container" class="row justify-content-center col-12">
+          <h2 id="my-bid-section-title">My Bids:</h2>
+          <div id="myBidsSection" class="row align-self-center justify-content-center profile-cards-section"></div>
+        </div>
+        <div id="my-wins-container" class="row justify-content-center col-12">
+          <h2 id="my-wins-section-title">My Wins:</h2>
+          <div id="myWinSection" class="row align-self-center justify-content-center profile-cards-section"></div>
+        </div>
       </section>
     </main>
     <footer>
