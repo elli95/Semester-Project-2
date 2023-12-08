@@ -1,4 +1,8 @@
+import { getCountdownDate } from "./dateCountdown.js";
 const endDateSetup = {
+  second: "numeric",
+  minute: "numeric",
+  hour: "numeric",
   day: "numeric",
   month: "numeric",
   year: "numeric",
@@ -97,6 +101,7 @@ function listingsCard(listing) {
   listingImg.className = "auction-img";
   // listingImg.setAttribute("id", "listing-img");
   infoContainer.className = "d-flex flex-column align-items-center m-2";
+  // listingEndTime.setAttribute("id", "endTimeCountdown");
 
   // console.log("hello", listing.endsAt);
   // userContainer.querySelector("h2").innerText = `${listing.name}`;
@@ -128,7 +133,8 @@ function listingsCard(listing) {
 
   // console.log("currentDate", currentDate);
   if (currentDate < listingEndDate) {
-    infoContainer.querySelector("h4").innerText = `Ends at: ${listingEndDate}`;
+    const endData = "h4";
+    getCountdownDate(listing, infoContainer, endData);
   } else {
     infoContainer.querySelector("h4").innerText = `Ended`;
   }
@@ -152,6 +158,8 @@ function listingsCard(listing) {
 }
 
 function listingPage(listingData) {
+  const currentDateData = new Date();
+  const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
   let listingdate = new Date(listingData.endsAt);
   const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
 
@@ -173,7 +181,7 @@ function listingPage(listingData) {
   infoContainer.append(listingDescription);
   infoContainer.append(listingEndTime);
 
-  listingContainer.className = "d-flex flex-column align-items-center p-3 text-center specific-listing-style";
+  listingContainer.className = "d-flex flex-column align-items-center px-3 text-center specific-listing-style";
   listingTitle.className = "grid-a";
   listingImg.className = "grid-b";
   ImgCollectionSection.className = "d-flex specific-img-collection justify-content-center grid-c";
@@ -212,7 +220,14 @@ function listingPage(listingData) {
   }
   // listingContainer.querySelector("img").src = `${listingData.media}`;
   infoContainer.querySelector("h2").innerText = `${listingData.description}`;
-  infoContainer.querySelector("h3").innerText = `Ends at: ${listingEndDate}`;
+  // infoContainer.querySelector("h3").innerText = `Ends at: ${listingEndDate}`;
+
+  if (currentDate < listingEndDate) {
+    const endData = "h3";
+    getCountdownDate(listingData, infoContainer, endData);
+  } else {
+    infoContainer.querySelector("h3").innerText = `Ended`;
+  }
 }
 
 function userCredits(userData) {
@@ -263,6 +278,8 @@ function headerSearch(highestBid) {
 }
 
 function profileListingsCard(listing) {
+  const currentDateData = new Date();
+  const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
   let listingdate = new Date(listing.endsAt);
   const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
 
@@ -297,7 +314,7 @@ function profileListingsCard(listing) {
 
   cardContainer.className = "card h-100 m-3 listing-card col-11 col-md-5 col-xl-3";
   listingLink.className = "text-decoration-none text-reset";
-  listingTitle.className = "fw-bold ps-3 pt-2";
+  listingTitle.className = "fw-bold border-0 ps-3 pt-2";
   listingImg.className = "auction-img";
   infoContainer.className = "d-flex flex-column align-items-center m-2";
 
@@ -314,7 +331,13 @@ function profileListingsCard(listing) {
   }
 
   infoContainer.querySelector("h3").innerText = `${listing.description}`;
-  infoContainer.querySelector("h4").innerText = `Ends at: ${listingEndDate}`;
+
+  if (currentDate < listingEndDate) {
+    const endData = "h4";
+    getCountdownDate(listing, infoContainer, endData);
+  } else {
+    infoContainer.querySelector("h4").innerText = `Ended`;
+  }
 
   if (listing.bids.length === 0) {
     infoContainer.querySelector("h5").innerText = "No bids yet";
@@ -337,6 +360,8 @@ function listingEdit(listingData) {
 }
 
 function profileBidCard(bidData) {
+  const currentDateData = new Date();
+  const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
   let listingdate = new Date(bidData.listing.endsAt);
   const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
 
@@ -365,7 +390,7 @@ function profileBidCard(bidData) {
 
   cardContainer.className = "card h-100 m-3 listing-card col-11 col-md-5 col-xl-3";
   listingLink.className = "text-decoration-none text-reset";
-  listingTitle.className = "fw-bold ps-3 pt-2";
+  listingTitle.className = "fw-bold border-0 ps-3 pt-2";
   listingImg.className = "auction-img";
   infoContainer.className = "d-flex flex-column align-items-center m-2";
 
@@ -378,7 +403,13 @@ function profileBidCard(bidData) {
     auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
   }
   infoContainer.querySelector("h3").innerText = `${bidData.listing.description}`;
-  infoContainer.querySelector("h4").innerText = `Ends at: ${listingEndDate}`;
+
+  if (currentDate < listingEndDate) {
+    const endData = "h4";
+    getCountdownDate(bidData.listing, infoContainer, endData);
+  } else {
+    infoContainer.querySelector("h4").innerText = `Ended`;
+  }
 
   // let bidValues = [];
   // Object.values(listing.bids).forEach(function (data) {
@@ -390,4 +421,54 @@ function profileBidCard(bidData) {
   // }
 }
 
-export { profileStyle, listingsCard, listingPage, userCredits, bidsList, headerSearch, profileListingsCard, listingEdit, profileBidCard };
+function profileWinCard(winData) {
+  const listingsSection = document.getElementById("myWinSection");
+  const cardContainer = document.createElement("div");
+  const listingContainer = document.createElement("div");
+  const listingLink = document.createElement("a");
+  const auctionContainer = document.createElement("div");
+  const listingTitle = document.createElement("h2");
+  const listingImg = document.createElement("img");
+  const infoContainer = document.createElement("div");
+  const listingDescription = document.createElement("h3");
+  const listingHighestBid = document.createElement("h5");
+
+  listingsSection.append(cardContainer);
+  cardContainer.append(listingContainer);
+  listingContainer.append(listingLink);
+  listingLink.append(auctionContainer);
+  auctionContainer.append(listingTitle);
+  auctionContainer.append(listingImg);
+  auctionContainer.append(infoContainer);
+  infoContainer.append(listingDescription);
+  infoContainer.append(listingHighestBid);
+
+  cardContainer.className = "card h-100 m-3 listing-card col-11 col-md-5 col-xl-3";
+  listingLink.className = "text-decoration-none text-reset";
+  listingTitle.className = "fw-bold border-0 ps-3 pt-2";
+  listingImg.className = "auction-img";
+  infoContainer.className = "d-flex flex-column align-items-center m-2";
+
+  listingContainer.querySelector("a").href = `/feed/index.html?id=${winData.listing.id}`;
+  auctionContainer.querySelector("h2").innerText = `${winData.listing.title}`;
+  if (winData.listing.media.length !== 0) {
+    auctionContainer.querySelector("img").src = `${winData.listing.media[0]}`;
+  } else {
+    auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+  }
+  infoContainer.querySelector("h3").innerText = `${winData.listing.description}`;
+  infoContainer.querySelector("h5").innerText = `My bid: ${winData.amount}`;
+}
+
+export {
+  profileStyle,
+  listingsCard,
+  listingPage,
+  userCredits,
+  bidsList,
+  headerSearch,
+  profileListingsCard,
+  listingEdit,
+  profileBidCard,
+  profileWinCard,
+};
