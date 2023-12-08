@@ -24,6 +24,9 @@ async function newFilter() {
 }
 
 const endDateSetup = {
+  second: "numeric",
+  minute: "numeric",
+  hour: "numeric",
   day: "numeric",
   month: "numeric",
   year: "numeric",
