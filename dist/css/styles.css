@@ -12031,6 +12031,7 @@ footer p {
 
 .listing-card {
   border: solid 2px black;
+  border-radius: 0;
   max-width: 330px;
 }
 
