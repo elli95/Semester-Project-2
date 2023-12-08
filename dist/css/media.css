@@ -1,4 +1,23 @@
+@media (min-width: 500px) {
+  .about-img {
+    height: 300px;
+    overflow: hidden;
+  }
+  .about-img img {
+    object-position: center;
+    object-fit: cover;
+  }
+}
+@media (min-width: 800px) {
+  .form-post-container {
+    grid-template: "a b" "c c";
+  }
+}
 @media (min-width: 900px) {
+  main {
+    background-size: 35%;
+    padding-top: 80px;
+  }
   .logo {
     padding-right: 40px;
     font-size: 32px;
@@ -20,6 +39,7 @@
     font-size: 24px;
     border: 0;
     transform: none !important;
+    padding-top: 0;
   }
   .meny-style,
   .meny-style li,
@@ -32,6 +52,103 @@
   .searchbar button {
     height: 32px;
     align-self: center;
+  }
+  .img-top {
+    top: 62px;
+    width: 35%;
+  }
+  .about {
+    margin: 2% 5%;
+    border-radius: 10px;
+  }
+  .contact-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .contact-section img {
+    margin: 10px 10px 20px 45px;
+    border-radius: 10px;
+    align-self: center;
+    max-width: 45%;
+  }
+  .contact {
+    justify-content: center;
+    margin: 10px 45px 20px 45px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    align-self: center;
+    min-width: fit-content;
+    max-width: fit-content;
+  }
+  .contact h2,
+  .contact h3,
+  .contact p {
+    backdrop-filter: blur(0px);
+  }
+  .bids-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-info {
+    display: grid !important;
+    grid-template-areas: "b b" "a c";
+    justify-content: center;
+    width: 100%;
+    gap: 10%;
+  }
+  .profile-info h1 {
+    text-align: center;
+  }
+  .avatar-edit-form {
+    max-width: 600px;
+  }
+  .specific-listing-card-style {
+    border: solid 1px black;
+    border-radius: 5px;
+  }
+  .specific-listing-style {
+    display: grid !important;
+    grid-template: "a a" "b d" "c d";
+    justify-items: center;
+  }
+  .specific-info-container {
+    max-width: 80%;
+    padding: 20px;
+  }
+  .specific-listing-style img {
+    border-radius: 10px;
+    padding: 20px 0px 20px 20px;
+    height: 600px;
+    width: 800px;
+    object-fit: contain;
+  }
+  .specific-listing-style img,
+  .specific-img-collection img {
+    object-position: center;
+  }
+  .specific-img-collection {
+    flex-wrap: wrap;
+    width: 800px;
+  }
+  .specific-img-collection img {
+    object-fit: fill;
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 1200px) {
+  .about {
+    margin: 2% 15%;
+  }
+  .contact-section img {
+    max-width: 35%;
+  }
+}
+@media (min-width: 1640px) {
+  #listingsSection {
+    width: 90%;
   }
 }
 
