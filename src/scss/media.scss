@@ -10,9 +10,29 @@
   }
 }
 
+@media (min-width: 769px) {
+  .profile-filter-menu {
+    position: relative;
+  }
+
+  .profile-filter-menu button {
+    width: 100px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .profile-btn-border {
+    border-left: solid 2px black;
+  }
+}
+
 @media (min-width: 800px) {
   .form-post-container {
     grid-template: "a b" "c c";
+  }
+
+  .profile-filter-menu {
+    margin-top: 20px;
   }
 }
 
@@ -132,7 +152,7 @@
   }
   .specific-listing-style {
     display: grid !important;
-    grid-template: "a a" "b d" "c d";
+    grid-template: "b a" "b d" "b d" "c d";
     justify-items: center;
   }
 
@@ -150,7 +170,7 @@
 
   .specific-listing-style img {
     border-radius: 10px;
-    padding: 20px 0px 20px 20px;
+    padding: 20px 20px 20px 20px;
     height: 600px;
     width: 800px;
     object-fit: contain;
@@ -169,7 +189,8 @@
   .specific-img-collection img {
     object-fit: fill;
     width: 100px;
-    height: 100px;
+    height: 80px;
+    padding-top: 0px;
   }
 
   // .specific-listing-style h2 {
@@ -200,7 +221,7 @@
 }
 
 @media (min-width: 1640px) {
-  #listingsSection {
+  .profile-cards-section {
     width: 90%;
   }
 }
