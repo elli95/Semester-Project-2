@@ -1,7 +1,7 @@
 import { API_PROFILE_URL } from "../api/constant-api.mjs";
 import { apiData } from "../api/apiCall.mjs";
 import { getLocalStorage } from "../localStorage.mjs";
-import { profileStyle, profileListingsCard, profileBidCard, profileWinCard } from "../htmlStyle.js";
+import { profileStyle, profileListingsCard, profileBidCard, profileWinCard, userHeader } from "../htmlStyle.js";
 
 const method = "GET";
 const user = getLocalStorage("profile").name;
@@ -35,12 +35,15 @@ export async function getProfileData(userDataUrl, method, data) {
     const lastBid = userBids.filter((obj, index) => userBids.findIndex((bid) => bid.listing.id === obj.listing.id) === index);
 
     profileStyle(userData, lastBid);
+    userHeader(userData);
 
     const listingData = await apiData(userDataUrl + "/listings?_bids=true", method, data);
 
     Object.values(listingData).forEach(function (listing) {
       profileListingsCard(listing);
     });
+
+    // header-profile """"""""""""""""""""""""""""""""""""
 
     console.log("ac", lastBid);
     Object.values(lastBid).forEach(function (bidData) {
