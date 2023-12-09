@@ -107,12 +107,22 @@ footer p {
   height: auto;
 }
 
+.header-profile-img,
+.profile-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.header-profile-img {
+  width: 60px;
+  height: 60px;
+  clip-path: ellipse(30px 30px at 30px 30px);
+}
+
 .profile-img {
   width: 160px;
   height: 160px;
   clip-path: ellipse(80px 80px at 80px 80px);
-  object-fit: cover;
-  object-position: center;
 }
 
 .bids,
