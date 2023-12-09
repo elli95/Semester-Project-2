@@ -58,6 +58,7 @@
       <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top d-none" alt="" />
       <h1>Edit Auction Listing:</h1>
       <section>
+        <img id="edit-img-display" class="auction-img" src="" alt="">
         <form id="listing-update-form">
             <div class="form-group row justify-content-center">
               <img id="output-img" class="profile-img" src="" alt="">
@@ -85,13 +86,16 @@
                   id="listing-tags"
                   placeholder="Write a listing tag"
                 />
-                <input
+                <!-- <input
                   class="form-control"
                   type="text"
                   name="listing-media"
                   id="listing-media"
                   placeholder="Write a img link"
-                />
+                /> -->
+                <div id="listing-media"></div>
+                <div id="new-listing-media-input"></div>
+                <h3 id="add-new-img-input">Add another image</h3>
                 <button class="btn btn-success" type="submit">Update</button>
                 <button class="btn btn-danger" type="button" id="delete-listing-btn">Delete</button>
         </form>

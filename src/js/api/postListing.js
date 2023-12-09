@@ -9,11 +9,31 @@ const listingForm = document.querySelector("#listing-submission");
 const listingTitle = document.querySelector("#listing-title");
 const listingDescription = document.querySelector("#listing-text");
 const listingTags = document.querySelector("#listing-tags");
-const listingMedia = document.querySelector("#listing-media");
+const listingMedia = document.getElementsByClassName("listing-media-input");
+// const listingMedia = document.querySelector("#listing-media");
 const listingend = document.querySelector("#listing-end");
+const addNewImgInput = document.querySelector("#add-new-img-input");
+
 // createNewAuctionBtn.addEventListener("click", showNewAuctionForm);
 listingForm.addEventListener("submit", listingSubmission);
-listingMedia.addEventListener("input", imgOutput);
+// listingMedia.addEventListener("input", imgOutput);
+addNewImgInput.addEventListener("click", newImgInput);
+
+function newImgInput() {
+  const newListingMediaInput = document.getElementById("new-listing-media-input");
+  const newListingMediaSection = document.createElement("div");
+  const newListingMedia = document.createElement("input");
+
+  newListingMediaInput.append(newListingMediaSection);
+  newListingMediaSection.append(newListingMedia);
+
+  newListingMediaSection.className = "mb-2";
+  newListingMedia.className = "form-control listing-media-input";
+  newListingMedia.setAttribute("type", "text");
+  newListingMedia.setAttribute("name", "listing-media");
+
+  newListingMediaSection.querySelector("input").placeholder = `Write an image link`;
+}
 
 createNewAuctionBtn.addEventListener("click", function () {
   // function showNewAuctionForm() {
@@ -32,15 +52,19 @@ async function listingSubmission(event) {
   event.preventDefault();
   try {
     const method = "POST";
-    console.log(listingMedia.value);
+    const allMediaInput = [...listingMedia].map((input) => input.value);
+    console.log("1", allMediaInput);
 
     const listingData = {
       title: listingTitle.value,
       description: listingDescription.value,
       tags: [listingTags.value],
-      media: [listingMedia.value],
+      // media: [listingMedia.value],
+      media: allMediaInput,
       endsAt: listingend.value,
     };
+
+    console.log("2", listingData);
 
     const listingInfo = await apiData(listingUrl, method, listingData);
     console.log(listingInfo);

@@ -12,9 +12,31 @@ const listingUpdateForm = document.querySelector("#listing-update-form");
 const listingTitle = document.querySelector("#listing-title");
 const listingDescription = document.querySelector("#listing-description");
 const listingTags = document.querySelector("#listing-tags");
-const listingMedia = document.querySelector("#listing-media");
+// const listingMedia = document.querySelector("#listing-media");
+const listingMedia = document.getElementsByClassName("listing-media-input");
+const addNewImgInput = document.querySelector("#add-new-img-input");
+
 listingUpdateForm.addEventListener("submit", editListing);
-listingMedia.addEventListener("input", imgOutput);
+// listingMedia.addEventListener("input", imgOutput);
+addNewImgInput.addEventListener("click", newImgInput);
+
+function newImgInput() {
+  // const newListingMediaInput = document.getElementById("new-listing-media-input");
+  const newListingMediaInput = document.getElementById("listing-media");
+  // const newListingMediaSection = document.createElement("div");
+  const newListingMedia = document.createElement("input");
+
+  // newListingMediaInput.append(newListingMediaSection);
+  newListingMediaInput.append(newListingMedia);
+
+  newListingMediaInput.className = "mb-2";
+  newListingMedia.className = "form-control listing-media-input";
+  newListingMedia.setAttribute("type", "text");
+  newListingMedia.setAttribute("name", "listing-media");
+
+  newListingMediaInput.querySelector("input").placeholder = `Write an image link`;
+  imgOutput();
+}
 
 async function getListingData(listingDataUrl, data) {
   try {
@@ -33,11 +55,13 @@ getListingData(listingDataUrl);
 async function editListing() {
   event.preventDefault();
   try {
+    const allMediaInput = [...listingMedia].map((input) => input.value);
+
     const avatarUpdate = {
       title: listingTitle.value,
       description: listingDescription.value,
       tags: [listingTags.value],
-      media: [listingMedia.value],
+      media: allMediaInput,
     };
 
     const method = "PUT";
@@ -51,6 +75,14 @@ async function editListing() {
 }
 
 function imgOutput() {
-  const value = listingMedia.value.toLowerCase();
-  document.getElementById("output-img").src = value;
+  const collectionImg = document.querySelectorAll(".listing-media-input");
+  for (let i = 0; i < collectionImg.length; i++) {
+    collectionImg[i].addEventListener("click", function () {
+      console.log(this.value);
+      document.getElementById("edit-img-display").src = this.value;
+      console.log("hei");
+    });
+  }
+  //   const value = listingMedia.value.toLowerCase();
+  //   document.getElementById("output-img").src = value;
 }

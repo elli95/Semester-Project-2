@@ -109,7 +109,7 @@ function listingsCard(listing) {
   cardContainer.querySelector("a").href = `/feed/index.html?id=${listing.id}`;
   auctionContainer.querySelector("h2").innerText = `${listing.title}`;
 
-  // const cardImg = document.querySelectorAll("#listing-img");
+  const cardImg = document.querySelectorAll("#listing-img");
 
   if (listing.media.length !== 0) {
     // || listing.media[0] !== "undefined"
@@ -119,7 +119,7 @@ function listingsCard(listing) {
     // img.onerror = function () {
     //   auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
     // };
-    // console.log(cardImg);
+    // console.log(cardImg[4].naturalHeight);
   } else {
     // console.log(cardImg);
     // const img = new Image();
@@ -189,6 +189,14 @@ function listingPage(listingData) {
   listingDescription.className = "m-3";
   listingEndTime.className = "endTime";
 
+  listingImg.setAttribute("id", "listing-img");
+  const imgeee = document.getElementById("listing-img");
+
+  imgeee.onerror = function () {
+    listingContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+    console.log("hello?????????????");
+  };
+
   console.log(listingData);
 
   listingContainer.querySelector("h1").innerText = `${listingData.title}`;
@@ -206,9 +214,10 @@ function listingPage(listingData) {
       ImgCollectionSection.append(listingImgCollection);
       listingImgCollection.append(imgCollection);
 
-      imgCollection.setAttribute("id", "collection-img");
+      imgCollection.className = "collection-img";
+      // imgCollection.setAttribute("id", "collection-img");
 
-      const collectionImg = document.querySelectorAll("#collection-img");
+      const collectionImg = document.querySelectorAll(".collection-img");
       for (let i = 0; i < collectionImg.length; i++) {
         collectionImg[i].addEventListener("click", function () {
           console.log(this.src);
@@ -353,10 +362,39 @@ function profileListingsCard(listing) {
 }
 
 function listingEdit(listingData) {
+  console.log(listingData);
+  const mediaSection = document.getElementById("listing-media");
+  // const mediainputBox = document.createElement("div");
+  // mediaSection.append(mediainputBox);
+
   document.getElementById("listing-title").value = `${listingData.title}`;
   document.getElementById("listing-description").value = `${listingData.description}`;
   document.getElementById("listing-tags").value = `${listingData.tags}`;
-  document.getElementById("listing-media").value = `${listingData.media}`;
+
+  if (listingData.media.length > 1) {
+    Object.values(listingData.media).forEach(function (img) {
+      const mediaUrl = document.createElement("input");
+      mediaUrl.className = "form-control listing-media-input";
+      mediaSection.append(mediaUrl);
+
+      mediaUrl.value = `${img}`;
+    });
+  } else {
+    const mediaUrl = document.createElement("input");
+    mediaSection.append(mediaUrl);
+    mediaUrl.className = "form-control listing-media-input";
+
+    mediaUrl.value = `${listingData.media}`;
+  }
+
+  const collectionImg = document.querySelectorAll(".listing-media-input");
+  for (let i = 0; i < collectionImg.length; i++) {
+    collectionImg[i].addEventListener("click", function () {
+      console.log(this.value);
+      document.getElementById("edit-img-display").src = this.value;
+      console.log("hei");
+    });
+  }
 }
 
 function profileBidCard(bidData) {
@@ -460,6 +498,30 @@ function profileWinCard(winData) {
   infoContainer.querySelector("h5").innerText = `My bid: ${winData.amount}`;
 }
 
+function userHeader(userData) {
+  const headerProfileSection = document.getElementById("header-profile");
+  const headerProfileLink = document.createElement("a");
+  const textBox = document.createElement("div");
+  const userName = document.createElement("h2");
+  const userCredit = document.createElement("h3");
+  const profileAvatar = document.createElement("img");
+
+  headerProfileSection.append(headerProfileLink);
+  headerProfileLink.append(textBox);
+  textBox.append(userName);
+  textBox.append(userCredit);
+  headerProfileLink.append(profileAvatar);
+
+  headerProfileLink.className = "d-flex me-2";
+  textBox.className = "text-center";
+  profileAvatar.className = "header-profile-img";
+
+  headerProfileSection.querySelector("a").href = `/profile/index.html`;
+  textBox.querySelector("h2").innerText = `${userData.name}`;
+  textBox.querySelector("h3").innerText = `Your credit: ${userData.credits}`;
+  headerProfileLink.querySelector("img").src = `${userData.avatar}`;
+}
+
 export {
   profileStyle,
   listingsCard,
@@ -471,4 +533,5 @@ export {
   listingEdit,
   profileBidCard,
   profileWinCard,
+  userHeader,
 };
