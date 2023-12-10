@@ -17,6 +17,11 @@ async function newFilter() {
   try {
     const listingData = await apiData(listingsDataUrl, method);
     const result = listingData.sort((a, b) => new Date(b.created) - new Date(a.created));
+
+    document.getElementById("new-post").style.backgroundColor = "#72f88d";
+    document.getElementById("old-post").style.backgroundColor = "#bfedce";
+    document.getElementById("popular-post").style.backgroundColor = "#bfedce";
+
     printFilterResult(result);
   } catch (error) {
     console.log(error);
@@ -32,10 +37,14 @@ const endDateSetup = {
   year: "numeric",
 };
 
-async function endingFilter() {
+export async function endingFilter() {
   try {
     const listingData = await apiData(listingsDataUrl, method);
     const result = listingData.sort((a, b) => new Date(a.endsAt) - new Date(b.endsAt));
+
+    document.getElementById("new-post").style.backgroundColor = "#bfedce";
+    document.getElementById("old-post").style.backgroundColor = "#72f88d";
+    document.getElementById("popular-post").style.backgroundColor = "#bfedce";
 
     document.getElementById("listingsSection").innerText = "";
 
@@ -46,6 +55,7 @@ async function endingFilter() {
       const listingEndDate = ListingEndsAt.toLocaleString("en-GB", endDateSetup);
       if (currentDate < listingEndDate) {
         listingsCard(listing);
+        // return "test";
       }
     });
   } catch (error) {
@@ -57,6 +67,10 @@ async function popularFilter() {
   try {
     const listingData = await apiData(listingsDataUrl, method);
     const result = listingData.sort((a, b) => b._count.bids - a._count.bids);
+
+    document.getElementById("new-post").style.backgroundColor = "#bfedce";
+    document.getElementById("old-post").style.backgroundColor = "#bfedce";
+    document.getElementById("popular-post").style.backgroundColor = "#72f88d";
     printFilterResult(result);
   } catch (error) {
     console.log(error);
