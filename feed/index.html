@@ -12,6 +12,9 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../dist/css/styles.css" />
     <link rel="stylesheet" href="../dist/css/media.css" />
@@ -20,9 +23,10 @@
     <script src="../src/js/api/auth/logout.js" type="module"></script>
     <script src="../src/js/specific-listing.js" type="module"></script>
     <script src="../src/js/api/place-bid.js" type="module"></script>
+    <script src="../src/js/headerProfile.js" type="module"></script>
   </head>
   <body>
-    <header class="d-flex justify-content-between">
+    <!-- <header class="d-flex justify-content-between">
       <a href="../index.html" class="logo ps-2 align-self-center">Auction<span class="logo-lock">Lock</span></a>
       <section class="d-flex gap-3">
         <nav class="btn-group">
@@ -30,7 +34,17 @@
             <i class="fa-solid fa-bars ms-4"></i>
           </div>
           <ul class="meny-style dropdown-menu" id="menu">
-            <li>
+            <li> -->
+    <header class="d-flex justify-content-between">
+      <a href="../index.html" class="logo ps-2 align-self-center">Auction<span class="logo-lock">Lock</span></a>
+      <section class="d-flex gap-3 w-100">
+        <nav class="btn-group w-100 justify-content-end">
+          <div class="align-self-center dropdw-btn pe-4" data-bs-toggle="dropdown" aria-expanded="false" role="button">
+            <i class="fa-solid fa-bars ms-4"></i>
+          </div>
+          <ul class="meny-style dropdown-menu gap-4" id="menu">
+            <div id="header-profile" class="justify-content-center"></div>
+            <li class="align-self-center">
               <a href="../index.html" class="dropdown-item">Home</a>
               <!-- <a href="profile/index.html" class="dropdown-item">Profile</a> -->
               <a href="../about/index.html" class="dropdown-item">About</a>
@@ -41,21 +55,21 @@
             </li>
           </ul>
         </nav>
-        <div class="searchbar pe-4">
+        <!-- <div class="searchbar pe-4">
           <input type="search" class="form-control rounded-start rounded-0" placeholder="Search" id="search-input-header" />
           <label for="search-input-header" class="wave-form-lable-fix">Search field</label>
           <button class="btn bg-secondary p-1 px-2 rounded-end rounded-0" type="submit" aria-label="Search submit button">
             <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-          <!-- <label for="magnifying-glass" class="wave-form-lable-fix">Magnifying glass</label> -->
-        </div>
+          </button> -->
+        <!-- <label for="magnifying-glass" class="wave-form-lable-fix">Magnifying glass</label> -->
+        <!-- </div> -->
         <!-- <div class="profile-menu align-self-center pe-4">
           <a href="#" class="dropdown-item">Login</a>
         </div> -->
       </section>
     </header>
     <main class="d-flex flex-column align-items-center">
-      <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top" alt="" />
+      <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top" id="main-back-img" alt="" />
       <section id="specific-listing" class="z-2 position-relative specific-listing-card-style"></section>
       <section class="text-center">
         <div class="m-3" id="user-credits"></div>

@@ -23,28 +23,30 @@
     <script src="../src/js/search.js" type="module"></script>
     <script src="../src/js/api/editInfo.js" type="module"></script>
     <script src="../src/js/profileFilter.js" type="module"></script>
+    <script src="../src/js/headerProfile.js" type="module"></script>
   </head>
   <body>
     <header class="d-flex justify-content-between">
       <a href="../index.html" class="logo ps-2 align-self-center">Auction<span class="logo-lock">Lock</span></a>
-      <section class="d-flex gap-3">
-        <nav class="btn-group">
+      <section class="d-flex gap-3 w-100">
+        <nav class="btn-group w-100 justify-content-end">
           <div class="align-self-center dropdw-btn pe-4" data-bs-toggle="dropdown" aria-expanded="false" role="button">
             <i class="fa-solid fa-bars ms-4"></i>
           </div>
-          <ul class="meny-style dropdown-menu" id="menu">
-            <li>
+          <ul class="meny-style dropdown-menu gap-4" id="menu">
+            <div id="header-profile" class="justify-content-center"></div>
+            <li class="align-self-center">
               <a href="../index.html" class="dropdown-item">Home</a>
               <!-- <a href="profile/index.html" class="dropdown-item">Profile</a> -->
               <a href="../about/index.html" class="dropdown-item">About</a>
               <a href="../about/index.html#contact" class="dropdown-item">Contact</a>
               <a href="login.html" class="dropdown-item login" id="menu-login">Login</a>
-              <a href="index.html" class="dropdown-item text-decoration-underline" id="profile">Profile</a>
+              <a href="index.html" class="dropdown-item" id="profile">Profile</a>
               <a class="dropdown-item" id="logout">Logout</a>
             </li>
           </ul>
         </nav>
-        <div id="header-profile"></div>
+        <!-- <div id="header-profile"></div> -->
 
         <!-- <div class="searchbar pe-4">
           <input type="search" class="form-control rounded-start rounded-0" placeholder="Search" id="search-input-header" />
@@ -60,9 +62,9 @@
       </section>
     </header>
     <main class="d-flex flex-column align-items-center">
-      <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top" alt="" />
+      <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top" id="main-back-img" alt="" />
       <div class="d-flex justify-content-end avatar-edit-btn mt-3 mt-lg-0 me-2">
-        <button id="edit-profile-btn">Edit Avatar</button>
+        <button id="edit-profile-btn" class="btn-style">Edit Avatar</button>
       </div>
       <div id="edit-profile-form" class="m-3 text-center z-1 avatar-edit-form align-items-center">
         <h2>Change avater image</h2>
@@ -70,7 +72,7 @@
           <img class="profile-img m-2" src="" alt="" id="output-img" />
           <div class="d-flex flex-column gap-2">
             <input type="text" id="input-img-url" />
-            <button>Submit</button>
+            <button class="btn-style">Submit</button>
           </div>
         </form>
       </div>
@@ -78,32 +80,32 @@
 
       <!-- <div class="d-flex flex-column justify-content-center"> -->
       <h2 class="errorText w-75 text-center" id="error-message"></h2>
-      <section class="d-flex flex-column justify-content-center align-items-center profile-listing-data">
+      <section class="d-flex flex-column justify-content-center align-items-center profile-listing-data w-100">
         <div class="dropdown col-6 d-flex justify-content-center z-1 pt-3">
           <button class="btn btn-light dropdown-toggle px-5 text-white bg-dark d-md-none" data-bs-toggle="dropdown" aria-expanded="false">
             Filter
           </button>
-          <ul class="dropdown-menu d-md-flex profile-filter-menu">
-            <li class="d-md-flex">
-              <button class="dropdown-item" id="show-all-filter">Show All</button>
-              <button class="dropdown-item profile-btn-border" id="my-bids-filter">My Bids</button>
-              <button class="dropdown-item profile-btn-border" id="my-listings-filter">My Listings</button>
-              <button class="dropdown-item profile-btn-border" id="my-wins-filter">My wins</button>
+          <ul class="dropdown-menu d-md-flex profile-filter-menu w-100 p-0">
+            <li class="d-md-flex w-100">
+              <!-- <button class="dropdown-item" id="show-all-filter">Show All</button> -->
+              <button class="dropdown-item profile-listing-filter-btn" id="my-listings-filter">My Listings</button>
+              <button class="dropdown-item profile-btn-border profile-listing-bids-btn" id="my-bids-filter">Active Bids</button>
+              <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="my-wins-filter">My Wins</button>
             </li>
           </ul>
         </div>
         <div id="my-listing-container" class="row justify-content-center col-12">
-          <h2 class="text-end">My Listings:</h2>
+          <!-- <h2 class="text-end">My Listings:</h2> -->
           <div id="listingsSection" class="row align-self-center justify-content-center profile-cards-section"></div>
         </div>
-        <div id="my-bid-container" class="row justify-content-center col-12">
+        <!-- <div id="my-bid-container" class="row justify-content-center col-12">
           <h2 id="my-bid-section-title">My Bids:</h2>
           <div id="myBidsSection" class="row align-self-center justify-content-center profile-cards-section"></div>
         </div>
         <div id="my-wins-container" class="row justify-content-center col-12">
           <h2 id="my-wins-section-title">My Wins:</h2>
           <div id="myWinSection" class="row align-self-center justify-content-center profile-cards-section"></div>
-        </div>
+        </div> -->
       </section>
     </main>
     <footer>

@@ -12,11 +12,14 @@
       crossorigin="anonymous"
       defer
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../dist/css/styles.css" />
+    <link rel="stylesheet" href="../dist/css/login-register.css" />
     <link rel="stylesheet" href="../dist/css/media.css" />
-    <link rel="stylesheet" href="../dist/css/login.css" />
-    <link rel="stylesheet" href="../dist/css/login-ragister.css" />
+    <!-- <link rel="stylesheet" href="../dist/css/login.css" /> -->
     <!-- <script src="../src/js/index.js" defer></script> -->
     <script src="../src/js/router.mjs" defer type="module"></script>
     <script src="../src/js/handlers/user-login.mjs" defer type="module"></script>
@@ -31,25 +34,26 @@
           </div>
           <ul class="meny-style dropdown-menu" id="menu">
             <li>
-              <a href="index.html" class="dropdown-item">Home</a>
-              <a href="about/index.html" class="dropdown-item">About</a>
+              <a href="../index.html" class="dropdown-item">Home</a>
+              <a href="../about/index.html" class="dropdown-item">About</a>
               <a href="../about/index.html#contact" class="dropdown-item">Contact</a>
               <a href="login.html" class="dropdown-item login">Login</a>
             </li>
           </ul>
         </nav>
-        <div class="searchbar pe-4">
+        <!-- <div class="searchbar pe-4">
           <input type="search" class="form-control rounded-start rounded-0" placeholder="Search" id="search-input-header" />
           <label for="search-input-header" class="wave-form-lable-fix">Search field</label>
           <button class="btn bg-secondary p-1 px-2 rounded-end rounded-0" type="submit" aria-label="Search submit button">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
-        </div>
+        </div> -->
       </section>
     </header>
-    <main class="d-flex flex-column justify-content-center align-items-center">
-      <section class="d-flex flex-column mb-2 align-items-center">
-        <a href="../index.html" class="logo ps-2 align-self-center">Auction<span class="logo-lock">Lock</span></a>
+    <main class="d-flex flex-column justify-content-center align-items-center log-reg-main">
+      <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top z-1" alt="" />
+      <section class="d-flex flex-column z-2 mb-5 align-items-center login-register-section">
+        <a href="../index.html" class="log-reg-logo ps-2 align-self-center">Auction<span class="log-reg-logo-lock">Lock</span></a>
         <form class="needs-validation d-flex flex-column align-items-center gap-3" id="signUpForm">
           <div class="d-flex flex-column">
             <label for="name" class="form-label m-0">Name</label>
@@ -107,7 +111,7 @@
         <a href="../profile/login.html" class="btn btn-style">Login</a>
       </section>
     </main>
-    <footer>
+    <footer class="z-2">
       <div class="d-flex justify-content-evenly">
         <h2 class="footer-btn">About</h2>
         <h2 class="footer-btn">Contact</h2>
