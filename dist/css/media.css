@@ -13,9 +13,22 @@
     position: relative;
   }
   .profile-filter-menu button {
-    width: 100px;
-    padding: 0;
+    padding: 10px;
     text-align: center;
+  }
+  .profile-listing-filter-btn {
+    background-color: #72f88d;
+    border-radius: 5px 0px 0px 5px;
+  }
+  .profile-listing-bids-btn,
+  .profile-wins-filter-btn {
+    background-color: #bfedce;
+  }
+  .profile-wins-filter-btn {
+    border-radius: 0px 5px 5px 0px;
+  }
+  .profile-filter-menu button:hover {
+    background-color: #72f88d;
   }
   .profile-btn-border {
     border-left: solid 2px black;
@@ -30,6 +43,39 @@
   }
 }
 @media (min-width: 900px) {
+  .menu-list-style {
+    flex-direction: row;
+  }
+  .header-profile h2 {
+    font-size: 20px;
+  }
+  .header-profile h3 {
+    font-size: 18px;
+  }
+  .menu-logged-in {
+    top: 80px;
+  }
+  .menu-logged-out {
+    top: 58px;
+  }
+  .log-reg-main,
+  .log-reg-main img {
+    background-color: #ffffff;
+    background-image: url(../../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp);
+    display: flex;
+  }
+  .login-register-section {
+    width: 70%;
+    max-width: 1000px;
+    border: 1px solid black;
+    filter: drop-shadow(0px 15px 20px black);
+  }
+  .log-reg-logo {
+    font-size: 90px;
+  }
+  .log-reg-logo-lock {
+    font-size: 70px;
+  }
   main {
     background-size: 35%;
     padding-top: 80px;
@@ -55,14 +101,17 @@
     font-size: 24px;
     border: 0;
     transform: none !important;
-    padding-top: 0;
+    padding: 0;
   }
   .meny-style,
-  .meny-style li,
   .searchbar,
   .profile-menu {
-    flex-direction: row;
     display: flex;
+    flex-direction: row-reverse;
+  }
+  .meny-style li {
+    display: flex;
+    flex-direction: row;
   }
   .searchbar,
   .searchbar button {
@@ -70,7 +119,6 @@
     align-self: center;
   }
   .img-top {
-    top: 62px;
     width: 35%;
   }
   .about {
@@ -120,13 +168,17 @@
   .avatar-edit-form {
     max-width: 600px;
   }
+  .avatar-edit-btn {
+    padding-top: 15px;
+  }
   .specific-listing-card-style {
     border: solid 1px black;
     border-radius: 5px;
+    margin-top: 50px;
   }
-  .specific-listing-style {
+  .specific-listing {
     display: grid !important;
-    grid-template: "b a" "b d" "b d" "c d";
+    grid-template: "c a" "c b" "c e" "c d";
     justify-items: center;
   }
   .specific-info-container {
@@ -153,6 +205,10 @@
     width: 100px;
     height: 80px;
     padding-top: 0px;
+  }
+  .listing-card h3,
+  .specific-info-container h2 {
+    height: 75px;
   }
 }
 @media (min-width: 1200px) {
