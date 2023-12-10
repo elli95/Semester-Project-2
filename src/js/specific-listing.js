@@ -9,13 +9,14 @@ const listingId = params.get("id");
 
 const method = "GET";
 
-const listingDataUrl = `${API_LISTINGS_URL}/${listingId}` + "?_bids=true";
+const listingDataUrl = `${API_LISTINGS_URL}/${listingId}` + "?_seller=true&_bids=true";
 // console.log("123", listingDataUrl);
 
 async function getProfileData(listingDataUrl, method, data) {
   try {
     const listingData = await apiData(listingDataUrl, method, data);
     listingPage(listingData);
+    // console.log(listingData);
 
     if (getLocalStorage("profile")) {
       const user = getLocalStorage("profile").name;
