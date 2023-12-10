@@ -1,7 +1,7 @@
 import { API_PROFILE_URL } from "../api/constant-api.mjs";
 import { apiData } from "../api/apiCall.mjs";
 import { getLocalStorage } from "../localStorage.mjs";
-import { profileStyle, profileListingsCard, profileBidCard, profileWinCard, userHeader } from "../htmlStyle.js";
+import { profileStyle, profileListingsCard } from "../htmlStyle.js";
 
 const method = "GET";
 const user = getLocalStorage("profile").name;
@@ -34,8 +34,26 @@ export async function getProfileData(userDataUrl, method, data) {
     const userBids = await apiData(userDataUrl + "/bids?_listings=true", method, data);
     const lastBid = userBids.filter((obj, index) => userBids.findIndex((bid) => bid.listing.id === obj.listing.id) === index);
 
+    // const currentDateData = new Date();
+    // const result = lastBid.sort((a) => new Date(a.endsAt) > currentDateData);
+    // console.log(result);
+
+    // userHeader(userData);
     profileStyle(userData, lastBid);
-    userHeader(userData);
+
+    // Object.values(lastBid).forEach(function (bidData) {
+    //   const currentDateData = new Date();
+    //   let listingdate = new Date(bidData.listing.endsAt);
+    //   const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
+    //   const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
+
+    //   console.log(currentDate < listingEndDate);
+    //   if (currentDate < listingEndDate) {
+    //     // profileStyle(bidData);
+    //     // console.log(bidData);
+    //   }
+    // });
+    // profileStyle(userData, lastBid);
 
     const listingData = await apiData(userDataUrl + "/listings?_bids=true", method, data);
 
@@ -45,32 +63,32 @@ export async function getProfileData(userDataUrl, method, data) {
 
     // header-profile """"""""""""""""""""""""""""""""""""
 
-    console.log("ac", lastBid);
-    Object.values(lastBid).forEach(function (bidData) {
-      const currentDateData = new Date();
-      let listingdate = new Date(bidData.listing.endsAt);
-      const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
-      const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
+    // console.log("ac", lastBid);
+    // Object.values(lastBid).forEach(function (bidData) {
+    //   const currentDateData = new Date();
+    //   let listingdate = new Date(bidData.listing.endsAt);
+    //   const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
+    //   const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
 
-      if (currentDate < listingEndDate) {
-        console.log("currentDate", listingEndDate);
-        console.log("currentDate", currentDate);
-        console.log("activeBids", bidData);
+    //   if (currentDate < listingEndDate) {
+    //     // console.log("currentDate", listingEndDate);
+    //     // console.log("currentDate", currentDate);
+    //     // console.log("activeBids", bidData);
 
-        profileBidCard(bidData);
-      }
-    });
+    //     profileBidCard(bidData);
+    //   }
+    // });
 
-    if (userData.wins.length > 0) {
-      const myWins = userData.wins;
-      const auctionWins = userBids.filter((bids) => myWins.includes(bids.listing.id));
-      Object.values(auctionWins).forEach(function (winData) {
-        profileWinCard(winData);
-      });
-    } else {
-      document.getElementById("my-wins-container").style.display = "none";
-      document.getElementById("my-wins-filter").style.display = "none";
-    }
+    // if (userData.wins.length > 0) {
+    //   const myWins = userData.wins;
+    //   const auctionWins = userBids.filter((bids) => myWins.includes(bids.listing.id));
+    //   Object.values(auctionWins).forEach(function (winData) {
+    //     profileWinCard(winData);
+    //   });
+    // } else {
+    //   document.getElementById("my-wins-container").style.display = "none";
+    //   document.getElementById("my-wins-filter").style.display = "none";
+    // }
   } catch (error) {
     console.log(error);
   }
