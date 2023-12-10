@@ -1,4 +1,4 @@
-import { getCountdownDate } from "./dateCountdown.js";
+import { getCountdownDate, getPreciseCountdownDate } from "./dateCountdown.js";
 const endDateSetup = {
   second: "numeric",
   minute: "numeric",
@@ -14,7 +14,9 @@ function profileStyle(userData, lastBid) {
   const profileData = document.getElementById("profileData");
   const imgContainer = document.createElement("div");
   const profileAvatar = document.createElement("img");
+  const profileinfoBox = document.createElement("div");
   const userName = document.createElement("h1");
+  const userEmail = document.createElement("h2");
   const creditBidsListings = document.createElement("div");
   const creditsContainer = document.createElement("div");
   const creditsText = document.createElement("h2");
@@ -29,7 +31,9 @@ function profileStyle(userData, lastBid) {
 
   profileData.append(imgContainer);
   imgContainer.append(profileAvatar);
-  profileData.append(userName);
+  profileData.append(profileinfoBox);
+  profileinfoBox.append(userName);
+  profileinfoBox.append(userEmail);
   profileData.append(creditBidsListings);
   creditBidsListings.append(creditsContainer);
   creditsContainer.append(creditsText);
@@ -44,7 +48,7 @@ function profileStyle(userData, lastBid) {
 
   imgContainer.className = "align-self-center m-3 grid-a";
   profileAvatar.className = "profile-img";
-  userName.className = "align-self-center grid-b";
+  profileinfoBox.className = "align-self-center grid-b text-center";
   creditBidsListings.className = "d-flex flex-column gap-3 grid-c align-self-center";
   creditsContainer.className = "col-12 d-flex flex-row justify-content-center gap-1";
   bidsAndListings.className = "d-flex justify-content-center align-self-center gap-3 bids-list";
@@ -52,7 +56,8 @@ function profileStyle(userData, lastBid) {
   listings.className = "col-6 d-flex flex-row gap-2 list";
 
   imgContainer.querySelector("img").src = `${userData.avatar}`;
-  profileData.querySelector("h1").innerText = `${userData.name}`;
+  profileinfoBox.querySelector("h1").innerText = `${userData.name}`;
+  profileinfoBox.querySelector("h2").innerText = `${userData.email}`;
   creditsContainer.querySelector("h2").innerText = "Credits:";
   creditsContainer.querySelector("p").innerText = `${userData.credits}`;
   activeBids.querySelector("h2").innerText = "Active bids:";
@@ -157,6 +162,72 @@ function listingsCard(listing) {
   // }
 }
 
+function listingsCard2(listing) {
+  let listingdate = new Date(listing.endsAt);
+  const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
+  const currentDateData = new Date();
+  const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
+
+  const listingsSection = document.getElementById("ending-soon");
+  const cardContainer = document.createElement("div");
+  const listingLink = document.createElement("a");
+  const auctionContainer = document.createElement("div");
+  const listingTitle = document.createElement("h2");
+  const listingImg = document.createElement("img");
+  const infoContainer = document.createElement("div");
+  const listingDescription = document.createElement("h3");
+  const listingEndTime = document.createElement("h4");
+  const listingHighestBid = document.createElement("h5");
+
+  listingsSection.append(cardContainer);
+  cardContainer.append(listingLink);
+  listingLink.append(auctionContainer);
+  auctionContainer.append(listingTitle);
+  auctionContainer.append(listingImg);
+  auctionContainer.append(infoContainer);
+  infoContainer.append(listingDescription);
+  infoContainer.append(listingEndTime);
+  infoContainer.append(listingHighestBid);
+
+  cardContainer.className = "card h-100 m-3 listing-card col-11 col-md-5 col-xl-3";
+  listingLink.className = "text-decoration-none text-reset";
+  listingTitle.className = "fw-bold ps-3 pt-2";
+  listingImg.className = "auction-img";
+  infoContainer.className = "d-flex flex-column align-items-center m-2";
+
+  cardContainer.querySelector("a").href = `/feed/index.html?id=${listing.id}`;
+  auctionContainer.querySelector("h2").innerText = `${listing.title}`;
+
+  const cardImg = document.querySelectorAll("#listing-img");
+
+  if (listing.media.length !== 0) {
+    auctionContainer.querySelector("img").src = `${listing.media[0]}`;
+  } else {
+    auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+  }
+
+  infoContainer.querySelector("h3").innerText = `${listing.description}`;
+
+  if (currentDate < listingEndDate) {
+    const endData = "h4";
+    getCountdownDate(listing, infoContainer, endData);
+  } else {
+    infoContainer.querySelector("h4").innerText = `Ended`;
+  }
+
+  if (listing.bids.length === 0) {
+    infoContainer.querySelector("h5").innerText = "Be the first to bid";
+  } else {
+    let bidValues = [];
+    Object.values(listing.bids).forEach(function (data) {
+      const bids = data.amount;
+      bidValues.push(bids);
+      const highestBid = Math.max(...bidValues);
+      infoContainer.querySelector("h5").innerText = `Highest bid: ${highestBid}`;
+    });
+  }
+}
+
 function listingPage(listingData) {
   const currentDateData = new Date();
   const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
@@ -164,8 +235,15 @@ function listingPage(listingData) {
   const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
 
   const listingSection = document.getElementById("specific-listing");
+  const postContainer = document.createElement("div");
   const listingContainer = document.createElement("div");
+  const profileContainer = document.createElement("div");
+  const sellerAvatar = document.createElement("img");
+  const sellerText = document.createElement("div");
+  const sellerName = document.createElement("h2");
+  const sellerEmail = document.createElement("h3");
   const listingTitle = document.createElement("h1");
+  const listingimgBox = document.createElement("div");
   const listingImg = document.createElement("img");
   const ImgCollectionSection = document.createElement("div");
   const infoContainer = document.createElement("div");
@@ -173,19 +251,28 @@ function listingPage(listingData) {
   const listingEndTime = document.createElement("h3");
   // const bidsContainer = document.createElement("div");
 
-  listingSection.append(listingContainer);
+  listingSection.append(postContainer);
+  postContainer.append(listingContainer);
+  listingContainer.append(profileContainer);
+  profileContainer.append(sellerAvatar);
+  profileContainer.append(sellerText);
+  sellerText.append(sellerName);
+  sellerText.append(sellerEmail);
   listingContainer.append(listingTitle);
-  listingContainer.append(listingImg);
-  listingContainer.append(ImgCollectionSection);
+  listingContainer.append(listingimgBox);
+  listingimgBox.append(listingImg);
+  listingimgBox.append(ImgCollectionSection);
   listingContainer.append(infoContainer);
   infoContainer.append(listingDescription);
   infoContainer.append(listingEndTime);
 
-  listingContainer.className = "d-flex flex-column align-items-center px-3 text-center specific-listing-style";
-  listingTitle.className = "grid-a";
-  listingImg.className = "grid-b";
-  ImgCollectionSection.className = "d-flex specific-img-collection justify-content-center grid-c";
-  infoContainer.className = "d-flex flex-column align-items-center grid-d specific-info-container";
+  profileContainer.className = "grid-a d-flex border border-dark text-break gap-3 mt-4 p-3";
+  sellerAvatar.className = "header-profile-img mb-0";
+  listingContainer.className = "d-flex flex-column align-items-center px-3 text-center specific-listing";
+  listingTitle.className = "grid-b mt-4";
+  listingimgBox.className = "grid-c specific-listing-style";
+  ImgCollectionSection.className = "d-flex specific-img-collection justify-content-center grid-d";
+  infoContainer.className = "d-flex flex-column align-items-center gap-4 grid-e specific-info-container";
   listingDescription.className = "m-3";
   listingEndTime.className = "endTime";
 
@@ -199,11 +286,15 @@ function listingPage(listingData) {
 
   console.log(listingData);
 
+  profileContainer.querySelector("img").src = `${listingData.seller.avatar}`;
+  sellerText.querySelector("h2").innerText = `${listingData.seller.name}`;
+  sellerText.querySelector("h3").innerText = `${listingData.seller.email}`;
+
   listingContainer.querySelector("h1").innerText = `${listingData.title}`;
   if (listingData.media.length !== 0) {
-    listingContainer.querySelector("img").src = `${listingData.media[0]}`;
+    listingimgBox.querySelector("img").src = `${listingData.media[0]}`;
   } else {
-    listingContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+    listingimgBox.querySelector("img").src = `/images/no-img-avaliable.webp`;
   }
 
   if (listingData.media.length > 1) {
@@ -221,7 +312,7 @@ function listingPage(listingData) {
       for (let i = 0; i < collectionImg.length; i++) {
         collectionImg[i].addEventListener("click", function () {
           console.log(this.src);
-          listingContainer.querySelector("img").src = this.src;
+          listingimgBox.querySelector("img").src = this.src;
         });
       }
       listingImgCollection.querySelector("img").src = `${img}`;
@@ -233,7 +324,7 @@ function listingPage(listingData) {
 
   if (currentDate < listingEndDate) {
     const endData = "h3";
-    getCountdownDate(listingData, infoContainer, endData);
+    getPreciseCountdownDate(listingData, infoContainer, endData);
   } else {
     infoContainer.querySelector("h3").innerText = `Ended`;
   }
@@ -322,6 +413,8 @@ function profileListingsCard(listing) {
   infoContainer.append(listingHighestBid);
 
   cardContainer.className = "card h-100 m-3 listing-card col-11 col-md-5 col-xl-3";
+  editSection.className = "align-self-end";
+  editBtn.className = "btn-style profile-listing-btn-style";
   listingLink.className = "text-decoration-none text-reset";
   listingTitle.className = "fw-bold border-0 ps-3 pt-2";
   listingImg.className = "auction-img";
@@ -403,7 +496,8 @@ function profileBidCard(bidData) {
   let listingdate = new Date(bidData.listing.endsAt);
   const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
 
-  const listingsSection = document.getElementById("myBidsSection");
+  const listingsSection = document.getElementById("listingsSection");
+  // const listingsSection = document.getElementById("myBidsSection");
   const cardContainer = document.createElement("div");
   const listingContainer = document.createElement("div");
   const listingLink = document.createElement("a");
@@ -460,7 +554,8 @@ function profileBidCard(bidData) {
 }
 
 function profileWinCard(winData) {
-  const listingsSection = document.getElementById("myWinSection");
+  const listingsSection = document.getElementById("listingsSection");
+  // const listingsSection = document.getElementById("myWinSection");
   const cardContainer = document.createElement("div");
   const listingContainer = document.createElement("div");
   const listingLink = document.createElement("a");
@@ -512,8 +607,8 @@ function userHeader(userData) {
   textBox.append(userCredit);
   headerProfileLink.append(profileAvatar);
 
-  headerProfileLink.className = "d-flex me-2";
-  textBox.className = "text-center";
+  headerProfileLink.className = "d-flex text-dark menu-list-style";
+  textBox.className = "text-center header-profile";
   profileAvatar.className = "header-profile-img";
 
   headerProfileSection.querySelector("a").href = `/profile/index.html`;
@@ -525,6 +620,7 @@ function userHeader(userData) {
 export {
   profileStyle,
   listingsCard,
+  listingsCard2,
   listingPage,
   userCredits,
   bidsList,
