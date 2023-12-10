@@ -1,0 +1,63 @@
+.login-register-section {
+  background-color: #72f88d;
+  padding: 70px;
+  border-radius: 10px;
+  width: 100%;
+  // max-width: 1000px;
+  // border: 1px solid black;
+  // filter: drop-shadow(0px 15px 20px black);
+}
+
+main,
+main img {
+  background-color: #72f88d;
+  background-image: none;
+  display: none;
+  padding-top: 0px;
+}
+
+header .logo {
+  display: none;
+}
+
+.log-reg-logo {
+  font-size: 48px;
+  // font-size: 128px;
+}
+
+.log-reg-logo-lock {
+  font-size: 28px;
+  // font-size: 90px;
+}
+
+label,
+.btn-style,
+h2,
+.register-here {
+  font-size: 24px;
+}
+
+.btn-style {
+  background-color: #006815;
+  border: solid 2px black;
+  color: #ffffff;
+  width: 125px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  color: #ffffff;
+  background-color: #006815;
+  // border-color: var(--bs-btn-hover-border-color);
+}
+
+.register-success {
+  display: none;
+}
+
+footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
