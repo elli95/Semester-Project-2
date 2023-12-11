@@ -178,37 +178,29 @@
   }
   .specific-listing {
     display: grid !important;
-    grid-template: "c a" "c b" "c e" "c d";
+    grid-template: "c a" "c b" "c d";
     justify-items: center;
   }
   .specific-info-container {
     max-width: 80%;
     padding: 20px;
   }
-  .specific-listing-style img {
+  .specific-listing-style {
+    width: 400px;
+  }
+  .specific-listing-main-img {
     border-radius: 10px;
     padding: 20px 20px 20px 20px;
     height: 600px;
-    width: 800px;
+    width: 400px;
     object-fit: contain;
-  }
-  .specific-listing-style img,
-  .specific-img-collection img {
     object-position: center;
   }
-  .specific-img-collection {
-    flex-wrap: wrap;
-    width: 800px;
-  }
-  .specific-img-collection img {
-    object-fit: fill;
-    width: 100px;
-    height: 80px;
-    padding-top: 0px;
-  }
-  .listing-card h3,
-  .specific-info-container h2 {
+  .listing-card h3 {
     height: 75px;
+  }
+  .specific-info-container {
+    min-height: 75px;
   }
 }
 @media (min-width: 1200px) {

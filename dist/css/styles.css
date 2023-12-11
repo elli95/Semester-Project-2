@@ -11866,6 +11866,8 @@ textarea.form-control-lg {
 img {
   width: 100%;
   height: 100%;
+  max-height: 500px;
+  max-width: 500px;
 }
 
 h1, .h1 {
@@ -12058,7 +12060,8 @@ footer p {
 }
 
 .listing-card,
-#specific-listing {
+#specific-listing,
+.backgroud-col {
   background-color: #bfedce;
 }
 
@@ -12088,8 +12091,7 @@ footer p {
 }
 
 .listing-card h3, .listing-card .h3,
-.specific-info-container h2,
-.specific-info-container .h2 {
+.specific-info-container {
   background-color: #ffffff;
   border-radius: 7px;
   padding: 6px 10px;
@@ -12097,7 +12099,7 @@ footer p {
   height: 65px;
 }
 
-.specific-info-container h2, .specific-info-container .h2 {
+.specific-info-container {
   height: auto;
 }
 
@@ -12114,7 +12116,7 @@ footer p {
   padding: 5px;
   border-radius: 5px;
   text-align: center;
-  width: 80%;
+  width: 100%;
 }
 
 .listing-card h5, .listing-card .h5,
@@ -12215,6 +12217,48 @@ footer p {
 
 .show-less-btn {
   display: none;
+}
+
+.countdownBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  background-color: #a13030;
+}
+
+.countdownBox h2, .countdownBox .h2,
+.countdownBox h3,
+.countdownBox .h3 {
+  margin: 0;
+  background-color: #a13030;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.profile-container {
+  background-color: #ffffff;
+}
+
+.specific-listing-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specific-img-collection {
+  flex-wrap: wrap;
+}
+
+.specific-img-collection img {
+  object-position: center;
+  object-fit: fill;
+  width: 100px;
+  height: 80px;
+  padding-top: 0px;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
