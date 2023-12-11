@@ -29,7 +29,7 @@ function newImgInput() {
   // newListingMediaInput.append(newListingMediaSection);
   newListingMediaInput.append(newListingMedia);
 
-  newListingMediaInput.className = "mb-2";
+  newListingMediaInput.className = "d-flex flex-column mb-2 p-0 gap-3";
   newListingMedia.className = "form-control listing-media-input";
   newListingMedia.setAttribute("type", "text");
   newListingMedia.setAttribute("name", "listing-media");
