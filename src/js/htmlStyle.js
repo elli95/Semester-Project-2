@@ -8,6 +8,12 @@ const endDateSetup = {
   year: "numeric",
 };
 
+const simpleEndDateSetup = {
+  day: "numeric",
+  month: "numeric",
+  year: "numeric",
+};
+
 const path = location.pathname;
 
 function profileStyle(userData, lastBid) {
@@ -81,6 +87,7 @@ function listingsCard(listing) {
   // const userImg = document.createElement("img");
   const auctionContainer = document.createElement("div");
   const listingTitle = document.createElement("h2");
+  const imgContainer = document.createElement("div");
   const listingImg = document.createElement("img");
   const infoContainer = document.createElement("div");
   const listingDescription = document.createElement("h3");
@@ -94,7 +101,8 @@ function listingsCard(listing) {
   cardContainer.append(listingLink);
   listingLink.append(auctionContainer);
   auctionContainer.append(listingTitle);
-  auctionContainer.append(listingImg);
+  auctionContainer.append(imgContainer);
+  imgContainer.append(listingImg);
   auctionContainer.append(infoContainer);
   infoContainer.append(listingDescription);
   infoContainer.append(listingEndTime);
@@ -103,7 +111,7 @@ function listingsCard(listing) {
   cardContainer.className = "card h-100 m-3 listing-card col-11 col-md-5 col-xl-3";
   listingLink.className = "text-decoration-none text-reset";
   listingTitle.className = "fw-bold ps-3 pt-2";
-  listingImg.className = "auction-img";
+  imgContainer.className = "auction-img";
   // listingImg.setAttribute("id", "listing-img");
   infoContainer.className = "d-flex flex-column align-items-center m-2";
   // listingEndTime.setAttribute("id", "endTimeCountdown");
@@ -120,7 +128,7 @@ function listingsCard(listing) {
     // || listing.media[0] !== "undefined"
     // || cardImg.naturalHeight !== 0
     // const img = new Image();
-    auctionContainer.querySelector("img").src = `${listing.media[0]}`;
+    imgContainer.querySelector("img").src = `${listing.media[0]}`;
     // img.onerror = function () {
     //   auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
     // };
@@ -128,7 +136,7 @@ function listingsCard(listing) {
   } else {
     // console.log(cardImg);
     // const img = new Image();
-    auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+    imgContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
     // img.onerror = function () {
     //   auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
     // };
@@ -250,6 +258,19 @@ function listingPage(listingData) {
   const listingDescription = document.createElement("h2");
   const listingEndTime = document.createElement("h3");
   // const bidsContainer = document.createElement("div");
+  const timeSection = document.createElement("div");
+  const daysSection = document.createElement("div");
+  const daysText = document.createElement("h2");
+  const daysDate = document.createElement("h3");
+  const hoursSection = document.createElement("div");
+  const hoursText = document.createElement("h2");
+  const hoursDate = document.createElement("h3");
+  const minSection = document.createElement("div");
+  const minText = document.createElement("h2");
+  const minDate = document.createElement("h3");
+  const secSection = document.createElement("div");
+  const secText = document.createElement("h2");
+  const secDate = document.createElement("h3");
 
   listingSection.append(postContainer);
   postContainer.append(listingContainer);
@@ -264,17 +285,18 @@ function listingPage(listingData) {
   listingimgBox.append(ImgCollectionSection);
   listingContainer.append(infoContainer);
   infoContainer.append(listingDescription);
-  infoContainer.append(listingEndTime);
+  // infoContainer.append(listingEndTime);
 
-  profileContainer.className = "grid-a d-flex border border-dark text-break gap-3 mt-4 p-3";
+  profileContainer.className = "grid-a d-flex border border-dark text-break gap-3 mt-4 p-3 profile-container";
   sellerAvatar.className = "header-profile-img mb-0";
   listingContainer.className = "d-flex flex-column align-items-center px-3 text-center specific-listing";
   listingTitle.className = "grid-b mt-4";
   listingimgBox.className = "grid-c specific-listing-style";
-  ImgCollectionSection.className = "d-flex specific-img-collection justify-content-center grid-d";
-  infoContainer.className = "d-flex flex-column align-items-center gap-4 grid-e specific-info-container";
-  listingDescription.className = "m-3";
-  listingEndTime.className = "endTime";
+  listingImg.className = "specific-listing-main-img";
+  ImgCollectionSection.className = "d-flex specific-img-collection justify-content-center";
+  infoContainer.className = "d-flex flex-column align-items-center gap-4 grid-d ";
+  listingDescription.className = "m-3 specific-info-container";
+  // listingEndTime.className = "endTime";
 
   listingImg.setAttribute("id", "listing-img");
   const imgeee = document.getElementById("listing-img");
@@ -323,9 +345,40 @@ function listingPage(listingData) {
   // infoContainer.querySelector("h3").innerText = `Ends at: ${listingEndDate}`;
 
   if (currentDate < listingEndDate) {
+    timeSection.className = "d-flex gap-2 mb-3";
+    daysSection.className = "countdownBox";
+    hoursSection.className = "countdownBox";
+    minSection.className = "countdownBox";
+    secSection.className = "countdownBox";
+
+    infoContainer.append(timeSection);
+    timeSection.append(daysSection);
+    daysSection.append(daysText);
+    daysSection.append(daysDate);
+    timeSection.append(hoursSection);
+    hoursSection.append(hoursText);
+    hoursSection.append(hoursDate);
+    timeSection.append(minSection);
+    minSection.append(minText);
+    minSection.append(minDate);
+    timeSection.append(secSection);
+    secSection.append(secText);
+    secSection.append(secDate);
+
+    daysSection.querySelector("h2").innerText = `Days`;
+    hoursSection.querySelector("h2").innerText = `Hours`;
+    minSection.querySelector("h2").innerText = `Minutes`;
+    secSection.querySelector("h2").innerText = `Seconds`;
+
     const endData = "h3";
-    getPreciseCountdownDate(listingData, infoContainer, endData);
+    getPreciseCountdownDate(listingData, daysSection, hoursSection, minSection, secSection, endData);
+    // const endData = "h3";
+    // getPreciseCountdownDate(listingData, infoContainer, endData);
   } else {
+    infoContainer.append(listingEndTime);
+
+    listingEndTime.className = "endTime";
+
     infoContainer.querySelector("h3").innerText = `Ended`;
   }
 }
@@ -360,17 +413,37 @@ function userCredits(userData) {
 }
 
 function bidsList(highestBid) {
+  // let ListingBidDate = new Date(highestBid.created);
+  // const ListingBidCreated = ListingBidDate.toLocaleString("en-GB", simpleEndDateSetup);
+
   const bidSection = document.getElementById("listing-bids");
   const bidList = document.createElement("li");
+  const bidInfo = document.createElement("div");
+  const bid = document.createElement("div");
   const bidListBids = document.createElement("h2");
+  // const bidDate = document.createElement("div");
+  // const date = document.createElement("h2");
+  const bidder = document.createElement("div");
+  const bidderName = document.createElement("h2");
 
   bidSection.append(bidList);
-  bidList.append(bidListBids);
+  bidList.append(bidInfo);
+  bidInfo.append(bid);
+  bid.append(bidListBids);
+  // bidInfo.append(bidDate);
+  // bidDate.append(date);
+  bidInfo.append(bidder);
+  bidder.append(bidderName);
 
-  bidList.className = "d-flex justify-content-evenly list-group-item gap-5 px-3 pt-2";
+  bidList.className = "d-flex justify-content-evenly col-12 list-group-item gap-5 px-3 pt-2";
+  bidInfo.className = "d-flex gap-5 col-10";
+  bid.className = "col-4";
+  bidder.className = "col-6";
 
   // console.log("123", highestBid.amount);
-  bidList.querySelector("h2").innerText = `${highestBid.amount}`;
+  bid.querySelector("h2").innerText = `${highestBid.amount},-`;
+  // bidDate.querySelector("h2").innerText = `Bid time: ${ListingBidCreated},`;
+  bidder.querySelector("h2").innerText = ` ${highestBid.bidderName}`;
 }
 
 function headerSearch(highestBid) {
