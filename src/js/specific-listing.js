@@ -49,6 +49,7 @@ export async function getBidData(listingDataUrl, method, data) {
   try {
     document.getElementById("listing-bids").innerHTML = "";
     const listingData = await apiData(listingDataUrl, method, data);
+    console.log("1", listingData);
     if (listingData.bids.length < 4) {
       showMoreBtn.style.display = "none";
     }

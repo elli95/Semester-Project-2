@@ -1,6 +1,6 @@
 import { API_LISTINGS_URL } from "./api/constant-api.mjs";
 import { apiData } from "./api/apiCall.mjs";
-import { listingsCard, headerSearch } from "./htmlStyle.js";
+import { listingsCard } from "./htmlStyle.js";
 
 const method = "GET";
 const listingsDataUrl = `${API_LISTINGS_URL}` + "?_bids=true&sort=created";

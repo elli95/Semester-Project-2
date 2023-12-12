@@ -26,23 +26,14 @@
     <script src="../src/js/headerProfile.js" type="module"></script>
   </head>
   <body>
-    <!-- <header class="d-flex justify-content-between">
-      <a href="../index.html" class="logo ps-2 align-self-center">Auction<span class="logo-lock">Lock</span></a>
-      <section class="d-flex gap-3">
-        <nav class="btn-group">
-          <div class="align-self-center dropdw-btn pe-4" data-bs-toggle="dropdown" aria-expanded="false" role="button">
-            <i class="fa-solid fa-bars ms-4"></i>
-          </div>
-          <ul class="meny-style dropdown-menu" id="menu">
-            <li> -->
     <header class="d-flex justify-content-between">
       <a href="../index.html" class="logo ps-2 align-self-center">Auction<span class="logo-lock">Lock</span></a>
-      <section class="d-flex gap-3 w-100">
+      <section class="d-flex w-100">
         <nav class="btn-group w-100 justify-content-end">
           <div class="align-self-center dropdw-btn pe-4" data-bs-toggle="dropdown" aria-expanded="false" role="button">
             <i class="fa-solid fa-bars ms-4"></i>
           </div>
-          <ul class="meny-style dropdown-menu gap-4" id="menu">
+          <ul class="meny-style dropdown-menu" id="menu">
             <div id="header-profile" class="justify-content-center"></div>
             <li class="align-self-center">
               <a href="../index.html" class="dropdown-item">Home</a>
@@ -68,8 +59,8 @@
         </div> -->
       </section>
     </header>
-    <main class="d-flex flex-column align-items-center">
-      <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top" id="main-back-img" alt="" />
+    <main class="d-flex flex-column align-items-center justify-content-center main-cover-style">
+      <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img back-img-list-edit img-top" id="main-back-img" alt="" />
       <section class="z-1 text-center backgroud-col m-md-5">
         <h1 class="mt-5">Edit Auction Listing:</h1>
         <form id="listing-update-form" class="m-4">
@@ -86,11 +77,11 @@
               placeholder="Write a new description"
             ></textarea>
             <input class="form-control" type="text" name="listing-tags" id="listing-tags" placeholder="Write a listing tag" />
-            <div id="listing-media" class="p-0"></div>
-            <div id="new-listing-media-input"></div>
+            <div id="listing-media" class="d-flex flex-column mb-2 p-0 gap-3"></div>
+            <!-- <div id="new-listing-media-input"></div> -->
             <!-- <div> -->
             <button type="button" id="add-new-img-input" class="btn-style w-auto m-2">Add another image</button>
-            <img id="edit-img-display" class="auction-img w-md-75" src="" alt="" />
+            <img id="edit-img-display" class="listing-form-img w-md-75" src="" alt="" />
             <!-- </div> -->
             <div class="d-flex justify-content-around m-3">
               <button class="btn btn-success" type="submit">Update</button>
