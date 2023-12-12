@@ -5,8 +5,8 @@ import { signupFormListener } from "./handlers/user-register.mjs";
 import { userLoginFormListener } from "./handlers/user-login.mjs";
 
 const path = location.pathname;
-if (path === "/profile/login.html") {
+if (path === "/profile/login") {
   userLoginFormListener();
-} else if (path === "/profile/register.html") {
+} else if (path === "/profile/register") {
   signupFormListener();
 }
