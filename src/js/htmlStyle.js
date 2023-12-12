@@ -73,13 +73,15 @@ function profileStyle(userData, lastBid) {
   listings.querySelector("p").innerText = `${userData._count.listings}`;
 }
 
-function listingsCard(listing) {
-  let listingdate = new Date(listing.endsAt);
-  const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
-  const currentDateData = new Date();
-  const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
+function listingsCard(listing, listingsSection) {
+  const currentDate = new Date();
+  const listingDate = new Date(listing.endsAt);
+  // let listingdate = new Date(listing.endsAt);
+  // const listingEndDate = listingdate.toLocaleString("ko-KR", endDateSetup);
+  // const currentDateData = new Date();
+  // const currentDate = currentDateData.toLocaleString("ko-KR", endDateSetup);
 
-  const listingsSection = document.getElementById("listingsSection");
+  // const listingsSection = document.getElementById("listingsSection");
   const cardContainer = document.createElement("div");
   const listingLink = document.createElement("a");
   // const userContainer = document.createElement("div");
@@ -144,8 +146,7 @@ function listingsCard(listing) {
 
   infoContainer.querySelector("h3").innerText = `${listing.description}`;
 
-  // console.log("currentDate", currentDate);
-  if (currentDate < listingEndDate) {
+  if (currentDate < listingDate) {
     const endData = "h4";
     getCountdownDate(listing, infoContainer, endData);
   } else {
@@ -170,77 +171,13 @@ function listingsCard(listing) {
   // }
 }
 
-function listingsCard2(listing) {
-  let listingdate = new Date(listing.endsAt);
-  const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
-  const currentDateData = new Date();
-  const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
-
-  const listingsSection = document.getElementById("ending-soon");
-  const cardContainer = document.createElement("div");
-  const listingLink = document.createElement("a");
-  const auctionContainer = document.createElement("div");
-  const listingTitle = document.createElement("h2");
-  const listingImg = document.createElement("img");
-  const infoContainer = document.createElement("div");
-  const listingDescription = document.createElement("h3");
-  const listingEndTime = document.createElement("h4");
-  const listingHighestBid = document.createElement("h5");
-
-  listingsSection.append(cardContainer);
-  cardContainer.append(listingLink);
-  listingLink.append(auctionContainer);
-  auctionContainer.append(listingTitle);
-  auctionContainer.append(listingImg);
-  auctionContainer.append(infoContainer);
-  infoContainer.append(listingDescription);
-  infoContainer.append(listingEndTime);
-  infoContainer.append(listingHighestBid);
-
-  cardContainer.className = "card h-100 m-3 listing-card col-11 col-md-5 col-xl-3";
-  listingLink.className = "text-decoration-none text-reset";
-  listingTitle.className = "fw-bold ps-3 pt-2";
-  listingImg.className = "auction-img";
-  infoContainer.className = "d-flex flex-column align-items-center m-2";
-
-  cardContainer.querySelector("a").href = `/feed/index.html?id=${listing.id}`;
-  auctionContainer.querySelector("h2").innerText = `${listing.title}`;
-
-  const cardImg = document.querySelectorAll("#listing-img");
-
-  if (listing.media.length !== 0) {
-    auctionContainer.querySelector("img").src = `${listing.media[0]}`;
-  } else {
-    auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
-  }
-
-  infoContainer.querySelector("h3").innerText = `${listing.description}`;
-
-  if (currentDate < listingEndDate) {
-    const endData = "h4";
-    getCountdownDate(listing, infoContainer, endData);
-  } else {
-    infoContainer.querySelector("h4").innerText = `Ended`;
-  }
-
-  if (listing.bids.length === 0) {
-    infoContainer.querySelector("h5").innerText = "Be the first to bid";
-  } else {
-    let bidValues = [];
-    Object.values(listing.bids).forEach(function (data) {
-      const bids = data.amount;
-      bidValues.push(bids);
-      const highestBid = Math.max(...bidValues);
-      infoContainer.querySelector("h5").innerText = `Highest bid: ${highestBid}`;
-    });
-  }
-}
-
 function listingPage(listingData) {
-  const currentDateData = new Date();
-  const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
-  let listingdate = new Date(listingData.endsAt);
-  const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
+  const currentDate = new Date();
+  const listingDate = new Date(listingData.endsAt);
+  // const currentDateData = new Date();
+  // const currentDate = currentDateData.toLocaleString("ja-JP-u-ca-japanese", endDateSetup);
+  // let listingdate = new Date(listingData.endsAt);
+  // const listingEndDate = listingdate.toLocaleString("ja-JP-u-ca-japanese", endDateSetup);
 
   const listingSection = document.getElementById("specific-listing");
   const postContainer = document.createElement("div");
@@ -274,28 +211,27 @@ function listingPage(listingData) {
 
   listingSection.append(postContainer);
   postContainer.append(listingContainer);
-  listingContainer.append(profileContainer);
-  profileContainer.append(sellerAvatar);
-  profileContainer.append(sellerText);
-  sellerText.append(sellerName);
-  sellerText.append(sellerEmail);
   listingContainer.append(listingTitle);
   listingContainer.append(listingimgBox);
   listingimgBox.append(listingImg);
   listingimgBox.append(ImgCollectionSection);
   listingContainer.append(infoContainer);
   infoContainer.append(listingDescription);
-  // infoContainer.append(listingEndTime);
+  listingContainer.append(profileContainer);
+  profileContainer.append(sellerAvatar);
+  profileContainer.append(sellerText);
+  sellerText.append(sellerName);
+  sellerText.append(sellerEmail);
 
-  profileContainer.className = "grid-a d-flex border border-dark text-break gap-3 mt-4 p-3 profile-container";
+  profileContainer.className = "grid-a d-flex border border-dark text-break gap-3 my-3 p-3 profile-container";
   sellerAvatar.className = "header-profile-img mb-0";
   listingContainer.className = "d-flex flex-column align-items-center px-3 text-center specific-listing";
   listingTitle.className = "grid-b mt-4";
   listingimgBox.className = "grid-c specific-listing-style";
   listingImg.className = "specific-listing-main-img";
   ImgCollectionSection.className = "d-flex specific-img-collection justify-content-center";
-  infoContainer.className = "d-flex flex-column align-items-center gap-4 grid-d ";
-  listingDescription.className = "m-3 specific-info-container";
+  infoContainer.className = "d-flex flex-column-reverse align-items-center gap-4 grid-d ";
+  listingDescription.className = "mx-3 mb-3 specific-info-container";
   // listingEndTime.className = "endTime";
 
   listingImg.setAttribute("id", "listing-img");
@@ -307,10 +243,6 @@ function listingPage(listingData) {
   };
 
   console.log(listingData);
-
-  profileContainer.querySelector("img").src = `${listingData.seller.avatar}`;
-  sellerText.querySelector("h2").innerText = `${listingData.seller.name}`;
-  sellerText.querySelector("h3").innerText = `${listingData.seller.email}`;
 
   listingContainer.querySelector("h1").innerText = `${listingData.title}`;
   if (listingData.media.length !== 0) {
@@ -340,11 +272,8 @@ function listingPage(listingData) {
       listingImgCollection.querySelector("img").src = `${img}`;
     });
   }
-  // listingContainer.querySelector("img").src = `${listingData.media}`;
-  infoContainer.querySelector("h2").innerText = `${listingData.description}`;
-  // infoContainer.querySelector("h3").innerText = `Ends at: ${listingEndDate}`;
 
-  if (currentDate < listingEndDate) {
+  if (currentDate < listingDate) {
     timeSection.className = "d-flex gap-2 mb-3";
     daysSection.className = "countdownBox";
     hoursSection.className = "countdownBox";
@@ -381,6 +310,12 @@ function listingPage(listingData) {
 
     infoContainer.querySelector("h3").innerText = `Ended`;
   }
+
+  infoContainer.querySelector("h2").innerText = `${listingData.description}`;
+
+  profileContainer.querySelector("img").src = `${listingData.seller.avatar}`;
+  sellerText.querySelector("h2").innerText = `${listingData.seller.name}`;
+  sellerText.querySelector("h3").innerText = `${listingData.seller.email}`;
 }
 
 function userCredits(userData) {
@@ -435,7 +370,7 @@ function bidsList(highestBid) {
   bidInfo.append(bidder);
   bidder.append(bidderName);
 
-  bidList.className = "d-flex justify-content-evenly col-12 list-group-item gap-5 px-3 pt-2";
+  bidList.className = "d-flex justify-content-evenly col-12 list-group-item gap-5 px-4 pt-2";
   bidInfo.className = "d-flex gap-5 col-10";
   bid.className = "col-4";
   bidder.className = "col-6";
@@ -446,15 +381,9 @@ function bidsList(highestBid) {
   bidder.querySelector("h2").innerText = ` ${highestBid.bidderName}`;
 }
 
-function headerSearch(highestBid) {
-  console.log("noooooo!", highestBid);
-}
-
 function profileListingsCard(listing) {
-  const currentDateData = new Date();
-  const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
-  let listingdate = new Date(listing.endsAt);
-  const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
+  const currentDate = new Date();
+  const listingDate = new Date(listing.endsAt);
 
   const listingsSection = document.getElementById("listingsSection");
   const cardContainer = document.createElement("div");
@@ -507,7 +436,7 @@ function profileListingsCard(listing) {
 
   infoContainer.querySelector("h3").innerText = `${listing.description}`;
 
-  if (currentDate < listingEndDate) {
+  if (currentDate < listingDate) {
     const endData = "h4";
     getCountdownDate(listing, infoContainer, endData);
   } else {
@@ -564,10 +493,12 @@ function listingEdit(listingData) {
 }
 
 function profileBidCard(bidData) {
-  const currentDateData = new Date();
-  const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
-  let listingdate = new Date(bidData.listing.endsAt);
-  const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
+  const currentDate = new Date();
+  const listingDate = new Date(bidData.listing.endsAt);
+  // const currentDateData = new Date();
+  // const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
+  // let listingdate = new Date(bidData.listing.endsAt);
+  // const listingEndDate = listingdate.toLocaleString("en-GB", endDateSetup);
 
   const listingsSection = document.getElementById("listingsSection");
   // const listingsSection = document.getElementById("myBidsSection");
@@ -609,7 +540,7 @@ function profileBidCard(bidData) {
   }
   infoContainer.querySelector("h3").innerText = `${bidData.listing.description}`;
 
-  if (currentDate < listingEndDate) {
+  if (currentDate < listingDate) {
     const endData = "h4";
     getCountdownDate(bidData.listing, infoContainer, endData);
   } else {
@@ -693,11 +624,9 @@ function userHeader(userData) {
 export {
   profileStyle,
   listingsCard,
-  listingsCard2,
   listingPage,
   userCredits,
   bidsList,
-  headerSearch,
   profileListingsCard,
   listingEdit,
   profileBidCard,
