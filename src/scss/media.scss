@@ -22,13 +22,14 @@
   }
 
   .profile-listing-filter-btn {
-    background-color: #72f88d;
+    background-color: var(--btn-color);
+    color: var(--white-color);
     border-radius: 5px 0px 0px 5px;
   }
 
   .profile-listing-bids-btn,
   .profile-wins-filter-btn {
-    background-color: #bfedce;
+    background-color: var(--listing-color);
   }
 
   .profile-wins-filter-btn {
@@ -36,11 +37,11 @@
   }
 
   .profile-filter-menu button:hover {
-    background-color: #72f88d;
+    background-color: var(--listing-color);
   }
 
   .profile-btn-border {
-    border-left: solid 2px black;
+    border-left: solid 2px var(--black-color);
   }
 }
 
@@ -57,6 +58,11 @@
 @media (min-width: 900px) {
   .menu-list-style {
     flex-direction: row;
+    margin-right: 10px;
+  }
+
+  .menu-list-style img {
+    margin-left: 10px;
   }
 
   .header-profile h2 {
@@ -74,29 +80,32 @@
     top: 58px;
   }
 
+  footer {
+    position: initial;
+  }
+
   // login/register
-  .log-reg-main,
-  .log-reg-main img {
-    background-color: #ffffff;
+  .main-cover-style,
+  .back-img-list-edit {
+    background-color: var(--white-color);
     background-image: url(../../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp);
     display: flex;
+    // border: 2px solid var(--black-color);
   }
 
   .login-register-section {
     width: 70%;
     max-width: 1000px;
-    border: 1px solid black;
-    filter: drop-shadow(0px 15px 20px black);
+    border: 1px solid var(--black-color);
+    filter: drop-shadow(0px 15px 20px var(--black-color));
   }
 
   .log-reg-logo {
     font-size: 90px;
-    // font-size: 128px;
   }
 
   .log-reg-logo-lock {
     font-size: 70px;
-    // font-size: 90px;
   }
 
   main {
@@ -105,7 +114,7 @@
   }
 
   .logo {
-    padding-right: 40px;
+    padding-right: 10px;
     font-size: 32px;
     color: inherit;
     text-decoration: inherit;
@@ -124,7 +133,8 @@
 
   .meny-style {
     position: initial !important;
-    background-color: rgb(114, 248, 141);
+    background-color: transparent;
+    backdrop-filter: none;
     font-size: 24px;
     border: 0;
     transform: none !important;
@@ -143,6 +153,11 @@
     flex-direction: row;
   }
 
+  .meny-style li a,
+  .header-profile {
+    color: var(--white-color);
+  }
+
   .searchbar,
   .searchbar button {
     height: 32px;
@@ -150,7 +165,6 @@
   }
 
   .img-top {
-    // top: 80px;
     width: 35%;
   }
 
@@ -175,7 +189,7 @@
   .contact {
     justify-content: center;
     margin: 10px 45px 20px 45px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--background-blur-color);
     backdrop-filter: blur(4px);
     border-radius: 10px;
     align-self: center;
@@ -217,14 +231,14 @@
   }
 
   .specific-listing-card-style {
-    border: solid 1px black;
+    border: solid 2px var(--black-color);
     border-radius: 5px;
     margin-top: 50px;
   }
   .specific-listing {
     display: grid !important;
     // grid-template: "b a" "b d" "b d" "c d";
-    grid-template: "c a" "c b" "c d";
+    grid-template: "c b" "c d" "c a";
     justify-items: center;
   }
 
@@ -237,10 +251,6 @@
     width: 400px;
   }
 
-  // .specific-listing-style h1 {
-  //   grid
-  // }
-
   .specific-listing-main-img {
     border-radius: 10px;
     padding: 20px 20px 20px 20px;
@@ -250,31 +260,26 @@
     object-position: center;
   }
 
-  // .specific-img-collection {
-  //   //   flex-wrap: wrap;
-  //   width: 800px;
-  // }
-
-  // .specific-img-collection img {
-  //   object-fit: fill;
-  //   width: 100px;
-  //   height: 80px;
-  //   padding-top: 0px;
-  // }
-
-  // .specific-listing-style h2 {
-  // }
-
-  // .specific-listing-style h3 {
-  // }
-
   .listing-card h3 {
     height: 75px;
   }
 
   .specific-info-container {
     min-height: 75px;
-    // background-color: #ffffff;
+  }
+
+  .propular-now-title {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .meny-style {
+    gap: 40px;
+  }
+
+  .specific-listing {
+    width: 950px;
   }
 }
 
@@ -286,16 +291,12 @@
   .contact-section img {
     max-width: 35%;
   }
+}
 
-  // .about-img {
-  //   height: 25%;
-  //   overflow: hidden;
-  // }
-
-  // .about-img img {
-  //   object-position: center;
-  //   object-fit: cover;
-  // }
+@media (min-width: 1300px) {
+  .specific-listing {
+    width: 1200px;
+  }
 }
 
 @media (min-width: 1640px) {

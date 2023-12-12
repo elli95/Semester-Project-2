@@ -1,9 +1,9 @@
 .about {
-  background-color: #bfedce;
+  background-color: var(--listing-color);
 }
 
 .about-text {
-  background-color: #fff;
+  background-color: var(--white-color);
   margin: 0px 20px 10px 20px;
   border-radius: 10px;
 }
@@ -31,4 +31,9 @@
   padding: 0 7px;
   border-radius: 15px;
   width: fit-content;
+}
+
+.about-img img {
+  max-height: 100%;
+  max-width: 100%;
 }
