@@ -40,7 +40,8 @@ async function listingSearch() {
 
     document.getElementById("listingsSection").innerText = "";
     Object.values(result).forEach(function (listing) {
-      listingsCard(listing);
+      const listingsSection = document.getElementById("listingsSection");
+      listingsCard(listing, listingsSection);
     });
   } catch (error) {
     console.log(error);
