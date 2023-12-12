@@ -30,7 +30,7 @@ async function userLogin(profile) {
   if (!response.ok) {
     errorMessage.innerText = "There was an error: " + userProfile.errors[0].message;
     errorMessage.style.display = "block";
-    throw new Error(response.status);
+    // throw new Error(response.status);
   } else {
     errorMessage.style.display = "none";
     window.location.replace("../../../../profile/index.html");
