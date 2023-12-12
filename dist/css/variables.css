@@ -1,0 +1,11 @@
+:root {
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --listing-color: #92c085;
+  --date-color: #a13030;
+  --btn-color: rgb(0, 104, 21);
+  --gray-blur-color: rgba(135, 135, 135, 0.75);
+  --background-blur-color: rgba(255, 255, 255, 0.5);
+}
+
+/*# sourceMappingURL=variables.css.map */

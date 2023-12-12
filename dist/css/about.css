@@ -1,0 +1,41 @@
+.about {
+  background-color: var(--listing-color);
+}
+
+.about-text {
+  background-color: var(--white-color);
+  margin: 0px 20px 10px 20px;
+  border-radius: 10px;
+}
+
+.about-text h2 {
+  padding: 15px;
+}
+
+.contact h2 {
+  font-size: 30px;
+}
+
+.contact h3 {
+  font-size: 40px;
+}
+
+.contact p {
+  font-size: 25px;
+}
+
+.contact h2,
+.contact h3,
+.contact p {
+  backdrop-filter: blur(4px);
+  padding: 0 7px;
+  border-radius: 15px;
+  width: fit-content;
+}
+
+.about-img img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=about.css.map */
