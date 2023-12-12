@@ -18,9 +18,9 @@ async function deleteListing() {
     const listingDeletion = await apiData(listingDataUrl, method);
     console.log(listingDeletion);
 
-    if (listingDeletion === undefined) {
-      window.location.replace("../../../profile/index.html");
-    }
+    // if (listingDeletion === undefined) {
+    window.location.replace("../../../profile/index.html");
+    // }
   } catch (error) {
     console.log(error);
   }
