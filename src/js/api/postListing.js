@@ -33,6 +33,15 @@ function newImgInput() {
   newListingMedia.setAttribute("name", "listing-media");
 
   newListingMediaSection.querySelector("input").placeholder = `Write an image link`;
+
+  const collectionImg = document.querySelectorAll(".listing-media-input");
+  for (let i = 0; i < collectionImg.length; i++) {
+    collectionImg[i].addEventListener("click", function () {
+      console.log(this.value);
+      document.getElementById("edit-img-display").src = this.value;
+      console.log("hei");
+    });
+  }
 }
 
 createNewAuctionBtn.addEventListener("click", function () {

@@ -1,6 +1,6 @@
 import { API_LISTINGS_URL } from "./api/constant-api.mjs";
 import { apiData } from "./api/apiCall.mjs";
-import { listingsCard, listingsCard2 } from "./htmlStyle.js";
+import { listingsCard } from "./htmlStyle.js";
 // import { endingFilter } from "./filter.js";
 // import { getCountdownDate } from "./dateCountdown.js";
 
@@ -30,7 +30,9 @@ async function getEndingData(listingsDataUrl, method, data) {
     const result = listingsData.sort((a, b) => b._count.bids - a._count.bids);
     const limitedResult = result.slice(0, 4);
     Object.values(limitedResult).forEach(function (listing) {
-      listingsCard2(listing);
+      const listingsSection = document.getElementById("ending-soon");
+      listingsCard(listing, listingsSection);
+      // listingsCard2(listing);
     });
   } catch (error) {
     console.log(error);
@@ -44,7 +46,8 @@ async function getProfileData(listingsDataUrl, method) {
     document.getElementById("listingsSection").innerText = "";
     const limitedResult = listingsData.slice(0, 18);
     Object.values(limitedResult).forEach(function (listing) {
-      listingsCard(listing);
+      const listingsSection = document.getElementById("listingsSection");
+      listingsCard(listing, listingsSection);
     });
   } catch (error) {
     console.log(error);
@@ -60,7 +63,8 @@ async function showAllListing() {
     document.querySelector("#show-more-listing-btn").style.display = "none";
     document.querySelector("#show-less-listing-btn").style.display = "block";
     Object.values(listingsData).forEach(function (listing) {
-      listingsCard(listing);
+      const listingsSection = document.getElementById("listingsSection");
+      listingsCard(listing, listingsSection);
     });
   } catch (error) {
     console.log(error);
@@ -75,9 +79,19 @@ async function getProfileDat() {
     document.querySelector("#show-less-listing-btn").style.display = "none";
     const limitedResult = listingsData.slice(0, 18);
     Object.values(limitedResult).forEach(function (listing) {
-      listingsCard(listing);
+      const listingsSection = document.getElementById("listingsSection");
+      listingsCard(listing, listingsSection);
     });
   } catch (error) {
     console.log(error);
   }
+}
+
+const collectionImg = document.querySelectorAll(".listing-media-input");
+for (let i = 0; i < collectionImg.length; i++) {
+  collectionImg[i].addEventListener("click", function () {
+    console.log(this.value);
+    document.getElementById("edit-img-display").src = this.value;
+    console.log("hei");
+  });
 }
