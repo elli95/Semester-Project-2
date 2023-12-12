@@ -22,11 +22,16 @@ async function newFilter() {
     const listingData = await apiData(listingsDataUrl, method);
     const result = listingData.sort((a, b) => new Date(b.created) - new Date(a.created));
 
-    document.getElementById("new-listing").style.backgroundColor = "#72f88d";
-    document.getElementById("ending-soon-filter").style.backgroundColor = "#bfedce";
-    document.getElementById("popular-listing").style.backgroundColor = "#bfedce";
-    document.getElementById("low-price").style.backgroundColor = "#bfedce";
-    document.getElementById("high-price").style.backgroundColor = "#bfedce";
+    document.getElementById("new-listing").style.color = "var(--white-color)";
+    document.getElementById("new-listing").style.backgroundColor = "var(--btn-color)";
+    document.getElementById("ending-soon-filter").style.color = "var(--black-color)";
+    document.getElementById("ending-soon-filter").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("popular-listing").style.color = "var(--black-color)";
+    document.getElementById("popular-listing").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("low-price").style.color = "var(--black-color)";
+    document.getElementById("low-price").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("high-price").style.color = "var(--black-color)";
+    document.getElementById("high-price").style.backgroundColor = "var(--listing-color)";
 
     printFilterResult(result);
   } catch (error) {
@@ -48,11 +53,16 @@ export async function endingFilter() {
     const listingData = await apiData(listingsDataUrl, method);
     const result = listingData.sort((a, b) => new Date(a.endsAt) - new Date(b.endsAt));
 
-    document.getElementById("new-listing").style.backgroundColor = "#bfedce";
-    document.getElementById("ending-soon-filter").style.backgroundColor = "#72f88d";
-    document.getElementById("popular-listing").style.backgroundColor = "#bfedce";
-    document.getElementById("low-price").style.backgroundColor = "#bfedce";
-    document.getElementById("high-price").style.backgroundColor = "#bfedce";
+    document.getElementById("new-listing").style.color = "var(--black-color)";
+    document.getElementById("new-listing").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("ending-soon-filter").style.color = "var(--white-color)";
+    document.getElementById("ending-soon-filter").style.backgroundColor = "var(--btn-color)";
+    document.getElementById("popular-listing").style.color = "var(--black-color)";
+    document.getElementById("popular-listing").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("low-price").style.color = "var(--black-color)";
+    document.getElementById("low-price").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("high-price").style.color = "var(--black-color)";
+    document.getElementById("high-price").style.backgroundColor = "var(--listing-color)";
 
     document.getElementById("listingsSection").innerText = "";
 
@@ -62,7 +72,9 @@ export async function endingFilter() {
       const currentDate = currentDateData.toLocaleString("en-GB", endDateSetup);
       const listingEndDate = ListingEndsAt.toLocaleString("en-GB", endDateSetup);
       if (currentDate < listingEndDate) {
-        listingsCard(listing);
+        const listingsSection = document.getElementById("listingsSection");
+        listingsCard(listing, listingsSection);
+        // listingsCard(listing);
         // return "test";
       }
     });
@@ -76,12 +88,17 @@ async function popularFilter() {
     const listingData = await apiData(listingsDataUrl, method);
     const result = listingData.sort((a, b) => b._count.bids - a._count.bids);
 
-    console.log(result);
-    document.getElementById("new-listing").style.backgroundColor = "#bfedce";
-    document.getElementById("ending-soon-filter").style.backgroundColor = "#bfedce";
-    document.getElementById("popular-listing").style.backgroundColor = "#72f88d";
-    document.getElementById("low-price").style.backgroundColor = "#bfedce";
-    document.getElementById("high-price").style.backgroundColor = "#bfedce";
+    document.getElementById("new-listing").style.color = "var(--black-color)";
+    document.getElementById("new-listing").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("ending-soon-filter").style.color = "var(--black-color)";
+    document.getElementById("ending-soon-filter").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("popular-listing").style.color = "var(--white-color)";
+    document.getElementById("popular-listing").style.backgroundColor = "var(--btn-color)";
+    document.getElementById("low-price").style.color = "var(--black-color)";
+    document.getElementById("low-price").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("high-price").style.color = "var(--black-color)";
+    document.getElementById("high-price").style.backgroundColor = "var(--listing-color)";
+
     printFilterResult(result);
   } catch (error) {
     console.log(error);
@@ -93,11 +110,17 @@ async function lowFilter() {
     const listingData = await apiData(listingsDataUrl, method);
     const result = listingData.sort((a, b) => b._count.bids - a._count.bids);
 
-    document.getElementById("new-listing").style.backgroundColor = "#bfedce";
-    document.getElementById("ending-soon-filter").style.backgroundColor = "#bfedce";
-    document.getElementById("popular-listing").style.backgroundColor = "#bfedce";
-    document.getElementById("low-price").style.backgroundColor = "#72f88d";
-    document.getElementById("high-price").style.backgroundColor = "#bfedce";
+    document.getElementById("new-listing").style.color = "var(--black-color)";
+    document.getElementById("new-listing").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("ending-soon-filter").style.color = "var(--black-color)";
+    document.getElementById("ending-soon-filter").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("popular-listing").style.color = "var(--black-color)";
+    document.getElementById("popular-listing").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("low-price").style.color = "var(--white-color)";
+    document.getElementById("low-price").style.backgroundColor = "var(--btn-color)";
+    document.getElementById("high-price").style.color = "var(--black-color)";
+    document.getElementById("high-price").style.backgroundColor = "var(--listing-color)";
+
     printFilterResult(result);
   } catch (error) {
     console.log(error);
@@ -174,11 +197,16 @@ async function highFilter() {
     // console.log(listingData);
     // console.log(result);
 
-    document.getElementById("new-listing").style.backgroundColor = "#bfedce";
-    document.getElementById("ending-soon-filter").style.backgroundColor = "#bfedce";
-    document.getElementById("popular-listing").style.backgroundColor = "#bfedce";
-    document.getElementById("low-price").style.backgroundColor = "#bfedce";
-    document.getElementById("high-price").style.backgroundColor = "#72f88d";
+    document.getElementById("new-listing").style.color = "var(--black-color)";
+    document.getElementById("new-listing").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("ending-soon-filter").style.color = "var(--black-color)";
+    document.getElementById("ending-soon-filter").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("popular-listing").style.color = "var(--black-color)";
+    document.getElementById("popular-listing").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("low-price").style.color = "var(--black-color)";
+    document.getElementById("low-price").style.backgroundColor = "var(--listing-color)";
+    document.getElementById("high-price").style.color = "var(--white-color)";
+    document.getElementById("high-price").style.backgroundColor = "var(--btn-color)";
     // printFilterResult(result);
   } catch (error) {
     console.log(error);
@@ -188,6 +216,8 @@ async function highFilter() {
 function printFilterResult(result) {
   document.getElementById("listingsSection").innerText = "";
   Object.values(result).forEach(function (listing) {
-    listingsCard(listing);
+    const listingsSection = document.getElementById("listingsSection");
+    listingsCard(listing, listingsSection);
+    // listingsCard(listing);
   });
 }
