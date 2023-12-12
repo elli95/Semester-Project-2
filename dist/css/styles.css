@@ -11855,6 +11855,16 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+:root {
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --listing-color: #92c085;
+  --date-color: #a13030;
+  --btn-color: rgb(0, 104, 21);
+  --gray-blur-color: rgba(135, 135, 135, 0.75);
+  --background-blur-color: rgba(255, 255, 255, 0.5);
+}
+
 /* reference: https://blog.pope.tech/2020/02/28/missing-form-label-search/ */
 .wave-form-lable-fix {
   position: absolute;
@@ -11868,6 +11878,8 @@ img {
   height: 100%;
   max-height: 500px;
   max-width: 500px;
+  object-fit: cover;
+  object-position: center;
 }
 
 h1, .h1 {
@@ -11903,7 +11915,9 @@ header {
 
 Header,
 footer {
-  background-color: #72f88d;
+  background-image: url(../../images/joshua-bartell-6vvIBTvL90A-unsplash.jpg);
+  background-position: center;
+  color: var(--white-color);
   padding: 5px 0px 5px 0px;
   font-family: "Rubik", sans-serif;
 }
@@ -11938,7 +11952,7 @@ footer p {
   left: 0;
   overflow-x: hidden;
   border-radius: 0px;
-  background-color: rgba(135, 135, 135, 0.75);
+  background-color: var(--gray-blur-color);
   backdrop-filter: blur(5px);
   text-align: center;
   transform: translate3d(0px, 45px, 0px) !important;
@@ -12027,11 +12041,11 @@ footer p {
 
 #listing-form {
   display: none;
-  background-color: #bfedce;
+  background-color: var(--listing-color);
   width: 90%;
   max-width: 1100px;
   padding: 10px;
-  border: solid 2px black;
+  border: solid 2px var(--black-color);
   border-radius: 10px;
 }
 
@@ -12054,7 +12068,7 @@ footer p {
 }
 
 .listing-card {
-  border: solid 2px black;
+  border: solid 2px var(--black-color);
   border-radius: 0;
   max-width: 330px;
 }
@@ -12062,7 +12076,7 @@ footer p {
 .listing-card,
 #specific-listing,
 .backgroud-col {
-  background-color: #bfedce;
+  background-color: var(--listing-color);
 }
 
 .listing-card h2, .listing-card .h2 {
@@ -12072,15 +12086,12 @@ footer p {
   height: 32px;
 }
 
-.auction-img,
-.no-img {
+.auction-img {
   height: 200px;
-  object-fit: cover;
-  object-position: center;
 }
 
-.no-img {
-  background-color: #d9d9d9;
+.listing-form-img {
+  justify-self: center;
 }
 
 .listing-card h3, .listing-card .h3 {
@@ -12092,7 +12103,7 @@ footer p {
 
 .listing-card h3, .listing-card .h3,
 .specific-info-container {
-  background-color: #ffffff;
+  background-color: var(--white-color);
   border-radius: 7px;
   padding: 6px 10px;
   width: 100%;
@@ -12105,14 +12116,14 @@ footer p {
 
 .listing-card h4, .listing-card .h4,
 .endTime {
-  background-color: #a13030;
+  background-color: var(--date-color);
 }
 
 .listing-card h5, .listing-card .h5,
 .listing-card h4,
 .listing-card .h4,
 .endTime {
-  color: #fff;
+  color: var(--white-color);
   padding: 5px;
   border-radius: 5px;
   text-align: center;
@@ -12121,17 +12132,17 @@ footer p {
 
 .listing-card h5, .listing-card .h5,
 .bid-btn {
-  color: #fff;
-  background-color: black;
+  color: var(--white-color);
+  background-color: var(--black-color);
 }
 
 .input-style {
-  background-color: #d9d9d9;
+  background-color: var(--white-color);
 }
 
 .input-style,
 .bid-btn {
-  border: solid 2px black;
+  border: solid 2px var(--black-color);
   border-radius: 7px;
   height: 33px;
   width: 250px;
@@ -12144,13 +12155,13 @@ footer p {
 }
 
 .bid-history li {
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px var(--black-color);
 }
 
 .show-more {
   text-decoration: underline;
   border: none;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--background-blur-color);
   backdrop-filter: blur(5px);
   border-radius: 5px;
 }
@@ -12165,11 +12176,11 @@ footer p {
 
 .avatar-edit-form {
   flex-direction: column;
-  border: solid 2px black;
+  border: solid 2px var(--black-color);
   border-radius: 10px;
   width: 80%;
   padding: 10px;
-  background-color: #bfedce;
+  background-color: var(--listing-color);
 }
 
 .avatar-edit-form {
@@ -12178,18 +12189,27 @@ footer p {
 }
 
 .profile-listing-data h2, .profile-listing-data .h2 {
-  border-bottom: solid 2px black;
+  border-bottom: solid 2px var(--black-color);
   width: 90%;
 }
 
 .search-bar {
   height: 40px;
+  background-color: var(--btn-color);
+  border-radius: 10px;
+}
+
+.search-bar button {
+  color: var(--white-color);
 }
 
 .btn-style {
-  background-color: #006815;
-  border: solid 2px black;
-  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--btn-color);
+  border: solid 2px var(--black-color);
+  color: var(--white-color);
   width: 125px;
   height: 45px;
   border-radius: 10px;
@@ -12203,16 +12223,18 @@ footer p {
 }
 
 .btn:hover {
-  color: #ffffff;
-  background-color: #006815;
+  color: var(--white-color);
+  background-color: var(--btn-color);
 }
 
 .propular-now-title {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--background-blur-color);
   backdrop-filter: blur(4px);
   border-radius: 10px;
   width: fit-content;
   padding: 10px 20px;
+  font-size: 38px;
+  text-decoration: underline;
 }
 
 .show-less-btn {
@@ -12225,20 +12247,20 @@ footer p {
   justify-content: center;
   width: 75px;
   height: 75px;
-  background-color: #a13030;
+  background-color: var(--date-color);
 }
 
 .countdownBox h2, .countdownBox .h2,
 .countdownBox h3,
 .countdownBox .h3 {
   margin: 0;
-  background-color: #a13030;
-  color: #ffffff;
+  background-color: var(--date-color);
+  color: var(--white-color);
   font-size: 15px;
 }
 
 .profile-container {
-  background-color: #ffffff;
+  background-color: var(--white-color);
 }
 
 .specific-listing-style {
@@ -12249,6 +12271,7 @@ footer p {
 
 .specific-img-collection {
   flex-wrap: wrap;
+  max-width: 500px;
 }
 
 .specific-img-collection img {
@@ -12259,6 +12282,19 @@ footer p {
   padding-top: 0px;
   border-radius: 10px;
   padding: 20px 20px 20px 20px;
+}
+
+.search-bar input,
+.edit-listing {
+  border: 2px solid var(--black-color);
+}
+
+.main-cover-style,
+.back-img-list-edit {
+  background-color: var(--listing-color);
+  background-image: none;
+  display: none;
+  padding-top: 0px;
 }
 
 /*# sourceMappingURL=styles.css.map */

@@ -17,21 +17,22 @@
     text-align: center;
   }
   .profile-listing-filter-btn {
-    background-color: #72f88d;
+    background-color: var(--btn-color);
+    color: var(--white-color);
     border-radius: 5px 0px 0px 5px;
   }
   .profile-listing-bids-btn,
   .profile-wins-filter-btn {
-    background-color: #bfedce;
+    background-color: var(--listing-color);
   }
   .profile-wins-filter-btn {
     border-radius: 0px 5px 5px 0px;
   }
   .profile-filter-menu button:hover {
-    background-color: #72f88d;
+    background-color: var(--listing-color);
   }
   .profile-btn-border {
-    border-left: solid 2px black;
+    border-left: solid 2px var(--black-color);
   }
 }
 @media (min-width: 800px) {
@@ -45,6 +46,10 @@
 @media (min-width: 900px) {
   .menu-list-style {
     flex-direction: row;
+    margin-right: 10px;
+  }
+  .menu-list-style img {
+    margin-left: 10px;
   }
   .header-profile h2 {
     font-size: 20px;
@@ -58,17 +63,20 @@
   .menu-logged-out {
     top: 58px;
   }
-  .log-reg-main,
-  .log-reg-main img {
-    background-color: #ffffff;
+  footer {
+    position: initial;
+  }
+  .main-cover-style,
+  .back-img-list-edit {
+    background-color: var(--white-color);
     background-image: url(../../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp);
     display: flex;
   }
   .login-register-section {
     width: 70%;
     max-width: 1000px;
-    border: 1px solid black;
-    filter: drop-shadow(0px 15px 20px black);
+    border: 1px solid var(--black-color);
+    filter: drop-shadow(0px 15px 20px var(--black-color));
   }
   .log-reg-logo {
     font-size: 90px;
@@ -81,7 +89,7 @@
     padding-top: 80px;
   }
   .logo {
-    padding-right: 40px;
+    padding-right: 10px;
     font-size: 32px;
     color: inherit;
     text-decoration: inherit;
@@ -97,7 +105,8 @@
   }
   .meny-style {
     position: initial !important;
-    background-color: rgb(114, 248, 141);
+    background-color: transparent;
+    backdrop-filter: none;
     font-size: 24px;
     border: 0;
     transform: none !important;
@@ -112,6 +121,10 @@
   .meny-style li {
     display: flex;
     flex-direction: row;
+  }
+  .meny-style li a,
+  .header-profile {
+    color: var(--white-color);
   }
   .searchbar,
   .searchbar button {
@@ -139,7 +152,7 @@
   .contact {
     justify-content: center;
     margin: 10px 45px 20px 45px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--background-blur-color);
     backdrop-filter: blur(4px);
     border-radius: 10px;
     align-self: center;
@@ -172,13 +185,13 @@
     padding-top: 15px;
   }
   .specific-listing-card-style {
-    border: solid 1px black;
+    border: solid 2px var(--black-color);
     border-radius: 5px;
     margin-top: 50px;
   }
   .specific-listing {
     display: grid !important;
-    grid-template: "c a" "c b" "c d";
+    grid-template: "c b" "c d" "c a";
     justify-items: center;
   }
   .specific-info-container {
@@ -202,6 +215,17 @@
   .specific-info-container {
     min-height: 75px;
   }
+  .propular-now-title {
+    font-size: 48px;
+  }
+}
+@media (min-width: 1000px) {
+  .meny-style {
+    gap: 40px;
+  }
+  .specific-listing {
+    width: 950px;
+  }
 }
 @media (min-width: 1200px) {
   .about {
@@ -209,6 +233,11 @@
   }
   .contact-section img {
     max-width: 35%;
+  }
+}
+@media (min-width: 1300px) {
+  .specific-listing {
+    width: 1200px;
   }
 }
 @media (min-width: 1640px) {
