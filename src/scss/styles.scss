@@ -49,6 +49,11 @@ header {
   z-index: 5;
 }
 
+footer {
+  z-index: 1;
+  position: relative;
+}
+
 Header,
 footer {
   background-image: url(../../images/joshua-bartell-6vvIBTvL90A-unsplash.jpg);
@@ -113,11 +118,15 @@ footer p {
   display: none;
 }
 
+// .backgroud-img {
+//   position: absolute;
+// }
+
+// .img-top
 .backgroud-img {
   position: absolute;
-}
-
-.img-top {
+  max-height: initial;
+  max-width: initial;
   transform: rotate(180deg);
   top: 46px;
   left: 0px;
@@ -136,6 +145,10 @@ footer p {
   width: 60px;
   height: 60px;
   clip-path: ellipse(30px 30px at 30px 30px);
+}
+
+#output-img {
+  display: none;
 }
 
 .profile-img {
@@ -245,6 +258,10 @@ footer p {
   padding: 6px 10px;
   width: 100%;
   height: 65px;
+}
+
+.listing-card h4 {
+  height: 38px;
 }
 
 .specific-info-container {

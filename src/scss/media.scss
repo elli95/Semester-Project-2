@@ -46,9 +46,9 @@
 }
 
 @media (min-width: 800px) {
-  .form-post-container {
-    grid-template: "a b" "c c";
-  }
+  // .form-post-container {
+  //   grid-template: "a b" "c c";
+  // }
 
   .profile-filter-menu {
     margin-top: 20px;
@@ -80,9 +80,9 @@
     top: 58px;
   }
 
-  footer {
-    position: initial;
-  }
+  // footer {
+  //   position: initial;
+  // }
 
   // login/register
   .main-cover-style,
@@ -164,7 +164,8 @@
     align-self: center;
   }
 
-  .img-top {
+  // .img-top
+  .backgroud-img {
     width: 35%;
   }
 
@@ -186,16 +187,21 @@
     max-width: 45%;
   }
 
-  .contact {
-    justify-content: center;
-    margin: 10px 45px 20px 45px;
-    background-color: var(--background-blur-color);
-    backdrop-filter: blur(4px);
-    border-radius: 10px;
-    align-self: center;
-    min-width: fit-content;
-    max-width: fit-content;
+  .contact-section {
+    flex-direction: row;
   }
+
+  // .contact {
+  //   flex-direction: row;
+  // justify-content: center;
+  // margin: 10px 45px 20px 45px;
+  // background-color: var(--background-blur-color);
+  // backdrop-filter: blur(4px);
+  // border-radius: 10px;
+  // align-self: center;
+  // min-width: fit-content;
+  // max-width: fit-content;
+  // }
 
   .contact h2,
   .contact h3,
@@ -270,6 +276,10 @@
 
   .propular-now-title {
     font-size: 48px;
+  }
+
+  .contact-section img {
+    max-height: none;
   }
 }
 
