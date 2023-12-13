@@ -20,10 +20,10 @@
     <link rel="stylesheet" href="dist/css/media.css" />
     <script src="src/js/api/auth/loginCheck.mjs" type="module"></script>
     <script src="src/js/api/auth/logout.js" type="module"></script>
-    <script src="src/js/index.js" type="module"></script>
+    <script src="src/js/home/index.js" type="module"></script>
     <script src="src/js/api/postListing.js" type="module"></script>
-    <script src="src/js/filter.js" type="module"></script>
-    <script src="src/js/search.js" type="module"></script>
+    <script src="src/js/home/filter.js" type="module"></script>
+    <script src="src/js/home/search.js" type="module"></script>
     <script src="src/js/dateCountdown.js" type="module"></script>
     <script src="src/js/headerProfile.js" type="module"></script>
   </head>
@@ -70,9 +70,9 @@
         <form id="listing-submission">
           <h2>Start a new auction</h2>
           <div class="d-grid justify-content-center form-post-container">
-            <div class="grid-a post-img align-self-center p-2">
-              <!-- <img src="" alt="" id="output-img" /> -->
-            </div>
+            <!-- <div class="grid-a post-img align-self-center p-2"> -->
+            <!-- <img src="" alt="" id="output-img" /> -->
+            <!-- </div> -->
             <div class="d-grid grid-b gap-2 py-2">
               <input class="form-control" type="text" name="listing-title" id="listing-title" placeholder="Write a title" required />
               <textarea
@@ -85,9 +85,9 @@
                 placeholder="Write a description"
               ></textarea>
               <input class="form-control" type="text" name="listing-tags" id="listing-tags" placeholder="Write a tag" />
-              <input class="form-control listing-media-input" type="text" name="listing-media" id="listing-media" placeholder="Write an image link" />
+              <!-- <input class="form-control listing-media-input" type="text" name="listing-media" id="listing-media" placeholder="Write an image link" /> -->
               <div id="new-listing-media-input"></div>
-              <button type="button" class="btn btn-style w-auto px-2" id="add-new-img-input">Add another image</button>
+              <button type="button" class="btn btn-style w-auto px-2" id="add-new-img-input">Add image</button>
               <img id="edit-img-display" class="listing-form-img w-md-75" src="" alt="" />
               <input class="form-control" type="date" name="listing-end" id="listing-end" placeholder="Select end date" required />
             </div>
@@ -100,7 +100,7 @@
       </div>
       <section class="col-12">
         <div class="d-flex justify-content-center">
-          <h2 class="text-center z-1 position-relative propular-now-title">Populare Now</h2>
+          <h2 class="text-center z-1 position-relative propular-now-title">Popular Now</h2>
         </div>
         <div class="container row m-0 listing-list z-5 position-relative justify-content-center" id="ending-soon"></div>
       </section>
@@ -157,8 +157,8 @@
     </main>
     <footer>
       <div class="d-flex justify-content-evenly">
-        <h2 class="footer-btn">About</h2>
-        <h2 class="footer-btn">Contact</h2>
+        <!-- <h2 class="footer-btn">About</h2>
+        <h2 class="footer-btn">Contact</h2> -->
       </div>
       <p class="text-center">© Elise Marie Hogsnes | All rights reserved</p>
     </footer>
