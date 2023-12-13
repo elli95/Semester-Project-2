@@ -231,7 +231,7 @@ function listingPage(listingData) {
   listingImg.className = "specific-listing-main-img";
   ImgCollectionSection.className = "d-flex specific-img-collection justify-content-center";
   infoContainer.className = "d-flex flex-column-reverse align-items-center gap-4 grid-d ";
-  listingDescription.className = "mx-3 mb-3 specific-info-container";
+  listingDescription.className = "mx-3 mb-3 text-break specific-info-container";
   // listingEndTime.className = "endTime";
 
   listingImg.setAttribute("id", "listing-img");
