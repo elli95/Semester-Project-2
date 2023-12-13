@@ -29,5 +29,6 @@ async function editProfileAvatar() {
 
 function imgOutput() {
   const value = inputImgUrl.value.toLowerCase();
+  document.getElementById("output-img").style.display = "flex";
   document.getElementById("output-img").src = value;
 }

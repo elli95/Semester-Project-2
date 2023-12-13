@@ -4,20 +4,26 @@ import { apiData } from "./apiCall.mjs";
 const listingUrl = `${API_LISTINGS_URL}`;
 
 const createNewAuctionBtn = document.querySelector("#create-new-auction-btn");
+const addNewImgInput = document.querySelector("#add-new-img-input");
+
 const listingFormSection = document.querySelector("#listing-form");
 const listingForm = document.querySelector("#listing-submission");
 const listingTitle = document.querySelector("#listing-title");
 const listingDescription = document.querySelector("#listing-text");
 const listingTags = document.querySelector("#listing-tags");
 const listingMedia = document.getElementsByClassName("listing-media-input");
-// const listingMedia = document.querySelector("#listing-media");
 const listingend = document.querySelector("#listing-end");
-const addNewImgInput = document.querySelector("#add-new-img-input");
 
-// createNewAuctionBtn.addEventListener("click", showNewAuctionForm);
 listingForm.addEventListener("submit", listingSubmission);
-// listingMedia.addEventListener("input", imgOutput);
 addNewImgInput.addEventListener("click", newImgInput);
+
+createNewAuctionBtn.addEventListener("click", function () {
+  if (listingFormSection.style.display === "" || listingFormSection.style.display === "none") {
+    document.getElementById("listing-form").style.display = "flex";
+  } else {
+    document.getElementById("listing-form").style.display = "none";
+  }
+});
 
 function newImgInput() {
   const newListingMediaInput = document.getElementById("new-listing-media-input");
@@ -36,55 +42,31 @@ function newImgInput() {
 
   const collectionImg = document.querySelectorAll(".listing-media-input");
   for (let i = 0; i < collectionImg.length; i++) {
-    collectionImg[i].addEventListener("click", function () {
+    collectionImg[i].addEventListener("input", function () {
       console.log(this.value);
       document.getElementById("edit-img-display").src = this.value;
-      console.log("hei");
     });
   }
 }
-
-createNewAuctionBtn.addEventListener("click", function () {
-  // function showNewAuctionForm() {
-  console.log("099999999", listingFormSection);
-  if (listingFormSection.style.display === "" || listingFormSection.style.display === "none") {
-    document.getElementById("listing-form").style.display = "flex";
-    // listingFormSection.style.display === "flex";
-    console.log("hello", listingFormSection);
-  } else {
-    document.getElementById("listing-form").style.display = "none";
-    console.log("hellooooooo099999999", listingFormSection);
-  }
-});
 
 async function listingSubmission(event) {
   event.preventDefault();
   try {
     const method = "POST";
     const allMediaInput = [...listingMedia].map((input) => input.value);
-    console.log("1", allMediaInput);
 
     const listingData = {
       title: listingTitle.value,
       description: listingDescription.value,
       tags: [listingTags.value],
-      // media: [listingMedia.value],
       media: allMediaInput,
       endsAt: listingend.value,
     };
 
-    console.log("2", listingData);
-
     const listingInfo = await apiData(listingUrl, method, listingData);
-    console.log(listingInfo);
 
     window.location.replace("../../../index.html");
   } catch (error) {
     console.log(error);
   }
-}
-
-function imgOutput() {
-  const value = listingMedia.value.toLowerCase();
-  document.getElementById("output-img").src = value;
 }

@@ -4,7 +4,6 @@ const errorMessage = document.querySelector("#error-message");
 
 async function apiData(postUrl, method, post) {
   try {
-    // console.log("postUrl", postUrl);
     const response = await authToken(postUrl, {
       method,
       body: JSON.stringify(post),
@@ -15,7 +14,6 @@ async function apiData(postUrl, method, post) {
     if (!response.ok) {
       errorMessage.innerText = "There was an error: " + data.errors[0].message;
       errorMessage.style.display = "block";
-      // window.alert(data.errors[0].message);
       throw new Error(response.status);
     } else {
       errorMessage.style.display = "none";
@@ -23,11 +21,10 @@ async function apiData(postUrl, method, post) {
 
     return data;
   } catch (error) {
-    event.preventDefault();
+    // event.preventDefault();
     console.log(error);
     errorMessage.innerText = "There was an error: " + error;
     errorMessage.style.display = "block";
-    // window.alert(error);
   }
 }
 

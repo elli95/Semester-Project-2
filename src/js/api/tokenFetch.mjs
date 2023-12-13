@@ -2,7 +2,6 @@ import { getLocalStorage } from "../localStorage.mjs";
 
 function apiHeaders() {
   const accessToken = getLocalStorage("token");
-  // console.log("accessToken", accessToken);
 
   return {
     "Content-Type": "application/json",

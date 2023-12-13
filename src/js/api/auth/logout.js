@@ -1,4 +1,4 @@
-import { deleteKeyLocalStorage } from "../../localStorage.mjs";
+import { deleteThisLocalStorage } from "../../localStorage.mjs";
 import { isUserLogedIn } from "./loginCheck.mjs";
 
 const logout = document.querySelector("#logout");
@@ -10,8 +10,8 @@ logout.addEventListener("click", userLogout);
 
 const path = location.pathname;
 function userLogout() {
-  deleteKeyLocalStorage("token");
-  deleteKeyLocalStorage("profile");
+  deleteThisLocalStorage("token");
+  deleteThisLocalStorage("profile");
   if (path === "/profile/index.html") {
     window.location.replace("/");
   }

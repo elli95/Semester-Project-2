@@ -11,8 +11,8 @@ function getLocalStorage(token) {
   }
 }
 
-function deleteKeyLocalStorage(token) {
+function deleteThisLocalStorage(token) {
   localStorage.removeItem(token);
 }
 
-export { setLocalStorage, getLocalStorage, deleteKeyLocalStorage };
+export { setLocalStorage, getLocalStorage, deleteThisLocalStorage };

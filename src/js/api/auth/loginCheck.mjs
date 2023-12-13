@@ -1,6 +1,4 @@
-// import { headerSearch } from "../../htmlStyle";
 import { getLocalStorage } from "../../localStorage.mjs";
-// import { getProfileData } from "../../headerProfile";
 
 const path = location.pathname;
 function isUserLogedIn() {
@@ -9,6 +7,7 @@ function isUserLogedIn() {
     document.getElementById("profile").style.display = "block";
     document.getElementById("logout").style.display = "block";
     document.getElementById("main-back-img").className += " menu-logged-in";
+
     if (path === "/feed/index.html") {
       document.getElementById("place-bid").style.display = "flex";
     } else if (path === `/` || path === `/index.html`) {
@@ -22,6 +21,7 @@ function isUserLogedIn() {
     document.getElementById("profile").style.display = "none";
     document.getElementById("logout").style.display = "none";
     document.getElementById("main-back-img").className += " menu-logged-out";
+
     if (path === `/feed/index.html`) {
       document.getElementById("place-bid").style.display = "none";
     } else if (path === `/` || path === `/index.html`) {

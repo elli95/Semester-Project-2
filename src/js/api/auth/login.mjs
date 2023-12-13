@@ -1,7 +1,6 @@
 import { API_LOGIN_URL } from "../constant-api.mjs";
 import { setLocalStorage } from "../../localStorage.mjs";
 
-// const action = "/auth/login";
 const method = "POST";
 const errorMessage = document.querySelector("#error-message");
 
@@ -30,7 +29,6 @@ async function userLogin(profile) {
   if (!response.ok) {
     errorMessage.innerText = "There was an error: " + userProfile.errors[0].message;
     errorMessage.style.display = "block";
-    // throw new Error(response.status);
   } else {
     errorMessage.style.display = "none";
     window.location.replace("../../../../profile/index.html");

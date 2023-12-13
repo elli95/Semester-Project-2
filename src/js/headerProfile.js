@@ -5,12 +5,11 @@ import { userHeader } from "./htmlStyle.js";
 
 export async function getProfileData() {
   try {
-    if (getLocalStorage("token")) {
+    if (getLocalStorage("profile")) {
       const method = "GET";
       const user = getLocalStorage("profile").name;
       const userDataUrl = `${API_PROFILE_URL}/${user}`;
       const userData = await apiData(userDataUrl, method);
-      console.log(userData);
       userHeader(userData);
     }
   } catch (error) {

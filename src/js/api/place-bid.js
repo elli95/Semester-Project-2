@@ -1,13 +1,8 @@
-import { API_LISTINGS_URL } from "./constant-api.mjs";
+import { API_LISTINGS_URL, listingId } from "./constant-api.mjs";
 import { apiData } from "./apiCall.mjs";
-import { getBidData } from "../specific-listing.js";
-
-const queryString = document.location.search;
-const params = new URLSearchParams(queryString);
-const listingId = params.get("id");
+import { getBidData } from "../listingBids.js";
 
 const listingBidUrl = `${API_LISTINGS_URL}/${listingId}`;
-// console.log(listingDataUrl);
 
 const bidForm = document.querySelector("#place-bid");
 const bidValue = document.querySelector("#bid-value");
@@ -23,9 +18,9 @@ async function bidSubmission(event) {
     };
 
     const bidInfo = await apiData(listingBidUrl + "/bids", method, bidCredit);
-    // console.log(bidInfo);
 
     setTimeout(() => {
+      document.getElementById("listing-bids").innerHTML = "";
       getBidData(listingBidUrl + "?_bids=true");
     }, 500);
   } catch (error) {
