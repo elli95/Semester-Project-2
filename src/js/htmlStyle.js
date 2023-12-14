@@ -42,7 +42,7 @@ function listingsCard(listing, listingsSection) {
   infoContainer.className = "d-flex flex-column align-items-center m-2";
   listingImg.className = "img-check";
 
-  cardContainer.querySelector("a").href = `/feed/index.html?id=${listing.id}`;
+  cardContainer.querySelector("a").href = `/listing/index.html?id=${listing.id}`;
   auctionContainer.querySelector("h2").innerText = `${listing.title}`;
 
   if (listing.media.length > 0) {
@@ -370,7 +370,7 @@ function profileListingsCard(listing) {
 
   editSection.querySelector("a").href = `/profile/edit-listing.html?id=${listing.id}`;
   editSection.querySelector("button").innerText = `Edit`;
-  listingContainer.querySelector("a").href = `/feed/index.html?id=${listing.id}`;
+  listingContainer.querySelector("a").href = `/listing/index.html?id=${listing.id}`;
   auctionContainer.querySelector("h2").innerText = `${listing.title}`;
 
   if (listing.media.length > 0) {
@@ -436,7 +436,7 @@ function profileBidCard(bidData) {
   listingImg.className = "auction-img img-check";
   infoContainer.className = "d-flex flex-column align-items-center m-2";
 
-  listingContainer.querySelector("a").href = `/feed/index.html?id=${bidData.listing.id}`;
+  listingContainer.querySelector("a").href = `/listing/index.html?id=${bidData.listing.id}`;
   auctionContainer.querySelector("h2").innerText = `${bidData.listing.title}`;
   if (bidData.listing.media.length !== 0) {
     auctionContainer.querySelector("img").src = `${bidData.listing.media[0]}`;
@@ -485,7 +485,7 @@ function profileWinCard(winData) {
   listingImg.className = "auction-img img-check";
   infoContainer.className = "d-flex flex-column align-items-center m-2";
 
-  listingContainer.querySelector("a").href = `/feed/index.html?id=${winData.listing.id}`;
+  listingContainer.querySelector("a").href = `/listing/index.html?id=${winData.listing.id}`;
   auctionContainer.querySelector("h2").innerText = `${winData.listing.title}`;
   if (winData.listing.media.length !== 0) {
     auctionContainer.querySelector("img").src = `${winData.listing.media[0]}`;
