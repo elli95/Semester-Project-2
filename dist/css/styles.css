@@ -11873,6 +11873,10 @@ textarea.form-control-lg {
   top: auto;
 }
 
+.errorText {
+  display: none;
+}
+
 img {
   width: 100%;
   height: 100%;
