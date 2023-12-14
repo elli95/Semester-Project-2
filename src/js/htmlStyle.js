@@ -47,8 +47,10 @@ function listingsCard(listing, listingsSection) {
 
   if (listing.media.length > 0) {
     imgContainer.querySelector("img").src = `${listing.media[0]}`;
+    imgContainer.querySelector("img").alt = `Product image`;
   } else {
     imgContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+    imgContainer.querySelector("img").alt = `No product image available`;
   }
 
   infoContainer.querySelector("h3").innerText = `${listing.description}`;
@@ -135,8 +137,10 @@ function listingPage(listingData) {
   listingContainer.querySelector("h1").innerText = `${listingData.title}`;
   if (listingData.media.length !== 0) {
     listingimgBox.querySelector("img").src = `${listingData.media[0]}`;
+    listingimgBox.querySelector("img").alt = `Product image`;
   } else {
     listingimgBox.querySelector("img").src = `/images/no-img-avaliable.webp`;
+    listingimgBox.querySelector("img").alt = `No product image available`;
   }
 
   if (listingData.media.length > 1) {
@@ -157,6 +161,7 @@ function listingPage(listingData) {
         });
       }
       listingImgCollection.querySelector("img").src = `${img}`;
+      listingImgCollection.querySelector("img").alt = `Product image`;
     });
   }
 
@@ -199,6 +204,7 @@ function listingPage(listingData) {
   infoContainer.querySelector("h2").innerText = `${listingData.description}`;
 
   profileContainer.querySelector("img").src = `${listingData.seller.avatar}`;
+  profileContainer.querySelector("img").alt = `User avatar`;
   sellerText.querySelector("h2").innerText = `${listingData.seller.name}`;
   sellerText.querySelector("h3").innerText = `${listingData.seller.email}`;
 
@@ -265,6 +271,7 @@ function userHeader(userData) {
   textBox.querySelector("h2").innerText = `${userData.name}`;
   textBox.querySelector("h3").innerText = `Your credit: ${userData.credits}`;
   headerProfileLink.querySelector("img").src = `${userData.avatar}`;
+  headerProfileLink.querySelector("img").alt = `User avatar`;
 
   imgCheckError();
 }
@@ -315,6 +322,7 @@ function profileStyle(userData, lastBid) {
   listings.className = "col-6 d-flex flex-row gap-2 list";
 
   imgContainer.querySelector("img").src = `${userData.avatar}`;
+  imgContainer.querySelector("img").alt = `User avatar`;
   profileinfoBox.querySelector("h1").innerText = `${userData.name}`;
   profileinfoBox.querySelector("h2").innerText = `${userData.email}`;
   creditsContainer.querySelector("h2").innerText = "Credits:";
@@ -375,8 +383,10 @@ function profileListingsCard(listing) {
 
   if (listing.media.length > 0) {
     auctionContainer.querySelector("img").src = `${listing.media[0]}`;
+    auctionContainer.querySelector("img").alt = `Product image`;
   } else {
     auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+    auctionContainer.querySelector("img").alt = `No product image available`;
   }
 
   infoContainer.querySelector("h3").innerText = `${listing.description}`;
@@ -440,8 +450,10 @@ function profileBidCard(bidData) {
   auctionContainer.querySelector("h2").innerText = `${bidData.listing.title}`;
   if (bidData.listing.media.length !== 0) {
     auctionContainer.querySelector("img").src = `${bidData.listing.media[0]}`;
+    auctionContainer.querySelector("img").alt = `Product image`;
   } else {
     auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+    auctionContainer.querySelector("img").alt = `No product image available`;
   }
   infoContainer.querySelector("h3").innerText = `${bidData.listing.description}`;
 
@@ -489,8 +501,10 @@ function profileWinCard(winData) {
   auctionContainer.querySelector("h2").innerText = `${winData.listing.title}`;
   if (winData.listing.media.length !== 0) {
     auctionContainer.querySelector("img").src = `${winData.listing.media[0]}`;
+    auctionContainer.querySelector("img").alt = `Product image`;
   } else {
     auctionContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+    auctionContainer.querySelector("img").alt = `No product image available`;
   }
   infoContainer.querySelector("h3").innerText = `${winData.listing.description}`;
   infoContainer.querySelector("h5").innerText = `My bid: ${winData.amount}`;

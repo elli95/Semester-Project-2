@@ -27,6 +27,7 @@ async function userLogin(profile) {
   setLocalStorage("profile", userProfile);
 
   if (!response.ok) {
+    errorMessage.innerText = "";
     errorMessage.innerText = "There was an error: " + userProfile.errors[0].message;
     errorMessage.style.display = "block";
   } else {

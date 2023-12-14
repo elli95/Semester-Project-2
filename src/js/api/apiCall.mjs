@@ -12,6 +12,7 @@ async function apiData(postUrl, method, post) {
     const data = await response.json();
 
     if (!response.ok) {
+      errorMessage.innerText = "";
       errorMessage.innerText = "There was an error: " + data.errors[0].message;
       errorMessage.style.display = "block";
       throw new Error(response.status);
@@ -23,6 +24,7 @@ async function apiData(postUrl, method, post) {
   } catch (error) {
     // event.preventDefault();
     console.log(error);
+    errorMessage.innerText = "";
     errorMessage.innerText = "There was an error: " + error;
     errorMessage.style.display = "block";
   }
