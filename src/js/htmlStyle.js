@@ -370,7 +370,8 @@ function profileListingsCard(listing) {
 
   cardContainer.className = "card h-100 m-3 listing-card col-11 col-md-5 col-xl-3";
   editSection.className = "align-self-end";
-  editBtn.className = "btn-style profile-listing-btn-style";
+  editLink.className = "text-decoration-none";
+  editBtn.className = "btn-style profile-listing-btn-style p-2";
   listingLink.className = "text-decoration-none text-reset";
   listingTitle.className = "fw-bold border-0 ps-3 pt-2";
   listingImg.className = "auction-img img-check";
