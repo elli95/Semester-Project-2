@@ -20,6 +20,7 @@
     <script src="../src/js/api/editInfo.js" type="module"></script>
     <script src="../src/js/profile/profileFilter.js" type="module"></script>
     <script src="../src/js/headerProfile.js" type="module"></script>
+    <script src="../src/js/api/postListing.js" type="module"></script>
   </head>
   <body>
     <header class="d-flex justify-content-between">
@@ -57,8 +58,13 @@
     </header>
     <main class="d-flex flex-column align-items-center">
       <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top" id="main-back-img" alt="" />
-      <div class="d-flex justify-content-end avatar-edit-btn mt-3 mt-lg-0 me-2">
-        <button id="edit-profile-btn" class="btn-style z-1">Edit Avatar</button>
+      <div class="button-group-profile">
+        <div class="d-flex justify-content-end avatar-edit-btn my-3 mt-lg-0 me-2">
+          <button class="col-2 btn w-auto p-2 me-md-5 btn-style z-1 position-relative" id="create-new-auction-btn">Create new auction</button>
+        </div>
+        <div class="d-flex justify-content-end avatar-edit-btn mt-3 mt-lg-0 me-2">
+          <button id="edit-profile-btn" class="col-2 btn w-auto p-2 me-md-5 btn-style z-1 position-relative">Edit Avatar</button>
+        </div>
       </div>
       <div id="edit-profile-form" class="m-3 text-center z-1 avatar-edit-form align-items-center">
         <h2>Change avater image</h2>
@@ -66,8 +72,30 @@
           <img class="profile-img m-2 output-img" src="../images/no-img-avaliable.webp" alt="Image display area" id="output-img" />
           <div class="d-flex flex-column gap-2 align-items-center">
             <label for="input-img-url" class="wave-form-lable-fix">Image Url</label>
-            <input type="text" name="input-img-url" id="input-img-url" />
+            <input type="text" name="input-img-url" class="form-control" id="input-img-url" placeholder="Write an image link" />
             <button class="btn-style">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="z-5 position-relative justify-content-center m-3" id="listing-form">
+        <form id="listing-submission">
+          <h2>Start a new auction</h2>
+          <div class="d-grid justify-content-center form-post-container">
+            <div class="d-grid grid-b gap-2 py-2">
+              <label for="listing-title" class="wave-form-lable-fix">Listing Title</label>
+              <input class="form-control" type="text" name="listing-title" id="listing-title" placeholder="Write a title" required />
+              <label for="listing-text" class="wave-form-lable-fix">Listing Description</label>
+              <textarea class="form-control" name="listing-text" id="listing-text" cols="60" rows="3" placeholder="Write a description"></textarea>
+              <label for="listing-tags" class="wave-form-lable-fix">Listing Tags</label>
+              <input class="form-control" type="text" name="listing-tags" id="listing-tags" placeholder="Write a tag" />
+              <div id="new-listing-media-input"></div>
+              <button type="button" class="btn btn-style w-auto px-2" id="add-new-img-input">Add image</button>
+              <img id="edit-img-display" class="listing-form-img w-md-75 output-img" src="../images/no-img-avaliable.webp" alt="Image display area" />
+              <label for="listing-end" class="wave-form-lable-fix">Listing End Date</label>
+              <input class="form-control" type="date" name="listing-end" id="listing-end" required />
+              <!-- placeholder="Select end date" -->
+            </div>
+            <button type="submit" class="btn btn-style px-5 w-25 grid-c">Post</button>
           </div>
         </form>
       </div>

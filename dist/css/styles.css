@@ -12190,6 +12190,7 @@ ul div {
   overflow: hidden;
   height: 125px;
   padding: 0px;
+  max-width: 500px;
 }
 
 .bid-history li {
@@ -12333,6 +12334,15 @@ ul div {
   background-image: none;
   display: none;
   padding-top: 0px;
+}
+
+.specific-listing-main-img {
+  padding-bottom: 20px;
+}
+
+.button-group-profile {
+  align-self: end;
+  padding-right: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */

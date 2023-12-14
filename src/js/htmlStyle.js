@@ -242,8 +242,8 @@ function bidsList(highestBid) {
 
   bidList.className = "d-flex justify-content-evenly col-12 list-group-item gap-5 px-4 pt-2";
   bidInfo.className = "d-flex gap-5 col-10";
-  bid.className = "col-4";
-  bidder.className = "col-6";
+  bid.className = "col-2";
+  bidder.className = "col-8 text-break";
 
   bid.querySelector("h2").innerText = `${highestBid.amount},-`;
   bidder.querySelector("h2").innerText = ` ${highestBid.bidderName}`;
