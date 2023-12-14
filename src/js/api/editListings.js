@@ -32,6 +32,7 @@ function newImgInput() {
     collectionImg[i].addEventListener("input", function () {
       console.log(this.value);
       document.getElementById("edit-img-display").src = this.value;
+      document.getElementById("edit-img-display").style.display = "flex";
     });
   }
 }
