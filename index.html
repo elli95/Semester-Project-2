@@ -85,7 +85,9 @@
             <!-- <img src="" alt="" id="output-img" /> -->
             <!-- </div> -->
             <div class="d-grid grid-b gap-2 py-2">
+              <label for="listing-title" class="wave-form-lable-fix">Listing Title</label>
               <input class="form-control" type="text" name="listing-title" id="listing-title" placeholder="Write a title" required />
+              <label for="listing-text" class="wave-form-lable-fix">Listing Description</label>
               <textarea
                 class="form-control"
                 type="text"
@@ -95,11 +97,12 @@
                 rows="3"
                 placeholder="Write a description"
               ></textarea>
+              <label for="listing-tags" class="wave-form-lable-fix">Listing Tags</label>
               <input class="form-control" type="text" name="listing-tags" id="listing-tags" placeholder="Write a tag" />
-              <!-- <input class="form-control listing-media-input" type="text" name="listing-media" id="listing-media" placeholder="Write an image link" /> -->
               <div id="new-listing-media-input"></div>
               <button type="button" class="btn btn-style w-auto px-2" id="add-new-img-input">Add image</button>
-              <img id="edit-img-display" class="listing-form-img w-md-75" src="" alt="" />
+              <img id="edit-img-display" class="listing-form-img w-md-75 output-img" src="../images/no-img-avaliable.webp" alt="Image display area" />
+              <label for="listing-end" class="wave-form-lable-fix">Listing End Date</label>
               <input class="form-control" type="date" name="listing-end" id="listing-end" placeholder="Select end date" required />
             </div>
             <button type="submit" class="btn btn-style px-5 w-25 grid-c">Post</button>
@@ -118,7 +121,6 @@
       <section class="container">
         <div class="col align-self-center d-flex flex-column">
           <div class="d-flex flex-column align-items-center col col-12 align-self-center">
-            <!-- search -->
             <div class="col-6 d-flex z-1 mt-md-4 search-bar align-self-center">
               <input type="search" class="form-control rounded-start rounded-0" placeholder="Search" id="search-input" />
               <label for="search-input" class="wave-form-lable-fix">Search field</label>
@@ -126,17 +128,6 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </div>
-            <!-- filter -->
-            <!-- <div class="dropdown col-6 d-flex justify-content-center z-1">
-              <button class="btn d-md-none btn-light dropdown-toggle px-5" data-bs-toggle="dropdown" aria-expanded="false">Filter</button>
-              <ul class="dropdown-menu d-md-flex profile-filter-menu">
-                <li class="d-md-flex">
-                  <button class="dropdown-item" id="new-post">Newest</button>
-                  <button class="dropdown-item profile-btn-border" id="old-post">Ending soon</button>
-                  <button class="dropdown-item profile-btn-border" id="popular-post">Popularity</button>
-                </li>
-              </ul>
-            </div> -->
             <div class="dropdown col-6 d-flex justify-content-center z-1">
               <button class="btn btn-light dropdown-toggle px-5 text-white bg-dark d-md-none" data-bs-toggle="dropdown" aria-expanded="false">
                 Filter

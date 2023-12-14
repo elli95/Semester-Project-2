@@ -56,17 +56,6 @@
               <a href="login.html" class="dropdown-item login" id="menu-login">Login</a>
             </li>
           </ul>
-          <!-- <ul class="meny-style dropdown-menu" id="menu">
-            <div id="header-profile" class="justify-content-center"></div>
-            <li class="align-self-center">
-              <a href="../index.html" class="dropdown-item">Home</a>
-              <a href="../about/index.html" class="dropdown-item">About</a>
-              <a href="../about/index.html#contact" class="dropdown-item">Contact</a>
-              <a href="../profile/login.html" class="dropdown-item login" id="menu-login">Login</a>
-              <a href="../profile/index.html" class="dropdown-item" id="profile">Profile</a>
-              <a class="dropdown-item" id="logout">Logout</a>
-            </li>
-          </ul> -->
         </nav>
       </div>
     </header>
@@ -76,8 +65,9 @@
         <h1 class="mt-5">Edit Auction Listing:</h1>
         <form id="listing-update-form" class="m-4">
           <div class="flex-column align-items-center form-group row justify-content-center gap-3 w-100">
-            <!-- <img id="output-img" class="profile-img" src="" alt="" /> -->
+            <label for="listing-title" class="wave-form-lable-fix">Listing Title</label>
             <input class="form-control" type="text" name="listing-title" id="listing-title" placeholder="Write a listing title" required />
+            <label for="listing-description" class="wave-form-lable-fix">Listing description</label>
             <textarea
               class="form-control"
               type="text"
@@ -87,13 +77,11 @@
               rows="3"
               placeholder="Write a new description"
             ></textarea>
+            <label for="listing-tags" class="wave-form-lable-fix">Listing Tags</label>
             <input class="form-control" type="text" name="listing-tags" id="listing-tags" placeholder="Write a listing tag" />
             <div id="listing-media" class="d-flex flex-column mb-2 p-0 gap-3"></div>
-            <!-- <div id="new-listing-media-input"></div> -->
-            <!-- <div> -->
             <button type="button" id="add-new-img-input" class="btn-style w-auto m-2">Add another image</button>
             <img id="edit-img-display" class="listing-form-img w-md-75" src="" alt="" />
-            <!-- </div> -->
             <div class="d-flex justify-content-around m-3">
               <button class="btn btn-success" type="submit">Update</button>
               <button class="btn btn-danger" type="button" id="delete-listing-btn">Delete</button>
@@ -102,13 +90,6 @@
         </form>
       </section>
       <h2 class="errorText w-75 text-center" id="error-message">Error Message Field</h2>
-      <!-- <section class="text-center">
-        <div class="mt-3 pb-3">
-          <h2>Bid History:</h2>
-          <div id="listing-bids" class="bid-history"></div>
-          <button class="show-more px-2">Show all bids</button>
-        </div>
-      </section> -->
     </main>
     <footer>
       <div class="d-flex justify-content-evenly">
