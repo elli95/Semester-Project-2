@@ -12,15 +12,11 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="../dist/css/styles.css" />
     <link rel="stylesheet" href="../dist/css/media.css" />
-    <!-- <script src="../src/js/index.js" defer></script> -->
     <script src="../src/js/api/auth/loginCheck.mjs" type="module"></script>
     <script src="../src/js/api/auth/logout.js" type="module"></script>
     <script src="../src/js/profile/profile.js" type="module"></script>
-    <!-- <script src="../src/js/profile/userAuctionData.js" type="module"></script> -->
-    <!-- <script src="../src/js/search.js" type="module"></script> -->
     <script src="../src/js/api/editInfo.js" type="module"></script>
     <script src="../src/js/profile/profileFilter.js" type="module"></script>
     <script src="../src/js/headerProfile.js" type="module"></script>
@@ -56,17 +52,6 @@
               <a href="login.html" class="dropdown-item login" id="menu-login">Login</a>
             </li>
           </ul>
-          <!-- <ul class="meny-style dropdown-menu" id="menu">
-            <div id="header-profile" class="justify-content-center"></div>
-            <li class="align-self-center">
-              <a href="../index.html" class="dropdown-item">Home</a>
-              <a href="../about/index.html" class="dropdown-item">About</a>
-              <a href="../about/index.html#contact" class="dropdown-item">Contact</a>
-              <a href="login.html" class="dropdown-item login" id="menu-login">Login</a>
-              <a href="index.html" class="dropdown-item" id="profile">Profile</a>
-              <a class="dropdown-item" id="logout">Logout</a>
-            </li>
-          </ul> -->
         </nav>
       </div>
     </header>
@@ -78,16 +63,16 @@
       <div id="edit-profile-form" class="m-3 text-center z-1 avatar-edit-form align-items-center">
         <h2>Change avater image</h2>
         <form id="edit-avatar" class="d-flex flex-column flex-lg-row align-items-center gap-2 p-lg-3">
-          <img class="profile-img m-2" src="" alt="" id="output-img" />
+          <img class="profile-img m-2" src="../images/no-img-avaliable.webp" alt="Image display area" id="output-img" />
           <div class="d-flex flex-column gap-2 align-items-center">
-            <input type="text" id="input-img-url" />
+            <label for="input-img-url" class="wave-form-lable-fix">Image Url</label>
+            <input type="text" name="input-img-url" id="input-img-url" />
             <button class="btn-style">Submit</button>
           </div>
         </form>
       </div>
       <section id="profileData" class="d-flex flex-column profile-info"></section>
 
-      <!-- <div class="d-flex flex-column justify-content-center"> -->
       <h2 class="errorText w-75 text-center" id="error-message">Error Message Field</h2>
       <section class="d-flex flex-column justify-content-center align-items-center profile-listing-data w-100">
         <div class="dropdown col-6 d-flex justify-content-center z-1 pt-3">
@@ -96,7 +81,6 @@
           </button>
           <ul class="dropdown-menu d-md-flex profile-filter-menu w-100 p-0">
             <li class="d-md-flex w-100">
-              <!-- <button class="dropdown-item" id="show-all-filter">Show All</button> -->
               <button class="dropdown-item profile-listing-filter-btn" id="my-listings-filter">My Listings</button>
               <button class="dropdown-item profile-btn-border profile-listing-bids-btn" id="my-bids-filter">Active Bids</button>
               <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="my-wins-filter">My Wins</button>
