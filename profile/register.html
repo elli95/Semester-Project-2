@@ -15,15 +15,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" /> -->
-    l
     <link rel="stylesheet" href="../dist/css/styles.css" />
     <link rel="stylesheet" href="../dist/css/login-register.css" />
     <link rel="stylesheet" href="../dist/css/media.css" />
-    <!-- <link rel="stylesheet" href="../dist/css/login.css" /> -->
-    <!-- <script src="../src/js/index.js" defer></script> -->
-    <script src="../src/js/router.mjs" defer type="module"></script>
-    <script src="../src/js/handlers/user-login.mjs" defer type="module"></script>
+    <script src="../src/js/router.mjs" type="module"></script>
+    <script src="../src/js/handlers/user-login.mjs" type="module"></script>
   </head>
   <body class="min-vh-100 d-flex flex-column justify-content-center">
     <header class="d-flex justify-content-end">
@@ -50,7 +46,9 @@
     <main class="d-flex flex-column justify-content-center align-items-center main-cover-style">
       <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img back-img-list-edit img-top z-1" alt="" />
       <section class="d-flex flex-column z-2 mb-5 align-items-center login-register-section">
-        <a href="../index.html" class="log-reg-logo ps-2 align-self-center">Auction<span class="log-reg-logo-lock">Lock</span></a>
+        <a href="../index.html" class="text-decoration-none text-dark">
+          <h1 class="log-reg-logo ps-2 align-self-center">Auction<span class="log-reg-logo-lock">Lock</span></h1>
+        </a>
         <form class="needs-validation d-flex flex-column align-items-center gap-3" id="signUpForm">
           <div class="d-flex flex-column">
             <label for="name" class="form-label m-0">Name</label>
