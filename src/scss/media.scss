@@ -135,10 +135,19 @@
     position: initial !important;
     background-color: transparent;
     backdrop-filter: none;
-    font-size: 24px;
+    font-size: 20px;
     border: 0;
     transform: none !important;
     padding: 0;
+  }
+
+  ul {
+    display: grid;
+    grid-template: "b c d e f g a";
+  }
+
+  ul div {
+    flex-direction: row;
   }
 
   .meny-style,
@@ -149,7 +158,7 @@
   }
 
   .meny-style li {
-    display: flex;
+    // display: flex;
     flex-direction: row;
   }
 
@@ -286,6 +295,11 @@
 @media (min-width: 1000px) {
   .meny-style {
     gap: 40px;
+    font-size: 24px;
+  }
+
+  .menu-list-style {
+    padding-left: 30px;
   }
 
   .specific-listing {

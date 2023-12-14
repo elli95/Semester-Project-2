@@ -11921,6 +11921,7 @@ footer {
 Header,
 footer {
   background-image: url(../../images/joshua-bartell-6vvIBTvL90A-unsplash.webp);
+  background-color: var(--black-color);
   background-position: center;
   color: var(--white-color);
   background-size: cover;
@@ -11971,6 +11972,10 @@ footer p {
   text-decoration: none;
   justify-content: center;
   align-items: center;
+}
+
+ul div {
+  flex-direction: column;
 }
 
 .searchbar,
@@ -12041,6 +12046,22 @@ footer p {
 
 .grid-c {
   grid-area: c;
+}
+
+.grid-d {
+  grid-area: d;
+}
+
+.grid-e {
+  grid-area: e;
+}
+
+.grid-f {
+  grid-area: f;
+}
+
+.grid-g {
+  grid-area: g;
 }
 
 .register-success {
