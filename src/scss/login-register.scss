@@ -1,0 +1,49 @@
+.login-register-section {
+  background-color: var(--listing-color);
+  padding: 70px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+header .logo {
+  display: none;
+}
+
+.log-reg-logo {
+  font-size: 48px;
+}
+
+.log-reg-logo-lock {
+  font-size: 28px;
+}
+
+label,
+.btn-style,
+h2,
+.register-here {
+  font-size: 24px;
+}
+
+.btn-style {
+  background-color: var(--btn-color);
+  border: solid 2px var(--black-color);
+  color: var(--white-color);
+  width: 125px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  color: var(--white-color);
+  background-color: var(--btn-color);
+}
+
+.register-success {
+  display: none;
+}
+
+footer {
+  bottom: 0;
+  // position: absolute;
+  width: 100%;
+}

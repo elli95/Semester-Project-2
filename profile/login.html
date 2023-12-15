@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="AuctionLock | Log in to bid and post auctions." />
+    <title>AuctionLock | Home page</title>
+    <script src="https://kit.fontawesome.com/b0b0906e7d.js" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../dist/css/styles.css" />
+    <link rel="stylesheet" href="../dist/css/login-register.css" />
+    <link rel="stylesheet" href="../dist/css/media.css" />
+    <script src="../src/js/router.mjs" type="module"></script>
+    <script src="../src/js/handlers/user-login.mjs" type="module"></script>
+  </head>
+  <body class="min-vh-100 d-flex flex-column justify-content-center">
+    <header class="d-flex justify-content-end">
+      <a href="../index.html" class="logo ps-2 align-self-center">Auction<span class="logo-lock">Lock</span></a>
+      <div class="d-flex">
+        <nav class="btn-group">
+          <div class="align-self-center dropdw-btn pe-4" data-bs-toggle="dropdown" aria-expanded="false" role="button" aria-label="Menu button">
+            <i class="fa-solid fa-bars ms-4"></i>
+          </div>
+          <ul class="meny-style dropdown-menu" id="menu">
+            <li class="grid-b">
+              <a href="../index.html" class="dropdown-item">Home</a>
+            </li>
+            <li class="grid-c">
+              <a href="../about/index.html" class="dropdown-item">About</a>
+            </li>
+            <li class="grid-d">
+              <a href="../about/index.html#contact" class="dropdown-item">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="d-flex justify-content-center align-items-center main-cover-style">
+      <img src="../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img back-img-list-edit img-top z-1" alt="" />
+      <section class="d-flex flex-column z-2 mb-5 align-items-center login-register-section">
+        <a href="../index.html" class="text-decoration-none text-dark">
+          <h1 class="log-reg-logo ps-2 align-self-center">Auction<span class="log-reg-logo-lock">Lock</span></h1>
+        </a>
+        <form class="needs-validation d-flex flex-column align-items-center gap-3" id="userLoginForm">
+          <div class="d-flex flex-column">
+            <label for="email" class="form-label m-0">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              class="form-control"
+              placeholder="Email"
+              required
+              pattern="^[\w\-.]+@stud.noroff.no$"
+              title="The email must end with @stud.noroff.no"
+            />
+          </div>
+          <div class="d-flex flex-column">
+            <label for="password" class="form-label m-0">Password</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-control"
+              placeholder="Password"
+              required
+              minlength="8"
+              title="Password must be 8 characters long or longer."
+            />
+          </div>
+          <div class="d-flex flex-column gap-2 p-2">
+            <button class="btn btn-style d-flex align-items-center justify-content-center" type="submit">Login</button>
+          </div>
+          <h2 class="errorText w-75 text-center" id="error-message">Error Message Field</h2>
+        </form>
+        <h2 class="w-75 text-center pt-4">Don't have an account?</h2>
+        <div class="d-flex flex-row">
+          <h2>Register</h2>
+          <a href="register.html" class="h2 text-decoration-none fw-bold ps-2 register-here">here!</a>
+        </div>
+      </section>
+    </main>
+    <footer class="z-1">
+      <div class="d-flex justify-content-evenly">
+        <a href="../about/index.html" class="footer-btn">About</a>
+        <a href="../about/index.html#contact" class="footer-btn">Contact</a>
+      </div>
+      <p class="text-center">© Elise Marie Hogsnes | All rights reserved</p>
+    </footer>
+  </body>
+</html>

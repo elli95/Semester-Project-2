@@ -115,4 +115,4 @@ Information and inspiration with the creation of the codes came from Noroff's cu
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[project-screenshot]: images/
+[project-screenshot]: images/readme-img-semester-project-2.webp

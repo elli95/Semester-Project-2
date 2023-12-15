@@ -1,6 +1,120 @@
+@media (min-width: 500px) {
+  .about-img {
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .about-img img {
+    object-position: center;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 769px) {
+  .profile-filter-menu {
+    position: relative;
+  }
+
+  .profile-filter-menu button {
+    // width: 100px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .profile-listing-filter-btn {
+    background-color: var(--btn-color);
+    color: var(--white-color);
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  .profile-listing-bids-btn,
+  .profile-wins-filter-btn {
+    background-color: var(--listing-color);
+  }
+
+  .profile-wins-filter-btn {
+    border-radius: 0px 5px 5px 0px;
+  }
+
+  .profile-filter-menu button:hover {
+    background-color: var(--listing-color);
+  }
+
+  .profile-btn-border {
+    border-left: solid 2px var(--black-color);
+  }
+}
+
+@media (min-width: 800px) {
+  // .form-post-container {
+  //   grid-template: "a b" "c c";
+  // }
+
+  .profile-filter-menu {
+    margin-top: 20px;
+  }
+}
+
 @media (min-width: 900px) {
+  .menu-list-style {
+    flex-direction: row;
+    margin-right: 10px;
+  }
+
+  .menu-list-style img {
+    margin-left: 10px;
+  }
+
+  .header-profile h2 {
+    font-size: 20px;
+  }
+
+  .header-profile h3 {
+    font-size: 18px;
+  }
+
+  .menu-logged-in {
+    top: 80px;
+  }
+  .menu-logged-out {
+    top: 58px;
+  }
+
+  // footer {
+  //   position: initial;
+  // }
+
+  // login/register
+  .main-cover-style,
+  .back-img-list-edit {
+    background-color: var(--white-color);
+    background-image: url(../../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp);
+    display: flex;
+    // border: 2px solid var(--black-color);
+  }
+
+  .login-register-section {
+    width: 70%;
+    max-width: 1000px;
+    border: 1px solid var(--black-color);
+    filter: drop-shadow(0px 15px 20px var(--black-color));
+  }
+
+  .log-reg-logo {
+    font-size: 90px;
+  }
+
+  .log-reg-logo-lock {
+    font-size: 70px;
+  }
+
+  main {
+    background-size: 35%;
+    padding-top: 80px;
+  }
+
   .logo {
-    padding-right: 40px;
+    padding-right: 10px;
     font-size: 32px;
     color: inherit;
     text-decoration: inherit;
@@ -18,24 +132,237 @@
   }
 
   .meny-style {
+    display: grid;
+    grid-template: "b c d e f g a";
+    justify-content: end;
     position: initial !important;
-    background-color: rgb(114, 248, 141);
-    font-size: 24px;
+    background-color: transparent;
+    backdrop-filter: none;
+    font-size: 20px;
     border: 0;
     transform: none !important;
+    padding: 0;
   }
 
-  .meny-style,
-  .meny-style li,
-  .searchbar,
-  .profile-menu {
+  // ul div {
+  //   flex-direction: row;
+  // }
+
+  // .meny-style,
+  // .searchbar,
+  // .profile-menu {
+  //   display: flex;
+  //   flex-direction: row-reverse;
+  // }
+
+  .meny-style li {
+    // display: flex;
     flex-direction: row;
-    display: flex;
+  }
+
+  .meny-style li a,
+  .header-profile {
+    color: var(--white-color);
   }
 
   .searchbar,
   .searchbar button {
     height: 32px;
     align-self: center;
+  }
+
+  // .img-top
+  .backgroud-img {
+    width: 35%;
+  }
+
+  .about {
+    margin: 2% 5%;
+    border-radius: 10px;
+  }
+
+  .contact-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .contact-section img {
+    margin: 10px 10px 20px 45px;
+    border-radius: 10px;
+    align-self: center;
+    max-width: 45%;
+  }
+
+  .contact-section {
+    flex-direction: row;
+  }
+
+  // .contact {
+  //   flex-direction: row;
+  // justify-content: center;
+  // margin: 10px 45px 20px 45px;
+  // background-color: var(--background-blur-color);
+  // backdrop-filter: blur(4px);
+  // border-radius: 10px;
+  // align-self: center;
+  // min-width: fit-content;
+  // max-width: fit-content;
+  // }
+
+  .contact h2,
+  .contact h3,
+  .contact p {
+    backdrop-filter: blur(0px);
+  }
+
+  .bids-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-info {
+    display: grid !important;
+    grid-template-areas:
+      "b b"
+      "a c";
+    justify-content: center;
+    width: 100%;
+    gap: 10%;
+    padding-top: 30px;
+  }
+
+  .profile-info h1 {
+    text-align: center;
+  }
+
+  // .button-group-profile {
+  //   position: absolute;
+  //   right: -10px;
+  //   padding-right: 0px;
+  // }
+
+  .avatar-edit-form {
+    max-width: 600px;
+  }
+
+  .avatar-edit-btn {
+    padding-top: 40px;
+  }
+
+  .specific-listing-card-style {
+    border: solid 2px var(--black-color);
+    border-radius: 5px;
+    margin-top: 50px;
+  }
+  .specific-listing {
+    display: grid !important;
+    // grid-template: "b a" "b d" "b d" "c d";
+    grid-template: "c b" "c d" "c a";
+    justify-items: center;
+  }
+
+  .specific-info-container {
+    max-width: 80%;
+    padding: 20px;
+  }
+
+  .specific-listing-style {
+    width: 400px;
+  }
+
+  .specific-listing-main-img {
+    border-radius: 10px;
+    padding: 20px 20px 20px 20px;
+    height: 600px;
+    width: 400px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .listing-card h3 {
+    height: 75px;
+  }
+
+  .specific-info-container {
+    min-height: 75px;
+  }
+
+  .propular-now-title {
+    font-size: 48px;
+  }
+
+  .contact-section img {
+    max-height: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .meny-style {
+    gap: 40px;
+    font-size: 24px;
+  }
+
+  .menu-list-style {
+    padding-left: 30px;
+  }
+
+  .specific-listing {
+    width: 950px;
+  }
+
+  .carousel-box {
+    height: 300px;
+  }
+
+  .popular-listing-box-style {
+    max-width: 1000px;
+    height: 300px;
+  }
+
+  .popular-listing-style {
+    // display: grid;
+    grid-template: "b a" "b c";
+    // align-items: center;
+    width: 1000px;
+  }
+
+  .popular-listing-style h2 {
+    font-size: 30px;
+    padding: 40px;
+  }
+
+  .popular-auction-img {
+    height: 250px;
+  }
+
+  .popular-info-container-style {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .about {
+    margin: 2% 15%;
+  }
+
+  .contact-section img {
+    max-width: 35%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .specific-listing {
+    width: 1200px;
+  }
+
+  // .button-group-profile {
+  //   right: 100px;
+  // }
+}
+
+@media (min-width: 1640px) {
+  .profile-cards-section {
+    width: 90%;
   }
 }

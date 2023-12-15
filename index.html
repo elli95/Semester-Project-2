@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AuctionLock |" />
+    <meta name="description" content="AuctionLock | Come and bid on various items for sale, or create your own auction." />
     <title>AuctionLock | Home page</title>
     <script src="https://kit.fontawesome.com/b0b0906e7d.js" crossorigin="anonymous"></script>
     <script
@@ -12,49 +12,141 @@
       crossorigin="anonymous"
       defer
     ></script>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="dist/css/styles.css" />
     <link rel="stylesheet" href="dist/css/media.css" />
-    <script src="src/js/index.js" defer></script>
+    <script src="src/js/api/auth/loginCheck.mjs" type="module"></script>
+    <script src="src/js/api/auth/logout.js" type="module"></script>
+    <script src="src/js/index.js" type="module"></script>
+    <script src="src/js/api/postListing.js" type="module"></script>
+    <script src="src/js/searchFilter/filter.js" type="module"></script>
+    <script src="src/js/searchFilter/search.js" type="module"></script>
+    <script src="src/js/dateCountdown.js" type="module"></script>
+    <script src="src/js/headerProfile.js" type="module"></script>
   </head>
   <body>
     <header class="d-flex justify-content-between">
-      <a href="index.html" class="logo ps-2 align-self-center">Auction<span class="logo-lock">Lock</span></a>
-      <section class="d-flex gap-3">
-        <nav class="btn-group">
-          <div class="align-self-center dropdw-btn pe-4" data-bs-toggle="dropdown" aria-expanded="false" role="button">
+      <a href="../index.html" class="logo ps-2 align-self-center">Auction<span class="logo-lock">Lock</span></a>
+      <div class="d-flex w-100">
+        <nav class="btn-group w-100 justify-content-end">
+          <div class="align-self-center dropdw-btn pe-4" data-bs-toggle="dropdown" aria-expanded="false" role="button" aria-label="Menu button">
             <i class="fa-solid fa-bars ms-4"></i>
           </div>
-          <ul class="meny-style dropdown-menu" id="menu">
-            <li>
-              <a href="index.html" class="dropdown-item">Home</a>
-              <!-- <a href="profile/index.html" class="dropdown-item">Profile</a> -->
-              <a href="about/index.html" class="dropdown-item">About</a>
-              <a href="about/index.html" class="dropdown-item">Contact</a>
-              <a href="#" class="dropdown-item login">Login</a>
+          <ul class="meny-style dropdown-menu gap-1" id="menu">
+            <li class="grid-a">
+              <div id="header-profile" class="justify-content-center"></div>
+            </li>
+            <li class="align-self-center grid-b">
+              <a href="./index.html" class="dropdown-item">Home</a>
+            </li>
+            <li class="align-self-center grid-c">
+              <a href="./about/index.html" class="dropdown-item">About</a>
+            </li>
+            <li class="align-self-center grid-d">
+              <a href="./about/index.html#contact" class="dropdown-item">Contact</a>
+            </li>
+            <li class="align-self-center grid-f">
+              <a href="./profile/index.html" class="dropdown-item" id="profile">Profile</a>
+            </li>
+            <li class="align-self-center grid-g">
+              <a class="dropdown-item" id="logout">Logout</a>
+            </li>
+            <li class="align-self-center grid-e">
+              <a href="./profile/login.html" class="dropdown-item login" id="menu-login">Login</a>
             </li>
           </ul>
         </nav>
-        <div class="searchbar">
-          <input type="search" class="form-control rounded-start rounded-0" placeholder="Search" id="search-input" />
-          <label for="search-input" class="wave-form-lable-fix">Search field</label>
-          <button class="btn bg-secondary p-1 px-2 rounded-end rounded-0" type="submit" aria-label="Search submit button">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
-          <!-- <label for="magnifying-glass" class="wave-form-lable-fix">Magnifying glass</label> -->
+      </div>
+    </header>
+    <main class="d-flex flex-column align-items-center">
+      <img src="./images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top" id="main-back-img" alt="" />
+      <div class="d-flex justify-content-end avatar-edit-btn my-3 mt-lg-0 me-2 align-self-end">
+        <button class="col-2 btn w-auto p-2 me-md-5 btn-style z-1 position-relative" id="create-new-auction-btn">Create new auction</button>
+      </div>
+      <section class="z-5 position-relative justify-content-center" id="listing-form">
+        <form id="listing-submission">
+          <h2>Start a new auction</h2>
+          <div class="d-grid justify-content-center form-post-container">
+            <div class="d-grid grid-b gap-2 py-2">
+              <label for="listing-title" class="wave-form-lable-fix">Listing Title</label>
+              <input class="form-control" type="text" name="listing-title" id="listing-title" maxlength="280" placeholder="Write a title" required />
+              <label for="listing-text" class="wave-form-lable-fix">Listing Description</label>
+              <textarea
+                class="form-control"
+                name="listing-text"
+                id="listing-text"
+                cols="60"
+                rows="3"
+                maxlength="280"
+                placeholder="Write a description"
+              ></textarea>
+              <label for="listing-tags" class="wave-form-lable-fix">Listing Tags</label>
+              <input class="form-control" type="text" name="listing-tags" id="listing-tags" maxlength="24" placeholder="Write a tag" />
+              <div id="new-listing-media-input"></div>
+              <button type="button" class="btn btn-style w-auto px-2" id="add-new-img-input">Add image</button>
+              <img id="edit-img-display" class="listing-form-img w-md-75 output-img" src="../images/no-img-avaliable.webp" alt="Image display area" />
+              <label for="listing-end" class="wave-form-lable-fix">Listing End Date</label>
+              <input class="form-control" type="date" name="listing-end" id="listing-end" required />
+            </div>
+            <button type="submit" class="btn btn-style px-5 w-25 grid-c">Post</button>
+          </div>
+        </form>
+      </section>
+      <div class="d-flex justify-content-center">
+        <h2 class="errorText w-75 text-center" id="error-message">Error Message Field</h2>
+      </div>
+      <section class="col-12">
+        <div class="d-flex justify-content-center">
+          <h1 class="text-center z-1 position-relative propular-now-title">Popular Auctions</h1>
         </div>
-        <div class="profile-menu align-self-center pe-4">
-          <a href="#" class="dropdown-item">Login</a>
+        <div id="popularCarusel" class="carousel slide carousel-box" data-bs-ride="carousel">
+          <div class="container row m-0 listing-list z-5 position-relative justify-content-center carousel-inner" id="ending-soon"></div>
         </div>
       </section>
-    </header>
-    <main>
-      <h1>Hello world!</h1>
+      <section class="container pt-3">
+        <div class="col align-self-center d-flex flex-column">
+          <div class="d-flex flex-column align-items-center col col-12 align-self-center gap-2">
+            <div class="col-6 d-flex z-1 mt-md-4 search-bar align-self-center">
+              <input type="search" class="form-control rounded-start rounded-0" placeholder="Search" id="search-input" />
+              <label for="search-input" class="wave-form-lable-fix text-light">Search field</label>
+              <button class="btn p-1 px-3 rounded-end rounded-0" type="submit" aria-label="Search submit button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+            <div class="dropdown col-6 d-flex justify-content-center z-1">
+              <button class="btn btn-light dropdown-toggle px-5 text-white bg-dark d-md-none" data-bs-toggle="dropdown" aria-expanded="false">
+                Filter
+              </button>
+              <ul class="dropdown-menu d-md-flex profile-filter-menu w-100 p-0">
+                <li class="d-md-flex w-100">
+                  <button class="dropdown-item profile-listing-filter-btn" id="new-listing">Newest</button>
+                  <button class="dropdown-item profile-btn-border profile-listing-bids-btn" id="ending-soon-filter">Ending Soon</button>
+                  <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="popular-listing">Popularity</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="container d-flex flex-column m-0 listing-list">
+        <div class="row align-items-center align-self-center justify-content-center col-12" id="listingsSection"></div>
+        <div class="align-self-center my-4">
+          <button class="btn-style" id="show-more-listing-btn">Show more</button>
+          <button class="btn-style show-less-btn" id="show-less-listing-btn">Show less</button>
+          <button type="button" class="btn-style" id="show-more-ending-btn">Show more</button>
+          <button type="button" class="btn-style show-less-btn" id="show-less-ending-btn">Show less</button>
+          <button type="button" class="btn-style" id="show-more-popular-btn">Show more</button>
+          <button type="button" class="btn-style" id="show-less-popular-btn">Show more</button>
+        </div>
+      </section>
     </main>
     <footer>
       <div class="d-flex justify-content-evenly">
-        <h2 class="footer-btn">About</h2>
-        <h2 class="footer-btn">Contact</h2>
+        <a href="./about/index.html" class="footer-btn">About</a>
+        <a href="./about/index.html#contact" class="footer-btn">Contact</a>
       </div>
       <p class="text-center">© Elise Marie Hogsnes | All rights reserved</p>
     </footer>

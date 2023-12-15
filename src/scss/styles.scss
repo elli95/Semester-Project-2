@@ -1,4 +1,5 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variables.scss";
 
 /* reference: https://blog.pope.tech/2020/02/28/missing-form-label-search/ */
 .wave-form-lable-fix {
@@ -8,19 +9,76 @@
   top: auto;
 }
 
-Header,
-footer {
-  background-color: #72f88d;
-  padding: 5px 0px 5px 0px;
+.errorText {
+  display: none;
 }
 
-.logo {
+img {
+  width: 100%;
+  height: 100%;
+  max-height: 500px;
+  max-width: 500px;
+  object-fit: cover;
+  object-position: center;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+main {
+  background-image: url(../../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp);
+  background-position-y: bottom;
+  background-size: 60%;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  padding-top: 40px;
+  min-height: 100vh;
+  font-family: "Rubik", sans-serif;
+}
+
+header {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+footer {
+  z-index: 1;
+  position: relative;
+}
+
+Header,
+footer {
+  background-image: url(../../images/joshua-bartell-6vvIBTvL90A-unsplash.webp);
+  background-color: var(--black-color);
+  background-position: center;
+  color: var(--white-color);
+  background-size: cover;
+  // background-color: var(--header-footer-color);
+  padding: 5px 0px 5px 0px;
+  font-family: "Rubik", sans-serif;
+}
+
+.logo,
+.log-reg-logo {
   font-size: 24px;
   color: inherit;
   text-decoration: inherit;
 }
 
 .logo-lock,
+.log-reg-logo-lock,
 footer p {
   font-size: 15px;
 }
@@ -32,6 +90,9 @@ footer p {
 .dropdw-btn,
 .footer-btn {
   font-size: 24px;
+  text-decoration: none;
+  color: var(--white-color);
+  padding-top: 10px;
 }
 
 .meny-style {
@@ -42,21 +103,425 @@ footer p {
   left: 0;
   overflow-x: hidden;
   border-radius: 0px;
-  background-color: rgba(135, 135, 135, 0.75);
+  background-color: var(--gray-blur-color);
   backdrop-filter: blur(5px);
   text-align: center;
   transform: translate3d(0px, 45px, 0px) !important;
-  //   transition: 1s;
   font-size: 24px;
+  padding-top: 20%;
+}
+
+.menu-list-style {
+  flex-direction: column-reverse;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+}
+
+ul div {
+  flex-direction: column;
 }
 
 .searchbar,
-.profile-menu {
+.profile-menu,
+#profile,
+#logout,
+#listing-form,
+.avatar-edit-form {
   display: none;
 }
 
-footer p {
+// .backgroud-img {
+//   position: absolute;
+// }
+
+// .img-top
+.backgroud-img {
+  position: absolute;
+  max-height: initial;
+  max-width: initial;
+  transform: rotate(180deg);
+  top: 46px;
+  left: 0px;
+  width: 60%;
+  height: auto;
+}
+
+.header-profile-img,
+.profile-img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.header-profile-img {
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  clip-path: ellipse(30px 30px at 30px 30px);
+}
+
+.output-img {
+  display: none;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  clip-path: ellipse(80px 80px at 80px 80px);
+}
+
+.bids,
+.list {
+  width: fit-content;
+}
+
+.listing-list {
+  max-width: inherit;
+}
+
+.about footer p {
   font-style: italic;
   font-weight: lighter;
   margin: 0;
+}
+
+.grid-a {
+  grid-area: a;
+}
+
+.grid-b {
+  grid-area: b;
+}
+
+.grid-c {
+  grid-area: c;
+}
+
+.grid-d {
+  grid-area: d;
+}
+
+.grid-e {
+  grid-area: e;
+}
+
+.grid-f {
+  grid-area: f;
+}
+
+.grid-g {
+  grid-area: g;
+}
+
+.register-success {
+  text-align: center;
+  padding: 0px 25px 55px;
+}
+
+#listing-form {
+  display: none;
+  background-color: var(--listing-color);
+  width: 90%;
+  max-width: 1100px;
+  padding: 10px;
+  border: solid 2px var(--black-color);
+  border-radius: 10px;
+}
+
+.form-post-container {
+  grid-template: "a" "b" "c";
+}
+
+#listing-submission {
+  text-align: center;
+}
+
+.form-post-container button {
+  justify-self: center;
+}
+
+.post-img img {
+  max-height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.listing-card {
+  border: solid 2px var(--black-color);
+  border-radius: 0;
+  max-width: 330px;
+}
+
+.listing-card,
+#specific-listing,
+.backgroud-col {
+  background-color: var(--listing-color);
+}
+
+.listing-card h2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 32px;
+}
+
+.auction-img {
+  height: 200px;
+}
+
+.listing-form-img {
+  justify-self: center;
+}
+
+.listing-card h3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+
+.listing-card h3,
+.specific-info-container {
+  background-color: var(--white-color);
+  border-radius: 7px;
+  padding: 6px 10px;
+  width: 100%;
+  height: 65px;
+}
+
+.listing-card h4 {
+  height: 38px;
+}
+
+.specific-info-container {
+  height: auto;
+}
+
+.listing-card h4,
+.endTime {
+  background-color: var(--date-color);
+}
+
+.listing-card h5,
+.listing-card h4,
+.endTime {
+  color: var(--white-color);
+  padding: 5px;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+.listing-card h5,
+.bid-btn {
+  color: var(--white-color);
+  background-color: var(--black-color);
+}
+
+.input-style {
+  background-color: var(--white-color);
+}
+
+.input-style,
+.bid-btn {
+  border: solid 2px var(--black-color);
+  border-radius: 7px;
+  height: 33px;
+  width: 250px;
+}
+
+.bid-history {
+  overflow: hidden;
+  height: 125px;
+  padding: 0px;
+  max-width: 500px;
+}
+
+.bid-history li {
+  border-bottom: solid 1px var(--black-color);
+}
+
+.show-more {
+  text-decoration: underline;
+  border: none;
+  background-color: var(--background-blur-color);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+#listing-submission {
+  width: 80%;
+}
+
+.avatar-edit-btn button {
+  width: 170px;
+}
+
+.avatar-edit-form {
+  flex-direction: column;
+  border: solid 2px var(--black-color);
+  border-radius: 10px;
+  width: 80%;
+  padding: 10px;
+  background-color: var(--listing-color);
+}
+
+.avatar-edit-form {
+  width: 90%;
+  max-width: 400px;
+}
+
+.profile-listing-data h2 {
+  border-bottom: solid 2px var(--black-color);
+  width: 90%;
+}
+
+.search-bar {
+  height: 40px;
+  background-color: var(--btn-color);
+  // color: white;
+  border-radius: 10px;
+}
+
+.search-bar button {
+  color: var(--white-color);
+}
+
+.btn-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--btn-color);
+  border: solid 2px var(--black-color);
+  color: var(--white-color);
+  width: 125px;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.profile-listing-btn-style {
+  width: 70px;
+  height: 45px;
+  border-radius: 7px;
+  margin-top: 5px;
+}
+
+.btn:hover {
+  color: var(--white-color);
+  background-color: var(--btn-color);
+}
+
+.propular-now-title {
+  background-color: var(--background-blur-color);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+  font-size: 38px;
+  text-decoration: underline;
+}
+
+.show-less-btn {
+  display: none;
+}
+
+.countdownBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  background-color: var(--date-color);
+}
+
+.countdownBox h2,
+.countdownBox h3 {
+  margin: 0;
+  background-color: var(--date-color);
+  color: var(--white-color);
+  font-size: 15px;
+}
+
+.profile-container {
+  background-color: var(--white-color);
+}
+
+.specific-listing-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specific-img-collection {
+  flex-wrap: wrap;
+  max-width: 500px;
+}
+
+.specific-img-collection img {
+  object-position: center;
+  object-fit: fill;
+  width: 100px;
+  height: 80px;
+  padding-top: 0px;
+  border-radius: 10px;
+  padding: 20px 20px 20px 20px;
+}
+
+.search-bar input,
+.edit-listing {
+  border: 2px solid var(--black-color);
+}
+
+.main-cover-style,
+.back-img-list-edit {
+  background-color: var(--listing-color);
+  background-image: none;
+  display: none;
+  padding-top: 0px;
+}
+
+.specific-listing-main-img {
+  padding-bottom: 20px;
+}
+
+.button-group-profile {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.carousel-box {
+  overflow: hidden;
+  height: 525px;
+}
+
+.popular-listing-box-style {
+  background-color: var(--listing-color);
+  border: solid 2px var(--black-color);
+  max-width: 90%;
+  height: 525px;
+  margin: 0;
+  padding: 20px;
+}
+
+.popular-listing-style {
+  display: grid;
+  grid-template: "a" "b" "c";
+  align-items: center;
+  // width: 1000px;
+}
+
+.popular-listing-style h2 {
+  font-size: 30px;
+  padding: 40px;
+}
+
+.popular-auction-img {
+  display: flex;
+  justify-content: center;
+  height: 250px;
+}
+
+.popular-info-container-style {
+  width: 90%;
+  justify-self: center;
 }
