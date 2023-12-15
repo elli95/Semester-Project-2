@@ -9,7 +9,15 @@ const userDataUrl = `${API_PROFILE_URL}/${user}` + "/media";
 const editAvatar = document.querySelector("#edit-avatar");
 const inputImgUrl = document.querySelector("#input-img-url");
 editAvatar.addEventListener("submit", editProfileAvatar);
-inputImgUrl.addEventListener("input", imgOutput);
+
+inputImgUrl.addEventListener("input", ShowTestAvatar);
+inputImgUrl.addEventListener("click", ShowTestAvatar);
+
+function ShowTestAvatar() {
+  const value = inputImgUrl.value.toLowerCase();
+  document.getElementById("output-img").src = value;
+  document.getElementById("output-img").style.display = "flex";
+}
 
 async function editProfileAvatar() {
   event.preventDefault();
@@ -25,10 +33,4 @@ async function editProfileAvatar() {
   } catch (error) {
     console.log(error);
   }
-}
-
-function imgOutput() {
-  const value = inputImgUrl.value.toLowerCase();
-  document.getElementById("output-img").src = value;
-  document.getElementById("output-img").style.display = "flex";
 }

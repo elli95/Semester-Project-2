@@ -12,7 +12,7 @@ const path = location.pathname;
 function userLogout() {
   deleteThisLocalStorage("token");
   deleteThisLocalStorage("profile");
-  if (path === "/profile/index.html") {
+  if (path === "/profile/index.html" || path === "/profile/edit-listing.html") {
     window.location.replace("/");
   }
   isUserLogedIn();

@@ -22,7 +22,7 @@ async function apiData(postUrl, method, post) {
 
     return data;
   } catch (error) {
-    // event.preventDefault();
+    event.preventDefault();
     console.log(error);
     errorMessage.innerText = "";
     errorMessage.innerText = "There was an error: " + error;

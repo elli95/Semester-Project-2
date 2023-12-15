@@ -1,6 +1,7 @@
 import { API_LISTINGS_URL, listingId } from "../api/constant-api.mjs";
 import { apiData } from "../api/apiCall.mjs";
 import { listingEdit } from "../htmlStyle.js";
+import { ShowTestImage } from "../showTestImg.mjs";
 
 const listingDataUrl = `${API_LISTINGS_URL}/${listingId}`;
 
@@ -29,13 +30,16 @@ function newImgInput() {
 
   const collectionImg = document.querySelectorAll(".listing-media-input");
   for (let i = 0; i < collectionImg.length; i++) {
-    collectionImg[i].addEventListener("input", function () {
-      console.log(this.value);
-      document.getElementById("edit-img-display").src = this.value;
-      document.getElementById("edit-img-display").style.display = "flex";
-    });
+    collectionImg[i].addEventListener("click", ShowTestImage);
+    collectionImg[i].addEventListener("input", ShowTestImage);
   }
 }
+
+// export function ShowTestImage() {
+//   console.log(this.value);
+//   document.getElementById("edit-img-display").src = this.value;
+//   document.getElementById("edit-img-display").style.display = "flex";
+// }
 
 async function getListingData(listingDataUrl, data) {
   try {

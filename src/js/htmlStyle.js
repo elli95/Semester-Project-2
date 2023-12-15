@@ -1,4 +1,5 @@
 import { getCountdownDate, getPreciseCountdownDate } from "./dateCountdown.js";
+import { ShowTestImage } from "./showTestImg.mjs";
 
 function imgCheckError() {
   const imgCheck = document.querySelectorAll(".img-check");
@@ -525,6 +526,12 @@ function listingEdit(listingData) {
       const mediaUrl = document.createElement("input");
       mediaUrl.className = "form-control listing-media-input";
       mediaSection.append(mediaUrl);
+
+      const collectionImg = document.querySelectorAll(".listing-media-input");
+      for (let i = 0; i < collectionImg.length; i++) {
+        collectionImg[i].addEventListener("click", ShowTestImage);
+        collectionImg[i].addEventListener("input", ShowTestImage);
+      }
 
       mediaUrl.value = `${img}`;
     });

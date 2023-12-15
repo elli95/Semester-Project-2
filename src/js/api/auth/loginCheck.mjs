@@ -12,8 +12,9 @@ function isUserLogedIn() {
       document.getElementById("place-bid").style.display = "flex";
     } else if (path === `/` || path === `/index.html`) {
       document.getElementById("create-new-auction-btn").style.display = "flex";
-      document.getElementById("header-profile").style.display = "flex";
-    } else if (path === `/about/index.html`) {
+    }
+
+    if (path !== `/profile/login.html` || path !== `/profile/register.html`) {
       document.getElementById("header-profile").style.display = "flex";
     }
   } else {
@@ -27,8 +28,9 @@ function isUserLogedIn() {
     } else if (path === `/` || path === `/index.html`) {
       console.log("hello");
       document.getElementById("create-new-auction-btn").style.display = "none";
-      document.getElementById("header-profile").style.display = "none";
-    } else if (path === `/about/index.html`) {
+    }
+
+    if (path !== `/profile/login.html` || path !== `/profile/register.html`) {
       document.getElementById("header-profile").style.display = "none";
     }
   }

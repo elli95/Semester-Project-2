@@ -42,12 +42,15 @@ function newImgInput() {
 
   const collectionImg = document.querySelectorAll(".listing-media-input");
   for (let i = 0; i < collectionImg.length; i++) {
-    collectionImg[i].addEventListener("input", function () {
-      console.log(this.value);
-      document.getElementById("edit-img-display").src = this.value;
-      document.getElementById("edit-img-display").style.display = "flex";
-    });
+    collectionImg[i].addEventListener("click", ShowTestImage);
+    collectionImg[i].addEventListener("input", ShowTestImage);
   }
+}
+
+export function ShowTestImage() {
+  console.log(this.value);
+  document.getElementById("edit-img-display").src = this.value;
+  document.getElementById("edit-img-display").style.display = "flex";
 }
 
 async function listingSubmission(event) {
@@ -66,7 +69,11 @@ async function listingSubmission(event) {
 
     const listingInfo = await apiData(listingUrl, method, listingData);
 
-    window.location.replace("../../../index.html");
+    if (location.pathname === `/` || location.pathname === `/index.html`) {
+      window.location.replace("../../../index.html");
+    } else {
+      window.location.replace("../../../profile/index.html");
+    }
   } catch (error) {
     console.log(error);
   }

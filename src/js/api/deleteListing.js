@@ -8,9 +8,12 @@ deleteListingBtn.addEventListener("click", deleteListing);
 
 async function deleteListing() {
   try {
-    const method = "DELETE";
-    const listingDeletion = await apiData(listingDataUrl, method);
-    window.location.replace("../../../profile/index.html");
+    const confirmDeletion = confirm("Are you sure you want to delete this listing?");
+    if (confirmDeletion) {
+      // window.location.replace("../../../profile/index.html");
+      const method = "DELETE";
+      const listingDeletion = await apiData(listingDataUrl, method);
+    }
   } catch (error) {
     console.log(error);
   }
