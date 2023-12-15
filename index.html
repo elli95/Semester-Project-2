@@ -74,7 +74,7 @@
     </header>
     <main class="d-flex flex-column align-items-center">
       <img src="./images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top" id="main-back-img" alt="" />
-      <div class="d-flex justify-content-end avatar-edit-btn my-3 mt-lg-0 me-2">
+      <div class="d-flex justify-content-end avatar-edit-btn my-3 mt-lg-0 me-2 align-self-end">
         <button class="col-2 btn w-auto p-2 me-md-5 btn-style z-1 position-relative" id="create-new-auction-btn">Create new auction</button>
       </div>
       <section class="z-5 position-relative justify-content-center" id="listing-form">
@@ -83,9 +83,17 @@
           <div class="d-grid justify-content-center form-post-container">
             <div class="d-grid grid-b gap-2 py-2">
               <label for="listing-title" class="wave-form-lable-fix">Listing Title</label>
-              <input class="form-control" type="text" name="listing-title" id="listing-title" placeholder="Write a title" required />
+              <input class="form-control" type="text" name="listing-title" id="listing-title" maxlength="280" placeholder="Write a title" required />
               <label for="listing-text" class="wave-form-lable-fix">Listing Description</label>
-              <textarea class="form-control" name="listing-text" id="listing-text" cols="60" rows="3" placeholder="Write a description"></textarea>
+              <textarea
+                class="form-control"
+                name="listing-text"
+                id="listing-text"
+                cols="60"
+                rows="3"
+                maxlength="280"
+                placeholder="Write a description"
+              ></textarea>
               <label for="listing-tags" class="wave-form-lable-fix">Listing Tags</label>
               <input class="form-control" type="text" name="listing-tags" id="listing-tags" placeholder="Write a tag" />
               <div id="new-listing-media-input"></div>
@@ -127,8 +135,8 @@
                   <button class="dropdown-item profile-listing-filter-btn" id="new-listing">Newest</button>
                   <button class="dropdown-item profile-btn-border profile-listing-bids-btn" id="ending-soon-filter">Ending Soon</button>
                   <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="popular-listing">Popularity</button>
-                  <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="low-price">Lowest Price</button>
-                  <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="high-price">Highest Price</button>
+                  <!-- <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="low-price">Lowest Price</button>
+                  <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="high-price">Highest Price</button> -->
                 </li>
               </ul>
             </div>
