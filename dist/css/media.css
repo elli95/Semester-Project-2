@@ -217,6 +217,24 @@
   .specific-listing {
     width: 950px;
   }
+  .popular-listing-box-style {
+    max-width: 1000px;
+    height: 300px;
+  }
+  .popular-listing-style {
+    grid-template: "b a" "b c";
+    width: 1000px;
+  }
+  .popular-listing-style h2 {
+    font-size: 30px;
+    padding: 40px;
+  }
+  .popular-auction-img {
+    height: 250px;
+  }
+  .popular-info-container-style {
+    width: 80%;
+  }
 }
 @media (min-width: 1200px) {
   .about {
