@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AuctionLock | Log in to bid and post auctions." />
+    <meta name="description" content="AuctionLock | Register to bid and post auctions." />
     <title>AuctionLock | Home page</title>
     <script src="https://kit.fontawesome.com/b0b0906e7d.js" crossorigin="anonymous"></script>
     <script
@@ -73,8 +73,8 @@
               class="form-control"
               placeholder="Email"
               required
-              pattern="^[\w\-.]+@(stud.)?noroff.no$"
-              title="The email must end with @stud.noroff.no or @noroff.no"
+              pattern="^[\w\-.]+@stud.noroff.no$"
+              title="The email must end with @stud.noroff.no"
             />
           </div>
           <div class="d-flex flex-column">
@@ -94,7 +94,7 @@
             <label for="avatar" class="form-label m-0">Profiler avatar</label>
             <input type="url" class="form-control" name="avatar" id="avatar" placeholder="https://avatar.img.com" />
           </div>
-          <div class="d-flex flex-column gap-2 p-2">
+          <div class="d-flex flex-column gap-2 p-2 align-items-center">
             <button class="btn btn-style d-flex align-items-center justify-content-center" type="submit">Sign up</button>
           </div>
           <h2 class="errorText w-75 text-center" id="error-message">Error Message Field</h2>
@@ -108,8 +108,8 @@
     </main>
     <footer class="z-2">
       <div class="d-flex justify-content-evenly">
-        <h2 class="footer-btn">About</h2>
-        <h2 class="footer-btn">Contact</h2>
+        <a href="../about/index.html" class="footer-btn">About</a>
+        <a href="../about/index.html#contact" class="footer-btn">Contact</a>
       </div>
       <p class="text-center">© Elise Marie Hogsnes | All rights reserved</p>
     </footer>
