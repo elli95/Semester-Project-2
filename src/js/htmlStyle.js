@@ -1,6 +1,9 @@
 import { getCountdownDate, getPreciseCountdownDate } from "./dateCountdown.js";
 import { ShowTestImage } from "./showTestImg.mjs";
 
+/**
+ * Checks if an image gets an error, and replaces it with a placeholder image where it is true.
+ */
 function imgCheckError() {
   const imgCheck = document.querySelectorAll(".img-check");
   for (let i = 0; i < imgCheck.length; i++) {
@@ -10,6 +13,11 @@ function imgCheckError() {
   }
 }
 
+/**
+ * Shows a limited number (4) listings in the popular part of the html page.
+ * @param {string} listing Data from api call
+ * @param {string} activListing The ID of the first result in the api call
+ */
 function popularListingsCard(listing, activListing) {
   const currentDate = new Date();
   const listingDate = new Date(listing.endsAt);
@@ -86,6 +94,10 @@ function popularListingsCard(listing, activListing) {
   imgCheckError();
 }
 
+/**
+ * Shows listings on the index html page.
+ * @param {string} listing Data from api call
+ */
 function listingsCard(listing) {
   const currentDate = new Date();
   const listingDate = new Date(listing.endsAt);
@@ -155,6 +167,10 @@ function listingsCard(listing) {
   imgCheckError();
 }
 
+/**
+ * Shows listings on the listing/index html page.
+ * @param {string} listingData Data from api call
+ */
 function listingPage(listingData) {
   const currentDate = new Date();
   const listingDate = new Date(listingData.endsAt);
@@ -289,6 +305,10 @@ function listingPage(listingData) {
   imgCheckError();
 }
 
+/**
+ * Shows user credits on the listing/index html page.
+ * @param {string} userData Data from api call
+ */
 function userCredits(userData) {
   const creditSection = document.getElementById("user-credits");
   const bidSection = document.createElement("div");
@@ -302,6 +322,10 @@ function userCredits(userData) {
   bidSection.querySelector("h2").innerText = `Your credit: ${userData.credits}`;
 }
 
+/**
+ * Shows user bids on the listing/index html page.
+ * @param {string} highestBid Data from api call
+ */
 function bidsList(highestBid) {
   const bidSection = document.getElementById("listing-bids");
   const bidList = document.createElement("li");
@@ -327,6 +351,10 @@ function bidsList(highestBid) {
   bidder.querySelector("h2").innerText = ` ${highestBid.bidderName}`;
 }
 
+/**
+ * Shows user data in the header on the html page.
+ * @param {string} userData Data from api call
+ */
 function userHeader(userData) {
   const headerProfileSection = document.getElementById("header-profile");
   const headerProfileLink = document.createElement("a");
@@ -354,6 +382,11 @@ function userHeader(userData) {
   imgCheckError();
 }
 
+/**
+ * Shows user data on profile page.
+ * @param {string} userData Userdata from api call
+ * @param {string} lastBid Filterd user bids data from api call
+ */
 function profileStyle(userData, lastBid) {
   const profileData = document.getElementById("profileData");
   const imgContainer = document.createElement("div");
@@ -413,6 +446,10 @@ function profileStyle(userData, lastBid) {
   imgCheckError();
 }
 
+/**
+ * Shows a uses listings data on profile page.
+ * @param {string} listing Data from api call
+ */
 function profileListingsCard(listing) {
   const currentDate = new Date();
   const listingDate = new Date(listing.endsAt);
@@ -492,6 +529,10 @@ function profileListingsCard(listing) {
   imgCheckError();
 }
 
+/**
+ * Shows active listings a user has bid on, on profile page.
+ * @param {string} bidData Data from api call
+ */
 function profileBidCard(bidData) {
   const currentDate = new Date();
   const listingDate = new Date(bidData.listing.endsAt);
@@ -548,6 +589,10 @@ function profileBidCard(bidData) {
   imgCheckError();
 }
 
+/**
+ * Shows a users wins, on profile page.
+ * @param {string} winData Data from api call
+ */
 function profileWinCard(winData) {
   const listingsSection = document.getElementById("listingsSection");
   const cardContainer = document.createElement("div");
@@ -591,6 +636,10 @@ function profileWinCard(winData) {
   imgCheckError();
 }
 
+/**
+ * Shows a user's listing shown in input ready to be edited.
+ * @param {string} listingData Data from api call
+ */
 function listingEdit(listingData) {
   const mediaSection = document.getElementById("listing-media");
 
@@ -615,6 +664,9 @@ function listingEdit(listingData) {
   }
 }
 
+/**
+ * Hides buttons unless other functions give them a different value
+ */
 function diplayButtonStyle() {
   document.querySelector("#show-more-listing-btn").style.display = "none";
   document.querySelector("#show-less-listing-btn").style.display = "none";

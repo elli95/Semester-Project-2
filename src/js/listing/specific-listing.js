@@ -8,6 +8,12 @@ const method = "GET";
 const listingDataUrl = `${API_LISTINGS_URL}/${listingId}` + "?_seller=true&_bids=true";
 const profileDataUrl = `${API_PROFILE_URL}/`;
 
+/**
+ * Retrieves listing data based on ID and displays it in html.
+ * @param {string} listingDataUrl Api url
+ * @param {string} method Method (GET) used in the api call
+ * @param {string} data The data that is retrieved
+ */
 async function getListingData(listingDataUrl, method, data) {
   try {
     const listingData = await apiData(listingDataUrl, method, data);
@@ -19,6 +25,12 @@ async function getListingData(listingDataUrl, method, data) {
 
 getListingData(listingDataUrl, method);
 
+/**
+ * Retrieves a user data and displays it in html.
+ * @param {string} profileDataUrl Api url
+ * @param {string} method Method (GET) used in the api call
+ * @param {string} data The data that is retrieved
+ */
 async function getProfileData(profileDataUrl, method, data) {
   if (getLocalStorage("profile")) {
     const user = getLocalStorage("profile").name;

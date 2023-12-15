@@ -9,6 +9,9 @@ const listingDataUrl = `${API_LISTINGS_URL}/${listingId}` + "?_seller=true&_bids
 const showMoreBtn = document.querySelector(".show-more");
 showMoreBtn.addEventListener("click", showMoreBids);
 
+/**
+ * Shows/hides the rest of the bids if there were enough to win them.
+ */
 function showMoreBids() {
   if (showMoreBtn.innerText === "Show all bids") {
     document.getElementById("listing-bids").style.height = "fit-content";
@@ -19,6 +22,12 @@ function showMoreBids() {
   }
 }
 
+/**
+ * Retrieves and sorts bids from the api based on the listing ID, and limits the amount displayed based on the bid amount.
+ * @param {string} listingDataUrl Api url
+ * @param {string} method Method (GET) used in the api call
+ * @param {string} data The data that is retrieved
+ */
 async function getBidData(listingDataUrl, method, data) {
   try {
     const listingData = await apiData(listingDataUrl, method, data);

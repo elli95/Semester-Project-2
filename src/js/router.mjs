@@ -1,9 +1,9 @@
-/**
- * This router helps to decide which file to call based on path name
- */
 import { signupFormListener } from "./handlers/user-register.mjs";
 import { userLoginFormListener } from "./handlers/user-login.mjs";
 
+/**
+ * Selects which function to run based on the web page.
+ */
 const path = location.pathname;
 if (path === "/profile/login.html" || location.pathname === "/profile/login") {
   userLoginFormListener();
