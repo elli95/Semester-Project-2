@@ -10,10 +10,87 @@ function imgCheckError() {
   }
 }
 
-function listingsCard(listing, listingsSection) {
+function popularListingsCard(listing, activListing) {
   const currentDate = new Date();
   const listingDate = new Date(listing.endsAt);
 
+  const listingsSection = document.getElementById("ending-soon");
+  const cardContainer = document.createElement("div");
+  const listingLink = document.createElement("a");
+  const auctionContainer = document.createElement("div");
+  const listingTitle = document.createElement("h2");
+  const imgContainer = document.createElement("div");
+  const listingImg = document.createElement("img");
+  const infoContainer = document.createElement("div");
+  const listingDescription = document.createElement("h3");
+  const listingEndTime = document.createElement("h4");
+  const listingHighestBid = document.createElement("h5");
+
+  listingsSection.append(cardContainer);
+  cardContainer.append(listingLink);
+  listingLink.append(auctionContainer);
+  auctionContainer.append(listingTitle);
+  auctionContainer.append(imgContainer);
+  imgContainer.append(listingImg);
+  auctionContainer.append(infoContainer);
+  infoContainer.append(listingDescription);
+  infoContainer.append(listingEndTime);
+  infoContainer.append(listingHighestBid);
+
+  console.log("activListing", activListing);
+
+  cardContainer.className = "carousel-item listing-card popular-listing-box-style";
+  cardContainer.setAttribute("data-bs-interval", "10000");
+  if (activListing === listing.id) {
+    cardContainer.className = "carousel-item active listing-card popular-listing-box-style";
+  }
+  listingLink.className = "text-decoration-none text-reset ";
+  auctionContainer.className = "d-grid popular-listing-style";
+  listingTitle.className = "fw-bold text-center ps-3 pt-2 grid-a";
+  imgContainer.className = "popular-auction-img grid-b";
+  infoContainer.className = "d-flex flex-column align-items-center m-2 grid-c popular-info-container-style";
+  listingImg.className = "img-check";
+
+  cardContainer.querySelector("a").href = `/listing/index.html?id=${listing.id}`;
+  auctionContainer.querySelector("h2").innerText = `${listing.title}`;
+
+  if (listing.media.length > 0) {
+    imgContainer.querySelector("img").src = `${listing.media[0]}`;
+    imgContainer.querySelector("img").alt = `Product image`;
+  } else {
+    imgContainer.querySelector("img").src = `/images/no-img-avaliable.webp`;
+    imgContainer.querySelector("img").alt = `No product image available`;
+  }
+
+  infoContainer.querySelector("h3").innerText = `${listing.description}`;
+
+  if (currentDate < listingDate) {
+    const endData = "h4";
+    getCountdownDate(listing, infoContainer, endData);
+  } else {
+    infoContainer.querySelector("h4").innerText = `Ended`;
+  }
+
+  if (listing.bids.length === 0) {
+    infoContainer.querySelector("h5").innerText = "Be the first to bid";
+  } else {
+    let bidValues = [];
+    Object.values(listing.bids).forEach(function (data) {
+      const bids = data.amount;
+      bidValues.push(bids);
+      const highestBid = Math.max(...bidValues);
+      infoContainer.querySelector("h5").innerText = `Highest bid: ${highestBid}`;
+    });
+  }
+
+  imgCheckError();
+}
+
+function listingsCard(listing) {
+  const currentDate = new Date();
+  const listingDate = new Date(listing.endsAt);
+
+  const listingsSection = document.getElementById("listingsSection");
   const cardContainer = document.createElement("div");
   const listingLink = document.createElement("a");
   const auctionContainer = document.createElement("div");
@@ -538,8 +615,18 @@ function listingEdit(listingData) {
   }
 }
 
+function diplayButtonStyle() {
+  document.querySelector("#show-more-listing-btn").style.display = "none";
+  document.querySelector("#show-less-listing-btn").style.display = "none";
+  document.querySelector("#show-more-ending-btn").style.display = "none";
+  document.querySelector("#show-less-ending-btn").style.display = "none";
+  document.querySelector("#show-more-popular-btn").style.display = "none";
+  document.querySelector("#show-less-popular-btn").style.display = "none";
+}
+
 export {
   listingsCard,
+  popularListingsCard,
   listingPage,
   userCredits,
   bidsList,
@@ -549,4 +636,5 @@ export {
   profileBidCard,
   profileWinCard,
   listingEdit,
+  diplayButtonStyle,
 };

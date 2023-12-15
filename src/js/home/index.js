@@ -1,6 +1,7 @@
 import { API_LISTINGS_SORT_BIDS_URL } from "../api/constant-api.mjs";
 import { apiData } from "../api/apiCall.mjs";
-import { listingsCard } from "../htmlStyle.js";
+import { popularListingsCard, listingsCard } from "../htmlStyle.js";
+import { diplayButtonStyle } from "../htmlStyle.js";
 
 const method = "GET";
 const listingsDataUrl = `${API_LISTINGS_SORT_BIDS_URL}`;
@@ -14,11 +15,13 @@ async function getPopulareNow(listingsDataUrl, method, data) {
   try {
     const listingsData = await apiData(listingsDataUrl, method, data);
     const result = listingsData.sort((a, b) => b._count.bids - a._count.bids);
+
     const limitedResult = result.slice(0, 4);
 
+    const activListing = limitedResult[0].id;
+
     Object.values(limitedResult).forEach(function (listing) {
-      const listingsSection = document.getElementById("ending-soon");
-      listingsCard(listing, listingsSection);
+      popularListingsCard(listing, activListing);
     });
   } catch (error) {
     console.log(error);
@@ -34,15 +37,14 @@ getListingData(listingsDataUrl, method);
 
 async function getLimitedListingData() {
   try {
+    diplayButtonStyle();
+    document.querySelector("#show-more-listing-btn").style.display = "block";
+
     const listingsData = await apiData(listingsDataUrl + "&limit=18", method);
     document.getElementById("listingsSection").innerText = "";
 
-    document.querySelector("#show-more-listing-btn").style.display = "block";
-    document.querySelector("#show-less-listing-btn").style.display = "none";
-
     Object.values(listingsData).forEach(function (listing) {
-      const listingsSection = document.getElementById("listingsSection");
-      listingsCard(listing, listingsSection);
+      listingsCard(listing);
     });
   } catch (error) {
     console.log(error);
@@ -51,17 +53,18 @@ async function getLimitedListingData() {
 
 async function showAllListing() {
   try {
+    diplayButtonStyle();
+    document.querySelector("#show-less-listing-btn").style.display = "block";
+
     const listingsData = await apiData(listingsDataUrl, method);
     document.getElementById("listingsSection").innerText = "";
 
-    document.querySelector("#show-more-listing-btn").style.display = "none";
-    document.querySelector("#show-less-listing-btn").style.display = "block";
-
     Object.values(listingsData).forEach(function (listing) {
-      const listingsSection = document.getElementById("listingsSection");
-      listingsCard(listing, listingsSection);
+      listingsCard(listing);
     });
   } catch (error) {
     console.log(error);
   }
 }
+
+export { getLimitedListingData };

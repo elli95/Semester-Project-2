@@ -95,13 +95,12 @@
                 placeholder="Write a description"
               ></textarea>
               <label for="listing-tags" class="wave-form-lable-fix">Listing Tags</label>
-              <input class="form-control" type="text" name="listing-tags" id="listing-tags" placeholder="Write a tag" />
+              <input class="form-control" type="text" name="listing-tags" id="listing-tags" maxlength="24" placeholder="Write a tag" />
               <div id="new-listing-media-input"></div>
               <button type="button" class="btn btn-style w-auto px-2" id="add-new-img-input">Add image</button>
               <img id="edit-img-display" class="listing-form-img w-md-75 output-img" src="../images/no-img-avaliable.webp" alt="Image display area" />
               <label for="listing-end" class="wave-form-lable-fix">Listing End Date</label>
               <input class="form-control" type="date" name="listing-end" id="listing-end" required />
-              <!-- placeholder="Select end date" -->
             </div>
             <button type="submit" class="btn btn-style px-5 w-25 grid-c">Post</button>
           </div>
@@ -114,11 +113,13 @@
         <div class="d-flex justify-content-center">
           <h1 class="text-center z-1 position-relative propular-now-title">Popular Auctions</h1>
         </div>
-        <div class="container row m-0 listing-list z-5 position-relative justify-content-center" id="ending-soon"></div>
+        <div id="popularCarusel" class="carousel slide" data-bs-ride="carousel">
+          <div class="container row m-0 listing-list z-5 position-relative justify-content-center carousel-inner" id="ending-soon"></div>
+        </div>
       </section>
-      <section class="container">
+      <section class="container pt-3">
         <div class="col align-self-center d-flex flex-column">
-          <div class="d-flex flex-column align-items-center col col-12 align-self-center">
+          <div class="d-flex flex-column align-items-center col col-12 align-self-center gap-2">
             <div class="col-6 d-flex z-1 mt-md-4 search-bar align-self-center">
               <input type="search" class="form-control rounded-start rounded-0" placeholder="Search" id="search-input" />
               <label for="search-input" class="wave-form-lable-fix text-light">Search field</label>
@@ -135,8 +136,6 @@
                   <button class="dropdown-item profile-listing-filter-btn" id="new-listing">Newest</button>
                   <button class="dropdown-item profile-btn-border profile-listing-bids-btn" id="ending-soon-filter">Ending Soon</button>
                   <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="popular-listing">Popularity</button>
-                  <!-- <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="low-price">Lowest Price</button>
-                  <button class="dropdown-item profile-btn-border profile-wins-filter-btn" id="high-price">Highest Price</button> -->
                 </li>
               </ul>
             </div>
@@ -149,6 +148,10 @@
         <div class="align-self-center my-4">
           <button class="btn-style" id="show-more-listing-btn">Show more</button>
           <button class="btn-style show-less-btn" id="show-less-listing-btn">Show less</button>
+          <button type="button" class="btn-style" id="show-more-ending-btn">Show more</button>
+          <button type="button" class="btn-style show-less-btn" id="show-less-ending-btn">Show less</button>
+          <button type="button" class="btn-style" id="show-more-popular-btn">Show more</button>
+          <button type="button" class="btn-style" id="show-less-popular-btn">Show more</button>
         </div>
       </section>
     </main>

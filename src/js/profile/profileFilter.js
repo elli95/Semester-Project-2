@@ -19,12 +19,10 @@ myWinsFilter.addEventListener("click", myWins);
 
 async function myListings() {
   try {
+    profileFilterMenyStyle();
     document.getElementById("my-listings-filter").style.color = "var(--white-color)";
     document.getElementById("my-listings-filter").style.backgroundColor = "var(--btn-color)";
-    document.getElementById("my-bids-filter").style.color = "var(--black-color)";
-    document.getElementById("my-bids-filter").style.backgroundColor = "var(--listing-color)";
-    document.getElementById("my-wins-filter").style.color = "var(--black-color)";
-    document.getElementById("my-wins-filter").style.backgroundColor = "var(--listing-color)";
+
     document.getElementById("listingsSection").innerText = "";
 
     getProfileListingData(userDataUrl, method);
@@ -35,16 +33,13 @@ async function myListings() {
 
 async function myBids() {
   try {
+    profileFilterMenyStyle();
+    document.getElementById("my-bids-filter").style.color = "var(--white-color)";
+    document.getElementById("my-bids-filter").style.backgroundColor = "var(--btn-color)";
+
     const userBids = await apiData(userDataUrl + urlEnd, method);
 
     const lastBid = userBids.filter((obj, index) => userBids.findIndex((bid) => bid.listing.id === obj.listing.id) === index);
-
-    document.getElementById("my-listings-filter").style.color = "var(--black-color)";
-    document.getElementById("my-listings-filter").style.backgroundColor = "var(--listing-color)";
-    document.getElementById("my-bids-filter").style.color = "var(--white-color)";
-    document.getElementById("my-bids-filter").style.backgroundColor = "var(--btn-color)";
-    document.getElementById("my-wins-filter").style.color = "var(--black-color)";
-    document.getElementById("my-wins-filter").style.backgroundColor = "var(--listing-color)";
     document.getElementById("listingsSection").innerText = "";
 
     Object.values(lastBid).forEach(function (bidData) {
@@ -62,18 +57,15 @@ async function myBids() {
 
 async function myWins() {
   try {
+    profileFilterMenyStyle();
+    document.getElementById("my-wins-filter").style.color = "var(--white-color)";
+    document.getElementById("my-wins-filter").style.backgroundColor = "var(--btn-color)";
+
     const userData = await apiData(userDataUrl, method);
     const userBids = await apiData(userDataUrl + urlEnd, method);
 
     const myWins = userData.wins;
     const auctionWins = userBids.filter((bids) => myWins.includes(bids.listing.id));
-
-    document.getElementById("my-listings-filter").style.color = "var(--black-color)";
-    document.getElementById("my-listings-filter").style.backgroundColor = "var(--listing-color)";
-    document.getElementById("my-bids-filter").style.color = "var(--black-color)";
-    document.getElementById("my-bids-filter").style.backgroundColor = "var(--listing-color)";
-    document.getElementById("my-wins-filter").style.color = "var(--white-color)";
-    document.getElementById("my-wins-filter").style.backgroundColor = "var(--btn-color)";
     document.getElementById("listingsSection").innerText = "";
 
     Object.values(auctionWins).forEach(function (winData) {
@@ -82,4 +74,13 @@ async function myWins() {
   } catch (error) {
     console.log(error);
   }
+}
+
+function profileFilterMenyStyle() {
+  document.getElementById("my-listings-filter").style.color = "var(--black-color)";
+  document.getElementById("my-listings-filter").style.backgroundColor = "var(--listing-color)";
+  document.getElementById("my-bids-filter").style.color = "var(--black-color)";
+  document.getElementById("my-bids-filter").style.backgroundColor = "var(--listing-color)";
+  document.getElementById("my-wins-filter").style.color = "var(--black-color)";
+  document.getElementById("my-wins-filter").style.backgroundColor = "var(--listing-color)";
 }
