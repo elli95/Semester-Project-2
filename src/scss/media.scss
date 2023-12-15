@@ -236,18 +236,18 @@
     text-align: center;
   }
 
-  .button-group-profile {
-    position: absolute;
-    right: -10px;
-    padding-right: 0px;
-  }
+  // .button-group-profile {
+  //   position: absolute;
+  //   right: -10px;
+  //   padding-right: 0px;
+  // }
 
   .avatar-edit-form {
     max-width: 600px;
   }
 
   .avatar-edit-btn {
-    padding-top: 15px;
+    padding-top: 40px;
   }
 
   .specific-listing-card-style {
@@ -311,11 +311,11 @@
     width: 950px;
   }
 
-  .button-group-profile {
-    right: 20px;
-    padding-right: 20px;
-    top: 100px;
-  }
+  // .button-group-profile {
+  //   right: 20px;
+  //   padding-right: 20px;
+  //   top: 100px;
+  // }
 }
 
 @media (min-width: 1200px) {
@@ -333,9 +333,9 @@
     width: 1200px;
   }
 
-  .button-group-profile {
-    right: 100px;
-  }
+  // .button-group-profile {
+  //   right: 100px;
+  // }
 }
 
 @media (min-width: 1640px) {
