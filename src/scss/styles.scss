@@ -486,6 +486,11 @@ ul div {
   justify-content: center;
 }
 
+.carousel-box {
+  overflow: hidden;
+  height: 525px;
+}
+
 .popular-listing-box-style {
   background-color: var(--listing-color);
   border: solid 2px var(--black-color);
