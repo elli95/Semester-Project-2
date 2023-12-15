@@ -1,7 +1,7 @@
-import { API_LISTINGS_URL, listingId } from "../api/constant-api.mjs";
-import { apiData } from "../api/apiCall.mjs";
-import { listingEdit } from "../htmlStyle.js";
-import { ShowTestImage } from "../showTestImg.mjs";
+import { API_LISTINGS_URL, listingId } from "../constant-api.mjs";
+import { apiData } from "../apiCall.mjs";
+import { listingEdit } from "../../htmlStyle.js";
+import { ShowTestImage } from "../../showTestImg.mjs";
 
 const listingDataUrl = `${API_LISTINGS_URL}/${listingId}`;
 

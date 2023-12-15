@@ -1,7 +1,7 @@
-import { API_LISTINGS_URL, API_PROFILE_URL, listingId } from "./api/constant-api.mjs";
-import { getLocalStorage } from "./localStorage.mjs";
-import { apiData } from "./api/apiCall.mjs";
-import { listingPage, userCredits } from "./htmlStyle.js";
+import { API_LISTINGS_URL, API_PROFILE_URL, listingId } from "../api/constant-api.mjs";
+import { getLocalStorage } from "../localStorage.mjs";
+import { apiData } from "../api/apiCall.mjs";
+import { listingPage, userCredits } from "../htmlStyle.js";
 
 const method = "GET";
 

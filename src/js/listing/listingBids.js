@@ -1,6 +1,6 @@
-import { API_LISTINGS_URL, listingId } from "./api/constant-api.mjs";
-import { apiData } from "./api/apiCall.mjs";
-import { bidsList } from "./htmlStyle.js";
+import { API_LISTINGS_URL, listingId } from "../api/constant-api.mjs";
+import { apiData } from "../api/apiCall.mjs";
+import { bidsList } from "../htmlStyle.js";
 
 const method = "GET";
 

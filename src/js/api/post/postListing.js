@@ -1,5 +1,5 @@
-import { API_LISTINGS_URL } from "./constant-api.mjs";
-import { apiData } from "./apiCall.mjs";
+import { API_LISTINGS_URL } from "../constant-api.mjs";
+import { apiData } from "../apiCall.mjs";
 
 const listingUrl = `${API_LISTINGS_URL}`;
 

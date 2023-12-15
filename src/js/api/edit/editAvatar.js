@@ -1,6 +1,6 @@
-import { API_PROFILE_URL } from "../api/constant-api.mjs";
-import { apiData } from "../api/apiCall.mjs";
-import { getLocalStorage } from "../localStorage.mjs";
+import { API_PROFILE_URL } from "../constant-api.mjs";
+import { apiData } from "../apiCall.mjs";
+import { getLocalStorage } from "../../localStorage.mjs";
 
 const method = "PUT";
 const user = getLocalStorage("profile").name;
