@@ -2,7 +2,7 @@ import { API_LISTINGS_URL } from "../api/constant-api.mjs";
 import { apiData } from "../api/apiCall.mjs";
 import { listingsCard } from "../htmlStyle.js";
 import { diplayButtonStyle } from "../htmlStyle.js";
-import { getLimitedListingData } from "./index.js";
+import { getLimitedListingData } from "../index.js";
 
 const method = "GET";
 const listingsDataUrl = `${API_LISTINGS_URL}` + "?_bids=true&sort=created";

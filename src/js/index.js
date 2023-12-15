@@ -1,7 +1,6 @@
-import { API_LISTINGS_SORT_BIDS_URL } from "../api/constant-api.mjs";
-import { apiData } from "../api/apiCall.mjs";
-import { popularListingsCard, listingsCard } from "../htmlStyle.js";
-import { diplayButtonStyle } from "../htmlStyle.js";
+import { API_LISTINGS_SORT_BIDS_URL } from "./api/constant-api.mjs";
+import { apiData } from "./api/apiCall.mjs";
+import { popularListingsCard, listingsCard, diplayButtonStyle } from "./htmlStyle.js";
 
 const method = "GET";
 const listingsDataUrl = `${API_LISTINGS_SORT_BIDS_URL}`;
