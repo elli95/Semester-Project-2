@@ -25,24 +25,25 @@ showMoreEndingBtn.addEventListener("click", getAllEndingFilter);
 showLessPopularBtn.addEventListener("click", getLimitedPopularFilter);
 showMorePopularBtn.addEventListener("click", getAllPopularFilter);
 
+/**
+ * It calls a different function to get and display new listings.
+ * And changes the colors of the filter menu.
+ */
 async function newFilter() {
   try {
     filterMenuStyle();
     document.getElementById("new-listing").style.color = "var(--white-color)";
     document.getElementById("new-listing").style.backgroundColor = "var(--btn-color)";
     getLimitedListingData();
-    // diplayButtonStyle();
-    // document.querySelector("#show-more-listing-btn").style.display = "block";
-
-    // const listingData = await apiData(listingsDataUrl + "&limit=18", method);
-    // const result = listingData.sort((a, b) => new Date(b.created) - new Date(a.created));
-
-    // printFilterResult(result);
   } catch (error) {
     console.log(error);
   }
 }
 
+/**
+ * It shows a limited amount (18) of the API values sorted by ending time, but not yet ended.
+ * And changes the colors of the filter menu.
+ */
 async function getLimitedEndingFilter() {
   try {
     filterMenuStyle();
@@ -71,6 +72,9 @@ async function getLimitedEndingFilter() {
   }
 }
 
+/**
+ * It shows all the api values sorted by ending time, but not yet ended.
+ */
 async function getAllEndingFilter() {
   try {
     diplayButtonStyle();
@@ -92,6 +96,10 @@ async function getAllEndingFilter() {
   }
 }
 
+/**
+ * It shows a limited amount (18) of the API values sorted by popularity/amount of bids.
+ * And changes the colors of the filter menu.
+ */
 async function getLimitedPopularFilter() {
   try {
     filterMenuStyle();
@@ -111,6 +119,9 @@ async function getLimitedPopularFilter() {
   }
 }
 
+/**
+ * It shows all the api values sorted by popularity/amount of bids
+ */
 async function getAllPopularFilter() {
   try {
     diplayButtonStyle();
@@ -125,6 +136,10 @@ async function getAllPopularFilter() {
   }
 }
 
+/**
+ * It displays the result it gets on the html page.
+ * @param {string} result api data from the function which calls this.
+ */
 function printFilterResult(result) {
   document.getElementById("listingsSection").innerText = "";
   Object.values(result).forEach(function (listing) {
@@ -133,6 +148,9 @@ function printFilterResult(result) {
   });
 }
 
+/**
+ * It selects colors for filter fields, unless other functions give a different value.
+ */
 function filterMenuStyle() {
   document.getElementById("new-listing").style.color = "var(--black-color)";
   document.getElementById("new-listing").style.backgroundColor = "var(--listing-color)";
