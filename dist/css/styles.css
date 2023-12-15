@@ -12209,8 +12209,8 @@ ul div {
   width: 80%;
 }
 
-.avatar-edit-btn {
-  width: 98%;
+.avatar-edit-btn button {
+  width: 170px;
 }
 
 .avatar-edit-form {
@@ -12341,8 +12341,8 @@ ul div {
 }
 
 .button-group-profile {
-  align-self: end;
-  padding-right: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
