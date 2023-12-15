@@ -311,11 +311,30 @@
     width: 950px;
   }
 
-  // .button-group-profile {
-  //   right: 20px;
-  //   padding-right: 20px;
-  //   top: 100px;
-  // }
+  .popular-listing-box-style {
+    max-width: 1000px;
+    height: 300px;
+  }
+
+  .popular-listing-style {
+    // display: grid;
+    grid-template: "b a" "b c";
+    // align-items: center;
+    width: 1000px;
+  }
+
+  .popular-listing-style h2 {
+    font-size: 30px;
+    padding: 40px;
+  }
+
+  .popular-auction-img {
+    height: 250px;
+  }
+
+  .popular-info-container-style {
+    width: 80%;
+  }
 }
 
 @media (min-width: 1200px) {
