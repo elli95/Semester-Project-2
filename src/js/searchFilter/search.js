@@ -11,14 +11,15 @@ if (location.pathname === `/` || location.pathname === `/index.html`) {
   searchField.addEventListener("input", listingSearch);
 }
 
+/**
+ * It retrieves api data, filters data based on query input and displays it on the html page.
+ */
 async function listingSearch() {
   try {
     const auctionListings = await apiData(listingsDataUrl, method);
     const value = searchField.value.toLowerCase();
-    console.log(value);
 
     let result = auctionListings.filter((inputText) => inputText.title.toLowerCase().includes(value));
-    // || inputText.tags.toLowerCase().includes(value));
 
     document.getElementById("listingsSection").innerText = "";
     Object.values(result).forEach(function (listing) {

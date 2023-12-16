@@ -17,6 +17,10 @@ myBidsFilter.addEventListener("click", myBids);
 myListingsFilter.addEventListener("click", myListings);
 myWinsFilter.addEventListener("click", myWins);
 
+/**
+ * It shows all thee users listings.
+ * And changes the colors of the filter menu.
+ */
 async function myListings() {
   try {
     profileFilterMenyStyle();
@@ -31,6 +35,10 @@ async function myListings() {
   }
 }
 
+/**
+ * It shows all active listings that the user has a bid on.
+ * And changes the colors of the filter menu.
+ */
 async function myBids() {
   try {
     profileFilterMenyStyle();
@@ -55,6 +63,10 @@ async function myBids() {
   }
 }
 
+/**
+ * It shows a users wins.
+ * And changes the colors of the filter menu.
+ */
 async function myWins() {
   try {
     profileFilterMenyStyle();
@@ -76,6 +88,9 @@ async function myWins() {
   }
 }
 
+/**
+ * It selects colors for filter fields, unless other functions give a different value.
+ */
 function profileFilterMenyStyle() {
   document.getElementById("my-listings-filter").style.color = "var(--black-color)";
   document.getElementById("my-listings-filter").style.backgroundColor = "var(--listing-color)";

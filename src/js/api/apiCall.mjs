@@ -2,11 +2,18 @@ import { authToken } from "./tokenFetch.mjs";
 
 const errorMessage = document.querySelector("#error-message");
 
-async function apiData(postUrl, method, post) {
+/**
+ * Retrieves api data based on data from functions that uses this function.
+ * @param {string} apiUrl Api url
+ * @param {string} method Method used in the api call
+ * @param {string} data The data that is retrieved
+ * @returns {string}
+ */
+async function apiData(apiUrl, method, apiData) {
   try {
-    const response = await authToken(postUrl, {
+    const response = await authToken(apiUrl, {
       method,
-      body: JSON.stringify(post),
+      body: JSON.stringify(apiData),
     });
 
     const data = await response.json();

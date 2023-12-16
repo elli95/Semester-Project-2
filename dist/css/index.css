@@ -1,0 +1,63 @@
+.propular-now-title {
+  background-color: var(--background-blur-color);
+  backdrop-filter: blur(4px);
+  border-radius: 10px;
+  width: fit-content;
+  padding: 10px;
+  font-size: 38px;
+  text-decoration: underline;
+}
+
+.carousel-box {
+  overflow: hidden;
+  height: 525px;
+}
+
+.popular-listing-box-style {
+  background-color: var(--listing-color);
+  border: solid 2px var(--black-color);
+  max-width: 90%;
+  height: 525px;
+  margin: 0;
+  padding: 20px;
+}
+
+.popular-listing-style {
+  display: grid;
+  grid-template: "a" "b" "c";
+  align-items: center;
+}
+
+.popular-listing-style h2 {
+  font-size: 30px;
+  padding: 40px;
+}
+
+.popular-auction-img {
+  display: flex;
+  justify-content: center;
+  height: 250px;
+}
+
+.popular-info-container-style {
+  width: 90%;
+  justify-self: center;
+}
+
+.search-bar {
+  height: 40px;
+  background-color: var(--btn-color);
+  border-radius: 10px;
+  width: 80%;
+  max-width: 700px;
+}
+
+.search-bar input {
+  border: 2px solid var(--black-color);
+}
+
+.search-bar button {
+  color: var(--white-color);
+}
+
+/*# sourceMappingURL=index.css.map */

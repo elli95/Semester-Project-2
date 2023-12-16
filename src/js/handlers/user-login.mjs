@@ -1,12 +1,11 @@
-/**
- * This function collects the data from a form (login) at submit
- */
-
 import { userLogin } from "../api/auth/login.mjs";
 
 // Referense https://www.youtube.com/watch?v=rLAGHFr8bvU JavaScript 2 Course Assignment - Social Media API
 
-function userLoginFormListener() {
+/**
+ * This function retrieves data from the login form when submitting.
+ */
+function loginListener() {
   const userLoginForm = document.querySelector("#userLoginForm");
   if (userLoginForm) {
     userLoginForm.addEventListener("submit", (event) => {
@@ -18,4 +17,4 @@ function userLoginFormListener() {
     });
   }
 }
-export { userLoginFormListener };
+export { loginListener };

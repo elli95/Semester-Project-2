@@ -4,13 +4,10 @@ import { setLocalStorage } from "../../localStorage.mjs";
 const method = "POST";
 const errorMessage = document.querySelector("#error-message");
 
-console.log(API_LOGIN_URL);
-
 /**
- * This function logs in a user
- * @param {string} profile User data of those who log in
+ * Logs a user in
+ * @param {string} profile Profile data from the user
  */
-
 async function userLogin(profile) {
   const userLoginUrl = API_LOGIN_URL;
   const body = JSON.stringify(profile);

@@ -10,6 +10,12 @@ const showLessListingBtn = document.querySelector("#show-less-listing-btn");
 showMoreListingBtn.addEventListener("click", showAllListing);
 showLessListingBtn.addEventListener("click", getLimitedListingData);
 
+/**
+ * Retrieves a limited amount of api data, based on popularity (most bids)
+ * @param {string} listingsDataUrl Api url
+ * @param {string} method Method (GET) used in the api call
+ * @param {string} data The data that is retrieved
+ */
 async function getPopulareNow(listingsDataUrl, method, data) {
   try {
     const listingsData = await apiData(listingsDataUrl, method, data);
@@ -28,12 +34,20 @@ async function getPopulareNow(listingsDataUrl, method, data) {
 }
 getPopulareNow(listingsDataUrl, method);
 
+/**
+ * Calls function and retrieves/displays listing data.
+ * @param {string} listingsDataUrl Api url
+ * @param {string} method Method (GET) used in the api call
+ */
 function getListingData(listingsDataUrl, method) {
   getLimitedListingData(listingsDataUrl, method);
 }
 
 getListingData(listingsDataUrl, method);
 
+/**
+ * Show limited entries (Possibly from button click) based on api call
+ */
 async function getLimitedListingData() {
   try {
     diplayButtonStyle();
@@ -50,6 +64,9 @@ async function getLimitedListingData() {
   }
 }
 
+/**
+ * Show all entries when you click the button based on api call
+ */
 async function showAllListing() {
   try {
     diplayButtonStyle();

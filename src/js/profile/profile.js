@@ -9,6 +9,10 @@ const userDataUrl = `${API_PROFILE_URL}/${user}`;
 
 const editProfileBtn = document.querySelector("#edit-profile-btn");
 const editProfileForm = document.querySelector("#edit-profile-form");
+
+/**
+ * Listens after button clicks to then either show or hide avatar edit field.
+ */
 editProfileBtn.addEventListener("click", function () {
   if (editProfileForm.style.display === "" || editProfileForm.style.display === "none") {
     editProfileForm.style.display = "flex";
@@ -17,7 +21,13 @@ editProfileBtn.addEventListener("click", function () {
   }
 });
 
-export async function getProfileData(userDataUrl, method, data) {
+/**
+ * Retrieves a user data and displays it in html.
+ * @param {string} userDataUrl Api url
+ * @param {string} method Method (GET) used in the api call
+ * @param {string} data The data that is retrieved
+ */
+async function getProfileData(userDataUrl, method, data) {
   try {
     const userData = await apiData(userDataUrl, method, data);
     const userBids = await apiData(userDataUrl + "/bids?_listings=true", method, data);
@@ -32,7 +42,12 @@ export async function getProfileData(userDataUrl, method, data) {
 
 getProfileData(userDataUrl, method);
 
-export async function getProfileListingData(userDataUrl, method) {
+/**
+ * Retrieves a user's own listings and displays them in html.
+ * @param {string} userDataUrl Api url
+ * @param {string} method Method (GET) used in the api call
+ */
+async function getProfileListingData(userDataUrl, method) {
   try {
     const listingData = await apiData(userDataUrl + "/listings?_bids=true", method);
 
@@ -45,3 +60,5 @@ export async function getProfileListingData(userDataUrl, method) {
 }
 
 getProfileListingData(userDataUrl, method);
+
+export { getProfileListingData };

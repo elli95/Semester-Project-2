@@ -1,5 +1,11 @@
 // Refrence: How to create a countdown timer using JavaScript "https://www.educative.io/answers/how-to-create-a-countdown-timer-using-javascript"
 
+/**
+ * Finds and displays a listings date/time left based on today's date minus the list's end date.
+ * @param {string} listing Listing data for one listing.
+ * @param {string} infoContainer The location where the time should be displayed on the html page.
+ * @param {string} endData Html tags used.
+ */
 function getCountdownDate(listing, infoContainer, endData) {
   try {
     setInterval(function () {
@@ -19,6 +25,15 @@ function getCountdownDate(listing, infoContainer, endData) {
   }
 }
 
+/**
+ * Finds and displays a listings date/time left based on today's date minus the list's end date.
+ * @param {string} listing Listing data for one listing.
+ * @param {string} daysSection The location where days should be displayed on the html page.
+ * @param {string} hoursSection The location where hours should be displayed on the html page.
+ * @param {string} minSection The location where minutes should be displayed on the html page.
+ * @param {string} secSection The location where seconds should be displayed on the html page.
+ * @param {string} endData Html tags used.
+ */
 function getPreciseCountdownDate(listing, daysSection, hoursSection, minSection, secSection, endData) {
   try {
     setInterval(function () {

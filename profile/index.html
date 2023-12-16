@@ -13,14 +13,15 @@
       defer
     ></script>
     <link rel="stylesheet" href="../dist/css/styles.css" />
+    <link rel="stylesheet" href="../dist/css/profile.css" />
     <link rel="stylesheet" href="../dist/css/media.css" />
     <script src="../src/js/api/auth/loginCheck.mjs" type="module"></script>
     <script src="../src/js/api/auth/logout.js" type="module"></script>
     <script src="../src/js/profile/profile.js" type="module"></script>
-    <script src="../src/js/api/editInfo.js" type="module"></script>
+    <script src="../src/js/api/edit/editAvatar.js" type="module"></script>
     <script src="../src/js/profile/profileFilter.js" type="module"></script>
     <script src="../src/js/headerProfile.js" type="module"></script>
-    <script src="../src/js/api/postListing.js" type="module"></script>
+    <script src="../src/js/api/post/postListing.js" type="module"></script>
   </head>
   <body>
     <header class="d-flex justify-content-between">
@@ -62,10 +63,10 @@
       <section id="profileData" class="d-flex flex-column profile-info"></section>
 
       <div class="d-flex button-group-profile gap-2 gap-lg-5">
-        <div class="d-flex justify-content-end avatar-edit-btn">
+        <div class="d-flex justify-content-end avatar-listing-btn">
           <button class="btn btn-style z-1" id="create-new-auction-btn">Create new auction</button>
         </div>
-        <div class="d-flex justify-content-end avatar-edit-btn">
+        <div class="d-flex justify-content-end avatar-listing-btn">
           <button id="edit-profile-btn" class="btn btn-style z-1">Edit Avatar</button>
         </div>
       </div>
@@ -81,8 +82,8 @@
           </div>
         </form>
       </div>
-      <div class="z-5 position-relative justify-content-center m-3" id="listing-form">
-        <form id="listing-submission">
+      <div class="z-5 position-relative justify-content-center m-3 listing-form" id="listing-form">
+        <form id="listing-submission" class="listing-submission">
           <h2>Start a new auction</h2>
           <div class="d-grid justify-content-center form-post-container">
             <div class="d-grid grid-b gap-2 py-2">
