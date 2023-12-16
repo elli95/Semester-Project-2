@@ -16,11 +16,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="dist/css/styles.css" />
+    <link rel="stylesheet" href="dist/css/index.css" />
     <link rel="stylesheet" href="dist/css/media.css" />
     <script src="src/js/api/auth/loginCheck.mjs" type="module"></script>
     <script src="src/js/api/auth/logout.js" type="module"></script>
     <script src="src/js/index.js" type="module"></script>
-    <script src="src/js/api/postListing.js" type="module"></script>
+    <script src="src/js/api/post/postListing.js" type="module"></script>
     <script src="src/js/searchFilter/filter.js" type="module"></script>
     <script src="src/js/searchFilter/search.js" type="module"></script>
     <script src="src/js/dateCountdown.js" type="module"></script>
@@ -62,11 +63,11 @@
     </header>
     <main class="d-flex flex-column align-items-center">
       <img src="./images/josh-calabrese-XXpbdU_31Sg-unsplash.webp" class="backgroud-img img-top" id="main-back-img" alt="" />
-      <div class="d-flex justify-content-end avatar-edit-btn my-3 mt-lg-0 me-2 align-self-end">
+      <div class="d-flex justify-content-end avatar-listing-btn my-3 mt-lg-0 me-2 align-self-end">
         <button class="col-2 btn w-auto p-2 me-md-5 btn-style z-1 position-relative" id="create-new-auction-btn">Create new auction</button>
       </div>
-      <section class="z-5 position-relative justify-content-center" id="listing-form">
-        <form id="listing-submission">
+      <section class="z-5 position-relative justify-content-center listing-form" id="listing-form">
+        <form id="listing-submission" class="listing-submission">
           <h2>Start a new auction</h2>
           <div class="d-grid justify-content-center form-post-container">
             <div class="d-grid grid-b gap-2 py-2">
@@ -109,7 +110,7 @@
         <div class="col align-self-center d-flex flex-column">
           <div class="d-flex flex-column align-items-center col col-12 align-self-center gap-2">
             <div class="col-6 d-flex z-1 mt-md-4 search-bar align-self-center">
-              <input type="search" class="form-control rounded-start rounded-0" placeholder="Search" id="search-input" />
+              <input type="search" class="form-control rounded-start rounded-0" placeholder="Search by title" id="search-input" />
               <label for="search-input" class="wave-form-lable-fix text-light">Search field</label>
               <button class="btn p-1 px-3 rounded-end rounded-0" type="submit" aria-label="Search submit button">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -136,10 +137,10 @@
         <div class="align-self-center my-4">
           <button class="btn-style" id="show-more-listing-btn">Show more</button>
           <button class="btn-style show-less-btn" id="show-less-listing-btn">Show less</button>
-          <button type="button" class="btn-style" id="show-more-ending-btn">Show more</button>
-          <button type="button" class="btn-style show-less-btn" id="show-less-ending-btn">Show less</button>
-          <button type="button" class="btn-style" id="show-more-popular-btn">Show more</button>
-          <button type="button" class="btn-style" id="show-less-popular-btn">Show more</button>
+          <button type="button" class="btn-style hide-btn" id="show-more-ending-btn">Show more</button>
+          <button type="button" class="btn-style show-less-btn hide-btn" id="show-less-ending-btn">Show less</button>
+          <button type="button" class="btn-style hide-btn" id="show-more-popular-btn">Show more</button>
+          <button type="button" class="btn-style hide-btn" id="show-less-popular-btn">Show more</button>
         </div>
       </section>
     </main>

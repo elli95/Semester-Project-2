@@ -2,7 +2,7 @@
 
 # Semester Project 2
 
-[![Semester Project 2 - Screen Shot][project-screenshot]](https://elli95.github.io/Semester-Project-2/)
+[![Semester Project 2 - Screen Shot][project-screenshot]](https://precious-nougat-992bd6.netlify.app/)
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -32,7 +32,12 @@
 
 This is my second semester project assignment at Noroff
 In this assignment, I create an auction page for the sale and purchase of goods.
-In my case, I have envisioned a target group consisting of individuals who want to buy/sell gardening tools or farm equipment for both plants and animals.
+In my case, I originally thought of a target group consisting of individuals who want to buy/sell garden tools or farm equipment for both plants and animals.
+But as time went by with uncertainty about the design, I changed my target group to the general public who might want to sell/sell at auction.
+But, still with the lush and green part of my earlier idea.
+I feel that the opportunity to reach the original target audience is still there, the design just needs something a little more, which I have not have time for in this case.
+Having said that, I feel that this is suitable for a general target group that wants slightly quieter surroundings.
+
 My design is based on my prototype made in figma for this assignment:
 
 - [Mobile](https://www.figma.com/file/WZxW9EUB7GwtmR7fsUHvur/Mobile?type=design&node-id=0%3A1&mode=design&t=x2Jv5MhWCmp5P1Jt-1)
@@ -112,6 +117,7 @@ Icons were sourced from [Font Awesome](https://fontawesome.com).
 Information and inspiration with the creation of the codes came from Noroff's curriculum and various websites linked below.
 
 [JavaScript 2 Course Assignment - Social Media API](https://www.youtube.com/watch?v=rLAGHFr8bvU)
+[My own(Elise Marie Hogsnes) JavaScript 2 Course assignment](https://github.com/elli95/JavaScript-2-Course-assignment/tree/js2)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

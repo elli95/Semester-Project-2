@@ -1,0 +1,34 @@
+.profile-img {
+  width: 160px;
+  height: 160px;
+  clip-path: ellipse(80px 80px at 80px 80px);
+}
+
+.avatar-edit-form {
+  flex-direction: column;
+  border: solid 2px var(--black-color);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  background-color: var(--listing-color);
+}
+
+.button-group-profile {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.profile-listing-btn-style {
+  width: 70px;
+  height: 45px;
+  border-radius: 7px;
+  margin-top: 5px;
+}
+
+.profile-listing-data h2 {
+  border-bottom: solid 2px var(--black-color);
+  width: 90%;
+}
+
+/*# sourceMappingURL=profile.css.map */

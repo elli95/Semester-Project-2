@@ -3,7 +3,10 @@ import { apiData } from "./api/apiCall.mjs";
 import { getLocalStorage } from "./localStorage.mjs";
 import { userHeader } from "./htmlStyle.js";
 
-export async function getProfileData() {
+/**
+ * Gets and displays a user's profile info in the header.
+ */
+async function getProfileData() {
   try {
     if (getLocalStorage("profile")) {
       const method = "GET";
