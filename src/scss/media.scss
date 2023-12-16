@@ -16,7 +16,6 @@
   }
 
   .profile-filter-menu button {
-    // width: 100px;
     padding: 10px;
     text-align: center;
   }
@@ -46,10 +45,6 @@
 }
 
 @media (min-width: 800px) {
-  // .form-post-container {
-  //   grid-template: "a b" "c c";
-  // }
-
   .profile-filter-menu {
     margin-top: 20px;
   }
@@ -80,17 +75,11 @@
     top: 58px;
   }
 
-  // footer {
-  //   position: initial;
-  // }
-
-  // login/register
   .main-cover-style,
   .back-img-list-edit {
     background-color: var(--white-color);
     background-image: url(../../images/josh-calabrese-XXpbdU_31Sg-unsplash.webp);
     display: flex;
-    // border: 2px solid var(--black-color);
   }
 
   .login-register-section {
@@ -144,19 +133,7 @@
     padding: 0;
   }
 
-  // ul div {
-  //   flex-direction: row;
-  // }
-
-  // .meny-style,
-  // .searchbar,
-  // .profile-menu {
-  //   display: flex;
-  //   flex-direction: row-reverse;
-  // }
-
   .meny-style li {
-    // display: flex;
     flex-direction: row;
   }
 
@@ -171,7 +148,6 @@
     align-self: center;
   }
 
-  // .img-top
   .backgroud-img {
     width: 35%;
   }
@@ -197,18 +173,6 @@
   .contact-section {
     flex-direction: row;
   }
-
-  // .contact {
-  //   flex-direction: row;
-  // justify-content: center;
-  // margin: 10px 45px 20px 45px;
-  // background-color: var(--background-blur-color);
-  // backdrop-filter: blur(4px);
-  // border-radius: 10px;
-  // align-self: center;
-  // min-width: fit-content;
-  // max-width: fit-content;
-  // }
 
   .contact h2,
   .contact h3,
@@ -236,12 +200,6 @@
     text-align: center;
   }
 
-  // .button-group-profile {
-  //   position: absolute;
-  //   right: -10px;
-  //   padding-right: 0px;
-  // }
-
   .avatar-edit-form {
     max-width: 600px;
   }
@@ -257,7 +215,6 @@
   }
   .specific-listing {
     display: grid !important;
-    // grid-template: "b a" "b d" "b d" "c d";
     grid-template: "c b" "c d" "c a";
     justify-items: center;
   }
@@ -321,9 +278,7 @@
   }
 
   .popular-listing-style {
-    // display: grid;
     grid-template: "b a" "b c";
-    // align-items: center;
     width: 1000px;
   }
 
@@ -355,10 +310,6 @@
   .specific-listing {
     width: 1200px;
   }
-
-  // .button-group-profile {
-  //   right: 100px;
-  // }
 }
 
 @media (min-width: 1640px) {
