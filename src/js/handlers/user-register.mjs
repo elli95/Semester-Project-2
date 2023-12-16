@@ -1,12 +1,12 @@
-/**
- * This function collects the data from a form (sign up) at submit
- */
-
 import { signUp } from "../api/auth/registration.mjs";
 
 // Referense https://www.youtube.com/watch?v=rLAGHFr8bvU JavaScript 2 Course Assignment - Social Media API
+// Referense https://github.com/elli95/JavaScript-2-Course-assignment/tree/js2 My own JavaScript 2 Course assignment
 
-function signupFormListener() {
+/**
+ * This function retrieves data from the registration form when submitting.
+ */
+function registrationListener() {
   const signUpForm = document.querySelector("#signUpForm");
   if (signUpForm) {
     signUpForm.addEventListener("submit", (event) => {
@@ -19,4 +19,4 @@ function signupFormListener() {
   }
 }
 
-export { signupFormListener };
+export { registrationListener };
