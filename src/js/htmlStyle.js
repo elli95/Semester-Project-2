@@ -644,7 +644,7 @@ function listingEdit(listingData) {
   document.getElementById("listing-description").value = `${listingData.description}`;
   document.getElementById("listing-tags").value = `${listingData.tags}`;
 
-  if (listingData.media.length > 1) {
+  if (listingData.media.length > 0) {
     Object.values(listingData.media).forEach(function (img) {
       const mediaUrl = document.createElement("input");
       mediaUrl.className = "form-control listing-media-input";
