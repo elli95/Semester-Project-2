@@ -76,6 +76,8 @@ git clone https://github.com/elli95/Semester-Project-2
 
 3. Then run the `npm install` command in the terminal of the project.
 
+4. Then rin the `npm install bootstrap` command in the terminal of the project.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Contributing -->
