@@ -1,0 +1,83 @@
+.profile-container {
+  background-color: var(--white-color);
+}
+
+.specific-listing-style {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.specific-listing-main-img {
+  padding-bottom: 20px;
+}
+
+.specific-img-collection {
+  flex-wrap: wrap;
+  max-width: 500px;
+  padding-bottom: 15px;
+}
+
+.specific-img-collection img {
+  object-position: center;
+  object-fit: fill;
+  width: 100px;
+  height: 80px;
+  padding-top: 0px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.countdownBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75px;
+  height: 75px;
+  background-color: var(--date-color);
+}
+
+.countdownBox h2,
+.countdownBox h3 {
+  margin: 0;
+  background-color: var(--date-color);
+  color: var(--white-color);
+  font-size: 15px;
+}
+
+.specific-info-container {
+  height: auto;
+}
+
+.bid-history {
+  overflow: hidden;
+  height: 125px;
+  padding: 0px;
+  max-width: 500px;
+}
+
+.input-style {
+  background-color: var(--white-color);
+}
+
+.input-style,
+.bid-btn {
+  border: solid 2px var(--black-color);
+  border-radius: 7px;
+  height: 33px;
+  width: 250px;
+}
+
+.bid-history li {
+  border-bottom: solid 1px var(--black-color);
+}
+
+.show-more {
+  text-decoration: underline;
+  border: none;
+  background-color: var(--background-blur-color);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=specific-listing.css.map */
