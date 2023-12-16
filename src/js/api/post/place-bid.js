@@ -8,7 +8,10 @@ const bidForm = document.querySelector("#place-bid");
 const bidValue = document.querySelector("#bid-value");
 bidForm.addEventListener("submit", bidSubmission);
 
-async function bidSubmission(event) {
+/**
+ * Submit a bid for listing to api
+ */
+async function bidSubmission() {
   event.preventDefault();
   try {
     const confirmBid = confirm("Are you sure you want to bid this auction?");

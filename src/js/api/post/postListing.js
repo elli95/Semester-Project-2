@@ -1,5 +1,6 @@
 import { API_LISTINGS_URL } from "../constant-api.mjs";
 import { apiData } from "../apiCall.mjs";
+import { ShowTestImage } from "../../showTestImg.mjs";
 
 const listingUrl = `${API_LISTINGS_URL}`;
 
@@ -17,6 +18,9 @@ const listingend = document.querySelector("#listing-end");
 listingForm.addEventListener("submit", listingSubmission);
 addNewImgInput.addEventListener("click", newImgInput);
 
+/**
+ * Listens after button clicks to then either show or hide new listing field.
+ */
 createNewAuctionBtn.addEventListener("click", function () {
   if (listingFormSection.style.display === "" || listingFormSection.style.display === "none") {
     document.getElementById("listing-form").style.display = "flex";
@@ -25,6 +29,9 @@ createNewAuctionBtn.addEventListener("click", function () {
   }
 });
 
+/**
+ * Adds a new input field to add a new image to the listing.
+ */
 function newImgInput() {
   const newListingMediaInput = document.getElementById("new-listing-media-input");
   const newListingMediaSection = document.createElement("div");
@@ -47,13 +54,10 @@ function newImgInput() {
   }
 }
 
-export function ShowTestImage() {
-  console.log(this.value);
-  document.getElementById("edit-img-display").src = this.value;
-  document.getElementById("edit-img-display").style.display = "flex";
-}
-
-async function listingSubmission(event) {
+/**
+ * It post listing data from the new listing form to the api.
+ */
+async function listingSubmission() {
   event.preventDefault();
   try {
     const method = "POST";
