@@ -74,6 +74,8 @@ git clone https://github.com/elli95/Semester-Project-2
 
 2. Open the folder with a code editor (ex. visual studio code)
 
+3. To use the manual tests, run the `npm install` command in the terminal of the project.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- Contributing -->
@@ -110,14 +112,14 @@ Elise Marie Hogsnes - [Linkedin.com](https://www.linkedin.com/in/elise-marie-hog
 All image editing was done with [paint.net](https://www.getpaint.net/) and [FastStone Photo Resizer](https://www.faststone.org/FSResizerDetail.htm).
 
 All images outside the files within the assignment were taken from [Unsplash](https://unsplash.com/).
-
-[Bootstrap](https://getbootstrap.com/).
+Design and css styling was helped with [Bootstrap](https://getbootstrap.com/) framework.
 
 Icons were sourced from [Font Awesome](https://fontawesome.com).
 
 Information and inspiration with the creation of the codes came from Noroff's curriculum and various websites linked below.
 
 [JavaScript 2 Course Assignment - Social Media API](https://www.youtube.com/watch?v=rLAGHFr8bvU)
+
 [My own(Elise Marie Hogsnes) JavaScript 2 Course assignment](https://github.com/elli95/JavaScript-2-Course-assignment/tree/js2)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
