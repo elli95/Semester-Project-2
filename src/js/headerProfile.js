@@ -9,6 +9,7 @@ import { userHeader } from "./htmlStyle.js";
 async function getProfileData() {
   try {
     if (getLocalStorage("profile")) {
+      document.getElementById("header-profile").innerText = "";
       const method = "GET";
       const user = getLocalStorage("profile").name;
       const userDataUrl = `${API_PROFILE_URL}/${user}`;
@@ -21,3 +22,5 @@ async function getProfileData() {
 }
 
 getProfileData();
+
+export { getProfileData };

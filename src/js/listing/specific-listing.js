@@ -26,6 +26,13 @@ async function getListingData(listingDataUrl, method, data) {
 getListingData(listingDataUrl, method);
 
 /**
+ * Calls getProfileData after a bid has been placed
+ */
+function callsGetProfileData() {
+  getProfileData(profileDataUrl, method);
+}
+
+/**
  * Retrieves a user data and displays it in html.
  * @param {string} profileDataUrl Api url
  * @param {string} method Method (GET) used in the api call
@@ -33,6 +40,7 @@ getListingData(listingDataUrl, method);
  */
 async function getProfileData(profileDataUrl, method, data) {
   if (getLocalStorage("profile")) {
+    document.getElementById("user-credits").innerText = "";
     const user = getLocalStorage("profile").name;
     const userData = await apiData(profileDataUrl + user, method, data);
     userCredits(userData);
@@ -40,3 +48,5 @@ async function getProfileData(profileDataUrl, method, data) {
 }
 
 getProfileData(profileDataUrl, method);
+
+export { callsGetProfileData };

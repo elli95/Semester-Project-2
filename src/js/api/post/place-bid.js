@@ -1,6 +1,8 @@
 import { API_LISTINGS_URL, listingId } from "../constant-api.mjs";
 import { apiData } from "../apiCall.mjs";
 import { getBidData } from "../../listing/listingBids.js";
+import { callsGetProfileData } from "../../listing/specific-listing.js";
+import { getProfileData } from "../../headerProfile.js";
 
 const listingBidUrl = `${API_LISTINGS_URL}/${listingId}`;
 
@@ -27,6 +29,8 @@ async function bidSubmission() {
       setTimeout(() => {
         document.getElementById("listing-bids").innerHTML = "";
         getBidData(listingBidUrl + "?_bids=true");
+        callsGetProfileData();
+        getProfileData();
       }, 500);
     }
   } catch (error) {
