@@ -42,8 +42,9 @@ My design is based on my prototype made in figma for this assignment:
 
 - [Mobile](https://www.figma.com/file/WZxW9EUB7GwtmR7fsUHvur/Mobile?type=design&node-id=0%3A1&mode=design&t=x2Jv5MhWCmp5P1Jt-1)
 - [Desktop](https://www.figma.com/file/WZxW9EUB7GwtmR7fsUHvur/Mobile?type=design&node-id=18%3A131&mode=design&t=x2Jv5MhWCmp5P1Jt-1)
+- [Style Guide](https://www.figma.com/file/WZxW9EUB7GwtmR7fsUHvur/Mobile?type=design&node-id=189%3A110&mode=design&t=raYaC6zZREvWKmJq-1)
 
-To see the development tasks and where in the project I am, please refer to my [Github Projects](https://github.com/users/elli95/projects/1/views/1) page Or look to my [Gantt chart](https://github.com/users/elli95/projects/1/views/2) for a different perspective.
+To see the development tasks and where in the project I am, please refer to my [Trello Projects](https://trello.com/b/v9yyzWEh/semester-project-2) page Or look to my [Gantt chart](https://github.com/users/elli95/projects/1/views/2) for a different perspective.
 
 <!-- View the live version [here]() -->
 
