@@ -45,8 +45,6 @@ function popularListingsCard(listing, activListing) {
   infoContainer.append(listingEndTime);
   infoContainer.append(listingHighestBid);
 
-  console.log("activListing", activListing);
-
   cardContainer.className = "carousel-item listing-card popular-listing-box-style";
   cardContainer.setAttribute("data-bs-interval", "10000");
   if (activListing === listing.id) {
@@ -250,7 +248,6 @@ function listingPage(listingData) {
       const collectionImg = document.querySelectorAll(".collection-img");
       for (let i = 0; i < collectionImg.length; i++) {
         collectionImg[i].addEventListener("click", function () {
-          console.log(this.src);
           listingimgBox.querySelector("img").src = this.src;
         });
       }

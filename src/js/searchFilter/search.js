@@ -18,7 +18,6 @@ async function listingSearch() {
   try {
     const auctionListings = await apiData(listingsDataUrl, method);
     const value = searchField.value.toLowerCase();
-    console.log(value);
 
     let result = auctionListings.filter((inputText) => inputText.title.toLowerCase().includes(value));
 

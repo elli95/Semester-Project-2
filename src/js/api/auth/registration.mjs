@@ -18,7 +18,6 @@ async function userRegistration(profile) {
     },
     body,
   });
-  console.log(response);
 
   const data = await response.json();
 

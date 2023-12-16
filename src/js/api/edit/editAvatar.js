@@ -33,7 +33,6 @@ async function editProfileAvatar() {
     };
 
     const profileImgEdit = await apiData(userDataUrl, method, avatarUpdate);
-    console.log(profileImgEdit);
 
     window.location.replace("../../../profile/index.html");
   } catch (error) {
