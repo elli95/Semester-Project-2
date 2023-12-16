@@ -93,8 +93,7 @@
     font-size: 24px;
     margin: 0;
   }
-  .dropdw-btn,
-  #menu .login {
+  .dropdw-btn {
     display: none;
   }
   .meny-style {
