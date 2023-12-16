@@ -13,12 +13,18 @@ editAvatar.addEventListener("submit", editProfileAvatar);
 inputImgUrl.addEventListener("input", ShowTestAvatar);
 inputImgUrl.addEventListener("click", ShowTestAvatar);
 
+/**
+ * Shows the image from the input field when editing the avatar image
+ */
 function ShowTestAvatar() {
   const value = inputImgUrl.value.toLowerCase();
   document.getElementById("output-img").src = value;
   document.getElementById("output-img").style.display = "flex";
 }
 
+/**
+ * Post a new user avatar image to the api
+ */
 async function editProfileAvatar() {
   event.preventDefault();
   try {

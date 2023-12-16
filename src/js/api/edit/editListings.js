@@ -15,6 +15,9 @@ const addNewImgInput = document.querySelector("#add-new-img-input");
 listingUpdateForm.addEventListener("submit", editListing);
 addNewImgInput.addEventListener("click", newImgInput);
 
+/**
+ * Adds a new input field to add and show a new image to the listing.
+ */
 function newImgInput() {
   const newListingMediaInput = document.getElementById("listing-media");
   const newListingMedia = document.createElement("input");
@@ -35,12 +38,11 @@ function newImgInput() {
   }
 }
 
-// export function ShowTestImage() {
-//   console.log(this.value);
-//   document.getElementById("edit-img-display").src = this.value;
-//   document.getElementById("edit-img-display").style.display = "flex";
-// }
-
+/**
+ * Retrieves listing data and displays it in input fields ready for editing.
+ * @param {string} listingDataUrl Api url
+ * @param {string} data The data that is retrieved
+ */
 async function getListingData(listingDataUrl, data) {
   try {
     const method = "GET";
@@ -53,6 +55,9 @@ async function getListingData(listingDataUrl, data) {
 }
 getListingData(listingDataUrl);
 
+/**
+ * Post an edited listing to the api
+ */
 async function editListing() {
   event.preventDefault();
   try {
