@@ -75,6 +75,28 @@
     top: 58px;
   }
 
+  .meny-style {
+    display: grid;
+    grid-template: "b c d e f g a";
+    justify-content: end;
+    position: initial !important;
+    background-color: transparent;
+    backdrop-filter: none;
+    font-size: 20px;
+    border: 0;
+    transform: none !important;
+    padding: 0;
+  }
+
+  .meny-style li {
+    flex-direction: row;
+  }
+
+  .meny-style li a,
+  .header-profile {
+    color: var(--white-color);
+  }
+
   .main-cover-style,
   .back-img-list-edit {
     background-color: var(--white-color);
@@ -117,28 +139,6 @@
 
   .dropdw-btn {
     display: none;
-  }
-
-  .meny-style {
-    display: grid;
-    grid-template: "b c d e f g a";
-    justify-content: end;
-    position: initial !important;
-    background-color: transparent;
-    backdrop-filter: none;
-    font-size: 20px;
-    border: 0;
-    transform: none !important;
-    padding: 0;
-  }
-
-  .meny-style li {
-    flex-direction: row;
-  }
-
-  .meny-style li a,
-  .header-profile {
-    color: var(--white-color);
   }
 
   .searchbar,
