@@ -1,6 +1,10 @@
 import { getLocalStorage } from "../../localStorage.mjs";
 
 const path = location.pathname;
+
+/**
+ * Checks whether the user is logged in or not, and changes the appearance based on the result
+ */
 function isUserLogedIn() {
   if (getLocalStorage("token")) {
     document.getElementById("menu-login").style.display = "none";

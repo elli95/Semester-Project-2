@@ -1,15 +1,13 @@
 import { API_REGISTER_URL } from "../constant-api.mjs";
 
-// const action = "/auth/register";
 const method = "POST";
 const errorMessage = document.querySelector("#error-message");
 
 /**
- * This function creates a new user on use
- * @param {string} profile The information used to create a new user
+ * Registers a user in
+ * @param {string} profile Profile data from the user
  */
-
-async function signUp(profile) {
+async function userRegistration(profile) {
   const signUpUrl = API_REGISTER_URL;
   const body = JSON.stringify(profile);
 
@@ -37,4 +35,4 @@ async function signUp(profile) {
   }
 }
 
-export { signUp };
+export { userRegistration };
