@@ -10,7 +10,7 @@ function setLocalStorage(token, value) {
 /**
  * Returns the localStorage value that was queried.
  * @param {string} token The value to be deleted
- * @returns The value to be returned
+ * @returns {string} The value to be returned
  */
 function getLocalStorage(token) {
   try {
