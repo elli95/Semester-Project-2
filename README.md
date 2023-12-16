@@ -74,7 +74,7 @@ git clone https://github.com/elli95/Semester-Project-2
 
 2. Open the folder with a code editor (ex. visual studio code)
 
-3. To use the manual tests, run the `npm install` command in the terminal of the project.
+3. Then run the `npm install` command in the terminal of the project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
