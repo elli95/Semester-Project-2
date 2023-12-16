@@ -42,8 +42,9 @@ My design is based on my prototype made in figma for this assignment:
 
 - [Mobile](https://www.figma.com/file/WZxW9EUB7GwtmR7fsUHvur/Mobile?type=design&node-id=0%3A1&mode=design&t=x2Jv5MhWCmp5P1Jt-1)
 - [Desktop](https://www.figma.com/file/WZxW9EUB7GwtmR7fsUHvur/Mobile?type=design&node-id=18%3A131&mode=design&t=x2Jv5MhWCmp5P1Jt-1)
+- [Style Guide](https://www.figma.com/file/WZxW9EUB7GwtmR7fsUHvur/Mobile?type=design&node-id=189%3A110&mode=design&t=raYaC6zZREvWKmJq-1)
 
-To see the development tasks and where in the project I am, please refer to my [Github Projects](https://github.com/users/elli95/projects/1/views/1) page Or look to my [Gantt chart](https://github.com/users/elli95/projects/1/views/2) for a different perspective.
+To see the development tasks and where in the project I am, please refer to my [Trello Projects](https://trello.com/b/v9yyzWEh/semester-project-2) page Or look to my [Gantt chart](https://github.com/users/elli95/projects/1/views/2) for a different perspective.
 
 <!-- View the live version [here]() -->
 
@@ -72,6 +73,10 @@ git clone https://github.com/elli95/Semester-Project-2
 ```
 
 2. Open the folder with a code editor (ex. visual studio code)
+
+3. Then run the `npm install` command in the terminal of the project.
+
+4. Then rin the `npm install bootstrap` command in the terminal of the project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -109,14 +114,14 @@ Elise Marie Hogsnes - [Linkedin.com](https://www.linkedin.com/in/elise-marie-hog
 All image editing was done with [paint.net](https://www.getpaint.net/) and [FastStone Photo Resizer](https://www.faststone.org/FSResizerDetail.htm).
 
 All images outside the files within the assignment were taken from [Unsplash](https://unsplash.com/).
-
-[Bootstrap](https://getbootstrap.com/).
+Design and css styling was helped with [Bootstrap](https://getbootstrap.com/) framework.
 
 Icons were sourced from [Font Awesome](https://fontawesome.com).
 
 Information and inspiration with the creation of the codes came from Noroff's curriculum and various websites linked below.
 
 [JavaScript 2 Course Assignment - Social Media API](https://www.youtube.com/watch?v=rLAGHFr8bvU)
+
 [My own(Elise Marie Hogsnes) JavaScript 2 Course assignment](https://github.com/elli95/JavaScript-2-Course-assignment/tree/js2)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
