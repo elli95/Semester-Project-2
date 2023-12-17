@@ -31,12 +31,13 @@
 ## About The Project
 
 This is my second semester project assignment at Noroff
-In this assignment, I create an auction page for the sale and purchase of goods.
-In my case, I originally thought of a target group consisting of individuals who want to buy/sell garden tools or farm equipment for both plants and animals.
-But as time went by with uncertainty about the design, I changed my target group to the general public who might want to sell/sell at auction.
-But, still with the lush and green part of my earlier idea.
-I feel that the opportunity to reach the original target audience is still there, the design just needs something a little more, which I have not have time for in this case.
-Having said that, I feel that this is suitable for a general target group that wants slightly quieter surroundings.
+In this assignment, I created an auction site for selling and buying goods. 
+In my case, I considered my target group to consist of individuals who want to buy/sell garden tools or farm equipment from both plants to animals and machinery.
+I have tried to achieve this with nature themed web design.
+Afterwards, I would like to say that I think I can hit the target group even better by implementing categories in the auctions for different themes.
+Unfortunately, this was not something I had time for in this assignment.
+
+Having said that, I feel that this is suitable for the target group and for those who want a more nature-themed auction.
 
 My design is based on my prototype made in figma for this assignment:
 
